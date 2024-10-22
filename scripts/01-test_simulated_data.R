@@ -109,74 +109,44 @@ analysis_data <- read_csv("data/00-simulated_data/simulated_data.csv")
 # Test if the data was successfully loaded
 # Test 1: Check for any missing values (NA)
 test_missing_values <- function(poll_data) {
-  if (any(is.na(poll_data))) {
-    cat("Test Failed: Missing values detected.\n")
-  } else {
-    cat("Test Passed: No missing values.\n")
-  }
+  return(!any(is.na(poll_data)))
 }
+print(test_missing_values(poll_data))
 
 # Test 2: Check if the transparency score is between 1 and 10
 test_transparency_score <- function(poll_data) {
-  if (all(poll_data$transparency_score >= 1 & poll_data$transparency_score <= 10)) {
-    cat("Test Passed: Transparency score is between 1 and 10.\n")
-  } else {
-    cat("Test Failed: Transparency score out of range.\n")
-  }
+  return(all(poll_data$transparency_score >= 1 & poll_data$transparency_score <= 10))
 }
+print(test_transparency_score(poll_data))
 
 # Test 3: Check if the pollster is from the pollster_list
 test_pollster_list <- function(poll_data, pollsters) {
-  if (all(poll_data$pollster %in% pollsters)) {
-    cat("Test Passed: All pollsters are valid.\n")
-  } else {
-    cat("Test Failed: Invalid pollsters found.\n")
-  }
+  return(all(poll_data$pollster %in% pollsters))
 }
+print(test_pollster_list(poll_data, pollsters))
 
 # Test 4: Check if the candidate name is from candidate_list
 test_candidate_list <- function(poll_data, candidates) {
-  if (all(poll_data$candidate %in% candidates)) {
-    cat("Test Passed: All candidates are valid.\n")
-  } else {
-    cat("Test Failed: Invalid candidates found.\n")
-  }
+  return(all(poll_data$candidate %in% candidates))
 }
+print(test_candidate_list(poll_data, candidates))
 
 # Test 5: Check if the party is from party_list
 test_party_list <- function(poll_data, parties) {
-  if (all(poll_data$party %in% parties)) {
-    cat("Test Passed: All parties are valid.\n")
-  } else {
-    cat("Test Failed: Invalid parties found.\n")
-  }
+  return(all(poll_data$party %in% parties))
 }
+print(test_party_list(poll_data, parties))
 
 # Test 6: Check if the start date is between 2024-01-01 and 2024-10-19
 test_date_range <- function(poll_data) {
-  if (all(poll_data$start_date >= as.Date("2024-01-01") & poll_data$start_date <= as.Date("2024-10-19"))) {
-    cat("Test Passed: All start dates are within the valid range.\n")
-  } else {
-    cat("Test Failed: Dates out of valid range found.\n")
-  }
+  return(all(poll_data$start_date >= as.Date("2024-01-01") & poll_data$start_date <= as.Date("2024-10-19")))
 }
+print(test_date_range(poll_data))
 
 # Test 7: Check if the sum of probabilities for each pollster is less than 1
 test_probabilities_sum <- function(poll_data) {
   prob_sums <- aggregate(probability ~ pollster, data = poll_data, sum)
-  if (all(prob_sums$probability < 1)) {
-    cat("Test Passed: Sum of probabilities for each pollster is less than 1.\n")
-  } else {
-    cat("Test Failed: Sum of probabilities exceeds 1 for some pollsters.\n")
-  }
+  return(all(prob_sums$probability <= 1))
 }
+print(test_probabilities_sum(poll_data))
 
-# Running all tests
-cat("Running tests...\n")
-test_missing_values(poll_data)
-test_transparency_score(poll_data)
-test_pollster_list(poll_data, pollsters)
-test_candidate_list(poll_data, candidates)
-test_party_list(poll_data, parties)
-test_date_range(poll_data)
-test_probabilities_sum(poll_data)
