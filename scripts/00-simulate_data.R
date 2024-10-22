@@ -114,8 +114,9 @@ generate_poll_data <- function(pollster) {
   selected_parties <- sample(parties, num_candidates, replace = TRUE)
   
   # Generate probabilities that sum to less than 1
-  probs <- round(runif(num_candidates, min = 0.05, max = 0.3), 2)
-  probs <- probs / sum(probs) * runif(1, min = 0.8, max = 1) 
+  probs <- runif(num_candidates, min = 0.05, max = 0.3)
+  probs <- probs / sum(probs)  # Normalize to sum exactly 1
+  probs <- probs * runif(1, min = 0.8, max = 1)  # Scale it to be less than 1
   
   # Poll start date
   start_date <- sample(seq(as.Date("2024-01-01"), as.Date("2024-10-19"), by="day"), 1)
