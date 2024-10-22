@@ -2,7 +2,9 @@
 
 ## Overview
 
-This repo provides students with a foundation for their own projects associated with *Telling Stories with Data*. You do not need every aspect for every paper and you should delete aspects that you do not need.
+Welcome to the U.S. Presidential Election Prediction: Trump 2024 repository! This project aims to utilize data science and machine learning techniques to predict the electoral outcomes of the upcoming U.S. presidential election, focusing specifically on Donald Trump's campaign.
+
+
 
 
 ## File Structure
