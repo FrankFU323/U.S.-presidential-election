@@ -1,12 +1,11 @@
 #### Preamble ####
-# Purpose: Tests... [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 26 September 2024 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
+# Purpose: To check the data after cleaned
+# Author: Tianrui Fu & Yiyue Deng
+# Date: 21 October 2024
+# Contact: tianrui.fu@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
-
+# Pre-requisites: The raw data is cleaned.
+# Any other information needed? None.
 
 #### Workspace setup ####
 library(tidyverse)
@@ -16,16 +15,6 @@ data <- read_csv("data/02-analysis_data/analysis_data.csv")
 
 
 #### Test data ####
-# Test that the dataset has 151 rows - there are 151 divisions in Australia
-test_that("dataset has 151 rows", {
-  expect_equal(nrow(analysis_data), 151)
-})
-
-# Test that the dataset has 3 columns
-test_that("dataset has 3 columns", {
-  expect_equal(ncol(analysis_data), 3)
-})
-
 # Test that the 'division' column is character type
 test_that("'division' is character", {
   expect_type(analysis_data$division, "character")
