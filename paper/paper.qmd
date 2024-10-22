@@ -1,14 +1,15 @@
 ---
-title: "My title"
+title: "Predicting the 2024 US Presidential Election: A Polling-Based Forecast"
 subtitle: "My subtitle if needed"
 author: 
-  - First author
-  - Another author
+  - Tianrui Fu
+  - Yiyue Deng
 thanks: "Code and data are available at: [https://github.com/RohanAlexander/starter_folder](https://github.com/RohanAlexander/starter_folder)."
 date: today
 date-format: long
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+abstract: "This paper forecasts the 2024 US Presidential election outcome using polling data from [insert pollster name]. By applying simple and multiple linear regression models, we analyze the effect of polling factors, including sample size, poll score, and transparency, on support percentages for key candidates. Our findings suggest significant relationships between these variables, providing an evidence-based approach to predicting election outcomes. We further explore methodological strengths and weaknesses and propose an ideal polling survey methodology. This work highlights the potential for data-driven insights into political forecasting."
 format: pdf
+toc: true
 number-sections: true
 bibliography: references.bib
 ---
@@ -19,11 +20,11 @@ bibliography: references.bib
 #| message: false
 
 library(tidyverse)
-library(palmerpenguins)
+
 ```
 
 
-# Introduction
+# Introduction {#sec-data}
 
 Overview paragraph
 
@@ -58,20 +59,13 @@ Add graphs, tables and text. Use sub-sub-headings for each outcome variable or u
 
 
 
-Some of our data is of penguins (@fig-bills), from @palmerpenguins.
-
+Some of our data is of penguins (@fig-bills), from[]. 
 ```{r}
 #| label: fig-bills
 #| fig-cap: Bills of penguins
 #| echo: false
 
-ggplot(penguins, aes(x = island, fill = species)) +
-  geom_bar(alpha = 0.8) +
-  scale_fill_manual(values = c("darkorange","purple","cyan4"),
-                    guide = "none") +
-  theme_minimal() +
-  facet_wrap(~species, ncol = 1) +
-  coord_flip()
+
 ```
 
 Talk more about it.
@@ -84,15 +78,10 @@ And also planes (@fig-planes). (You can change the height and width, but don't w
 #| echo: false
 #| warning: false
 #| message: false
+library(arrow)
+analysis_data <- read_parquet(here::here("data/02-analysis_data/analysis_data.parquet"))
 
-analysis_data <- read_csv(here::here("data/02-analysis_data/analysis_data.csv"))
 
-analysis_data |> 
-  ggplot(aes(x = width, y = length)) +
-  geom_point(alpha = 0.8) +
-  theme_minimal() +
-  labs(x = "Wing width (mm)",
-       y = "Wing length (mm)")
 ```
 
 Talk way more about it. 
@@ -110,7 +99,7 @@ Use sub-sub-headings for each outcome variable and feel free to combine a few in
 
 
 
-# Model
+# Model {#sec-data}
 
 The goal of our modelling strategy is twofold. Firstly,...
 
@@ -139,7 +128,7 @@ We expect a positive relationship between the size of the wings and time spent a
 We can use maths by including latex between dollar signs, for instance $\theta$.
 
 
-# Results
+# Results {#sec-data}
 
 Our results are summarized in @tbl-modelresults.
 
@@ -150,9 +139,12 @@ Our results are summarized in @tbl-modelresults.
 #| message: false
 
 library(rstanarm)
+library(here)
 
-first_model <-
-  readRDS(file = here::here("models/first_model.rds"))
+model_date <-
+  readRDS(file = here::here("models/model_date.rds"))
+model_date_pollster <-
+  readRDS(file = here::here("models/model_date_pollster.rds"))
 ```
 
 ```{r}
@@ -161,20 +153,58 @@ first_model <-
 #| label: tbl-modelresults
 #| tbl-cap: "Explanatory models of flight time based on wing width and wing length"
 #| warning: false
+library(modelsummary)
+library(kableExtra)
+library(dplyr)
+coef_names <- c("end_date" = "End Date",
+                "pollsterBeacon/Shaw" = "Beacon/Shaw",
+                "pollsterChristopher Newport U." = "Christopher Newport U.",
+                "pollsterCNN/SSRS" = "CNN/SSRS",
+                "pollsterData Orbital" = "Data Orbital",
+                "pollsterEchelon Insights" = "Echelon Insights",
+                "pollsterEmerson" = "Emerson",
+                "pollsterIpsos" = "Ipsos",
+                "pollsterMarist" = "Marist",
+                "pollsterMarquette Law School" = "Marquette Law School",
+                "pollsterMassINC Polling Group" = "MassINC Polling Group",
+                "pollsterMcCourtney Institute/YouGov" = "McCourtney Institute/YouGov",
+                "pollsterMuhlenberg" = "Muhlenberg",
+                "pollsterQuinnipiac" = "Quinnipiac",
+                "pollsterSelzer" = "Selzer",
+                "pollsterSiena" = "Siena",
+                "pollsterSiena/NYT" = "Siena/NYT",
+                "pollsterSuffolk" = "Suffolk",
+                "pollsterSurveyUSA" = "SurveyUSA",
+                "pollsterSurveyUSA/High Point University" = "SurveyUSA/High Point University",
+                "pollsterThe Washington Post" = "The Washington Post",
+                "pollsterU. North Florida" = "U. North Florida",
+                "pollsterUniversity of Massachusetts Lowell/YouGov" = "University of Massachusetts Lowell/YouGov",
+                "pollsterWashington Post/George Mason University" = "Washington Post/George Mason University",
+                "pollsterYouGov" = "YouGov",
+                "pollsterYouGov Blue" = "YouGov Blue",
+                "pollsterYouGov/Center for Working Class Politics" = "YouGov/Center for Working Class Politics")
+                
+modelsummary(models = list("Model with date" = model_date, 
+                           "Model with date and pollster" = model_date_pollster),
+             statistic = "conf.int",
+             conf_level = 0.95,
+             stars = TRUE,
+             coef_rename = coef_names,
+             output = "kableExtra") %>%
+  kable_styling(full_width = F, position = "left", bootstrap_options = c("striped", "hover"
+                                                                           , line_height = 0.8)) %>%
+  column_spec(column = 2, width = "2em") %>%
+  column_spec(column = 2, width = "4em") %>%
+  add_header_above(c(" " = 1, "Model Summary" = 2)) %>%
+  kable_classic(full_width = F, font_size = 6) %>%
+  add_footnote("This table shows the regression models with custom variable names.")
 
-modelsummary::modelsummary(
-  list(
-    "First model" = first_model
-  ),
-  statistic = "mad",
-  fmt = 2
-)
 ```
 
 
 
 
-# Discussion
+# Discussion {#sec-data}
 
 ## First discussion point {#sec-first-point}
 
@@ -217,15 +247,7 @@ In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior. Th
 #| fig-cap: "Examining how the model fits, and is affected by, the data"
 #| fig-subcap: ["Posterior prediction check", "Comparing the posterior with the prior"]
 
-pp_check(first_model) +
-  theme_classic() +
-  theme(legend.position = "bottom")
 
-posterior_vs_prior(first_model) +
-  theme_minimal() +
-  scale_color_brewer(palette = "Set1") +
-  theme(legend.position = "bottom") +
-  coord_flip()
 ```
 
 ## Diagnostics
@@ -244,9 +266,6 @@ posterior_vs_prior(first_model) +
 #| fig-subcap: ["Trace plot", "Rhat plot"]
 #| layout-ncol: 2
 
-plot(first_model, "trace")
-
-plot(first_model, "rhat")
 ```
 
 
