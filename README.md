@@ -1,4 +1,4 @@
-# Starter folder
+# U.S. Presidential Election
 
 ## Overview
 
