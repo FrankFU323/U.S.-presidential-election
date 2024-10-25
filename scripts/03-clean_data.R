@@ -56,34 +56,6 @@ just_trump_high_quality <- just_trump_high_quality |>
     num_Trump = round((pct / 100) * sample_size, 0) # Need number not percent for some models
   )
 
-
-#### Plot data ####
-base_plot <- ggplot(just_trump_high_quality, aes(x = end_date, y = pct)) +
-  theme_classic() +
-  labs(y = "Trump percent", x = "Date")
-
-base_plot +
-  geom_point() +
-  geom_smooth()
-
-# Color by pollster
-base_plot +
-  geom_point(aes(color = pollster)) +
-  geom_smooth() +
-  theme(legend.position = "bottom")
-
-# Facet by pollster
-base_plot +
-  geom_point() +
-  geom_smooth() +
-  facet_wrap(vars(pollster))
-
-# Color by pollscore
-base_plot +
-  geom_point(aes(color = factor(pollscore))) +
-  geom_smooth() +
-  theme(legend.position = "bottom")
-
 #### Save data ####
 write_parquet(x = just_trump_high_quality, sink = "data/02-analysis_data/analysis_data.parquet")
 
