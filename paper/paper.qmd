@@ -141,10 +141,10 @@ Our results are summarized in @tbl-modelresults.
 library(rstanarm)
 library(here)
 
-model_date <-
-  readRDS(file = here::here("models/model_date.rds"))
-model_date_pollster <-
-  readRDS(file = here::here("models/model_date_pollster.rds"))
+model_final_glm <-
+  readRDS(file = here::here("models/model_final.rds"))
+model_bayes <-
+  readRDS(file = here::here("models/model_bayes.rds"))
 ```
 
 ```{r}
@@ -184,19 +184,19 @@ coef_names <- c("end_date" = "End Date",
                 "pollsterYouGov Blue" = "YouGov Blue",
                 "pollsterYouGov/Center for Working Class Politics" = "YouGov/Center for Working Class Politics")
                 
-modelsummary(models = list("Model with date" = model_date, 
-                           "Model with date and pollster" = model_date_pollster),
+modelsummary(models = list("Model by glm" = model_final_glm, 
+                           "Model by bayes" = model_bayes),
              statistic = "conf.int",
              conf_level = 0.95,
              stars = TRUE,
              coef_rename = coef_names,
              output = "kableExtra") %>%
   kable_styling(full_width = F, position = "left", bootstrap_options = c("striped", "hover"
-                                                                           , line_height = 0.8)) %>%
+                                                                           , line_height = 6)) %>%
   column_spec(column = 2, width = "2em") %>%
   column_spec(column = 2, width = "4em") %>%
   add_header_above(c(" " = 1, "Model Summary" = 2)) %>%
-  kable_classic(full_width = F, font_size = 6) %>%
+  kable_classic(full_width = F, font_size = 4) %>%
   add_footnote("This table shows the regression models with custom variable names.")
 
 ```
