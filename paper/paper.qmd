@@ -116,15 +116,12 @@ ggplot(analysis_data, aes(y = reorder(pollster, table(pollster)[pollster]))) +
 #| label: fig-avg-pollscore
 #| fig-cap: Average Pollscore by Pollster and End Date
 #| echo: false
-# 假设要查看 pollster 和 end_date 组合上的 pollscore 平均值
 library(dplyr)
 
-# 计算每个 pollster 和 end_date 的平均 pollscore
 heatmap_data <- analysis_data %>%
   group_by(pollster, end_date) %>%
   summarise(mean_pollscore = mean(pollscore, na.rm = TRUE), .groups = "drop") 
 
-# 绘制热图
 ggplot(heatmap_data, aes(x = end_date, y = pollster, fill = mean_pollscore)) +
   geom_tile(color = "white") +
   scale_fill_gradient(low = "lightblue", high = "darkblue") +
