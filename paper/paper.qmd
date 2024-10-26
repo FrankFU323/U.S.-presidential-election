@@ -4,7 +4,6 @@ subtitle: "My subtitle if needed"
 author: 
   - Tianrui Fu
   - Yiyue Deng
-  - Jianing Li
 thanks: "Code and data are available at: [https://github.com/RohanAlexander/starter_folder](https://github.com/RohanAlexander/starter_folder)."
 date: today
 date-format: long
@@ -21,7 +20,10 @@ bibliography: references.bib
 #| message: false
 
 library(tidyverse)
-
+library(arrow)
+library(kableExtra)
+library(ggplot2)
+library(dplyr)
 ```
 
 
@@ -48,7 +50,19 @@ Telegraphing paragraph: The remainder of this paper is structured as follows. @s
 
 We use the statistical programming language R [@citeR].... Our data [@shelter].... Following @tellingstories, we consider...
 
-Overview text
+
+```{r, fig.pos= 'H', fig.width=8, fig.height=4}
+#| label: tbl-dataset-example
+#| tbl-cap: The example of chosen variable datset
+#| echo: false
+set.seed(123)
+analysis_data <- read_parquet(here::here("data/02-analysis_data/analysis_data.parquet"))
+example_dataset <- analysis_data[sample(1:nrow(analysis_data), 10), c("pollster", "pollscore", "numeric_grade", "transparency_score", "end_date", "pct")]
+kable(example_dataset, col.names = c("pollster", "pollscore", "numeric_grade", "transparency_score", "end_date", "pct")) %>%
+  kable_styling() %>%
+  row_spec(0, bold = TRUE) %>%
+  row_spec(0, extra_css = "border-bottom: 2px solid black;")  
+```
 
 ## Measurement
 	
@@ -61,44 +75,79 @@ Add graphs, tables and text. Use sub-sub-headings for each outcome variable or u
 
 
 Some of our data is of penguins (@fig-bills), from[]. 
-```{r}
-#| label: fig-bills
-#| fig-cap: Bills of penguins
+```{r, fig.pos= 'H', fig.width=8, fig.height=4}
+#| label: fig-percentage-pollster
+#| fig-cap: Percentage of Each Pollster Over Time
 #| echo: false
-
-
+ggplot(analysis_data, aes(x = end_date, y = pct, fill = pollster)) +
+  geom_area(position = "stack", alpha = 0.7) +
+  labs(x = "End Date", y = "Percentage (%)") +
+  theme_minimal()
 ```
 
-Talk more about it.
-
-And also planes (@fig-planes). (You can change the height and width, but don't worry about doing that until you have finished every other aspect of the paper - Quarto will try to make it look nice and the defaults usually work well once you have enough text.)
-
-```{r}
-#| label: fig-planes
-#| fig-cap: Relationship between wing length and width
+```{r, fig.pos= 'H', fig.width=8, fig.height=4}
+#| label: fig-pct-density
+#| fig-cap: Density plot of pct
 #| echo: false
-#| warning: false
-#| message: false
-library(arrow)
-analysis_data <- read_parquet(here::here("data/02-analysis_data/analysis_data.parquet"))
-
-
+ggplot(analysis_data, aes(x = pct)) +
+  geom_density(fill = "lightblue", color = "blue", alpha = 0.5) +
+  labs(title = "Density Plot of Pct", x = "Pct", y = "Density") +
+  theme_minimal()
 ```
-
-Talk way more about it. 
-
 ## Predictor variables
 
 Add graphs, tables and text.
 
 Use sub-sub-headings for each outcome variable and feel free to combine a few into one if they go together naturally.
 
+```{r, fig.pos= 'H', fig.width=8, fig.height=4}
+#| label: fig-frequency-bar
+#| fig-cap: Frequency of each pollster
+#| echo: false
+ggplot(analysis_data, aes(y = reorder(pollster, table(pollster)[pollster]))) +  
+  geom_bar(aes(fill = after_stat(count)), color = "black") +                          
+  geom_text(stat = "count", aes(label = after_stat(count)), hjust = -0.1, size = 2) +  
+  scale_fill_gradient(low = "lightblue", high = "blue") +
+  labs(x = "Count", y = "Pollster") +       
+  theme_minimal() +
+  theme(axis.text.x = element_text(size = 8)) 
+```
+```{r, fig.pos= 'H', fig.width=8, fig.height=4}
+#| label: fig-avg-pollscore
+#| fig-cap: Average Pollscore by Pollster and End Date
+#| echo: false
+# 假设要查看 pollster 和 end_date 组合上的 pollscore 平均值
+library(dplyr)
 
+# 计算每个 pollster 和 end_date 的平均 pollscore
+heatmap_data <- analysis_data %>%
+  group_by(pollster, end_date) %>%
+  summarise(mean_pollscore = mean(pollscore, na.rm = TRUE), .groups = "drop") 
 
-
-
-
-
+# 绘制热图
+ggplot(heatmap_data, aes(x = end_date, y = pollster, fill = mean_pollscore)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient(low = "lightblue", high = "darkblue") +
+  labs(x = "End Date", y = "Pollster", fill = "Avg Pollscore") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.text.y = element_text(size = 8))
+  
+```
+```{r, fig.pos= 'H', fig.width=8, fig.height=4}
+#| label: fig-plot
+#| fig-cap: Scatter Plot of transparency score and numeric grade
+#| echo: false
+#| message: false
+#| warning: false
+suppressWarnings({
+  ggplot(analysis_data, aes(x = transparency_score, y = numeric_grade)) +
+    geom_point(color = "darkblue", alpha = 0.6) +
+    geom_smooth(method = "lm", color = "red", se = FALSE) +
+    labs(x = "Transparency Score", y = "Numeric Grade") +
+    theme_minimal()
+})
+```
 
 # Model {#sec-data}
 
@@ -107,18 +156,17 @@ The goal of our modelling strategy is twofold. Firstly,...
 Here we briefly describe the Bayesian analysis model used to investigate... Background details and diagnostics are included in [Appendix -@sec-model-details].
 
 ## Model set-up
+Define $y_i$ as the percentage. Then $\beta_i$ represents the numeric grade, $\gamma_i$ represents the transparency score, and $\delta_i$ represents the pollscore.
 
-Define $y_i$ as the number of seconds that the plane remained aloft. Then $\beta_i$ is the wing width and $\gamma_i$ is the wing length, both measured in millimeters.  
-
-\begin{align} 
-y_i|\mu_i, \sigma &\sim \mbox{Normal}(\mu_i, \sigma) \\
-\mu_i &= \alpha + \beta_i + \gamma_i\\
-\alpha &\sim \mbox{Normal}(0, 2.5) \\
-\beta &\sim \mbox{Normal}(0, 2.5) \\
-\gamma &\sim \mbox{Normal}(0, 2.5) \\
-\sigma &\sim \mbox{Exponential}(1)
+\begin{align}
+y_i|\mu_i, \sigma &\sim \text{Normal}(\mu_i, \sigma) \\
+\mu_i &= \alpha + \beta_1 \cdot \text{numeric\_grade}_i + \beta_2 \cdot \text{transparency\_score}_i + \beta_3 \cdot \text{pollscore}_i \\
+&\quad + \sum_{j=1}^{N} \gamma_j \cdot \text{pollster}_j + \delta_i \cdot \text{end\_date}_i \\
+\alpha &\sim \text{Normal}(50, 10) \\
+\beta_1, \beta_2, \beta_3 &\sim \text{Normal}(0, 5) \\
+\gamma_j &\sim \text{Normal}(0, 5) \\
+\sigma &\sim \text{Exponential}(1)
 \end{align}
-
 We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use the default priors from `rstanarm`.
 
 
@@ -226,153 +274,6 @@ Weaknesses and next steps should also be included.
 \appendix
 
 # Appendix {-}
-
-## Appendix A: Methodology Overview and Evaluation of YouGov Polling
-
-### Introduction
-YouGov is an online polling company that uses a combination of non-probability sampling and a model known as multilevel regression with post-stratification (MRP) to estimate voter intentions. This appendix reviews YouGov’s approach, including sample recruitment, data collection, response handling, questionnaire design, and MRP modeling. It also assesses the strengths and limitations of YouGov’s methods.
-
-### Population, Frame, and Sample Composition
-YouGov’s target population for its election polling includes American adults, with a focus on registered voters. It uses an online panel as its frame, drawing participants from a pool of volunteers who sign up and provide demographic information. This setup allows YouGov to adjust samples to align with the population it seeks to represent. Additionally, YouGov uses the TargetSmart voter file to verify that the sample aligns with national voter demographics. During election periods, YouGov increases its sample size, beginning with nearly 100,000 responses and adding another 20,000 in September and October to update its model.
-
-### Sample Recruitment and Representativeness
-YouGov recruits panel members online through ads and partnerships with other websites. This approach allows any American adult with internet access to join. Members provide basic demographic information, which YouGov uses to select participants and apply statistical weighting to reflect the population accurately. Panelists earn points for participating, redeemable for small rewards, which encourages engagement and enhances data quality. However, since recruitment is internet-based, some groups without reliable internet access, such as rural or low-income populations, may be underrepresented.
-
-### Sampling Approach and Methodological Trade-offs
-YouGov’s approach involves non-probability sampling, meaning that not everyone in the population has an equal chance of being selected. To address this, YouGov applies the MRP model, dividing respondents into subgroups based on characteristics like age, gender, race, education, region, and political affiliation. Each subgroup is weighted to match its share in the population. This method is efficient but has trade-offs, as MRP may not fully capture smaller states or hard-to-reach groups.
-
-### Non-response Handling and Quality Control Measures
-YouGov uses strict quality control measures to manage non-response. Surveys include checks for speed and consistency, removing low-quality responses. Panelists who repeatedly fail these checks are excluded, helping to reduce bias and improve data quality. These quality controls are essential for the MRP model, which relies on accurate data to produce reliable estimates.
-
-### Questionnaire Design
-YouGov’s questionnaires are neutral and straightforward, with randomized question order to reduce bias. They include various question types, such as text, images, and audio, helping respondents understand the context. Options like “prefer not to say” are included for sensitive questions, supporting respondent privacy. However, since the surveys are conducted online, some groups without internet access may be excluded, and shorter questionnaires may limit the depth of data collected.
-
-### MRP Model for Vote Estimation
-YouGov’s MRP model estimates voter intentions through three stages: estimating likelihood to vote, predicting support for a candidate among likely voters, and aggregating results to calculate overall support. By matching responses to the TargetSmart voter file, the model generates estimates at both national and regional levels. The MRP model also helps YouGov track changes in voter intentions over time.
-
-### Strengths and Limitations of the YouGov Approach
-YouGov’s approach has several strengths. The MRP model allows for accurate predictions at regional and national levels, and the use of voter files enhances sample representativeness. Repeated interviews with panelists allow YouGov to observe shifts in voter intentions over time. However, limitations include potential representativeness issues due to non-probability sampling, particularly in small states and among underrepresented groups. The internet-based survey method also may not fully capture populations without reliable internet access.
-
-### Conclusion
-Through a combination of MRP modeling, quality control, and a large online panel, YouGov provides a structured approach for election polling. Although challenges remain in achieving full representativeness and internet coverage, YouGov’s approach offers useful information on U.S. voter intentions. The MRP model has proven effective in past elections and serves as a practical tool for future polling and tracking trends.
-
-
-## Appendix B: Idealized Survey Methodology
-
-### Introduction
-
-The budget for this survey is $100,000, aimed at predicting the outcome of the 2024 United States Presidential Election. This methodology includes stratified sampling, multi-platform recruitment, data validation, and multi-wave data aggregation to ensure representative and reliable data.
-
-### Sampling Approach: Stratified Random Sampling
-
-To obtain a representative sample, we use stratified random sampling with a sample size of 5,000 respondents. Sampling is stratified by age, gender, education, and geographic region to ensure broad coverage across voter demographics. The age groups include 18-29, 30-44, 45-64, and 65 and above. Gender is categorized as male, female, and other, while education is classified as high school or below, bachelor’s degree, and master’s degree or above. The geographic region includes all U.S. states. Stratified sampling ensures that the sample accurately reflects voter characteristics, providing a solid foundation for subsequent analysis.
-
-### Recruitment: Multi-Platform and Interactive Engagement
-
-Recruitment is conducted through a multi-platform strategy to ensure wide coverage among voters. Targeted ads are deployed on Google, Facebook, and Twitter to attract respondents with specific demographic characteristics. The ad content is concise and highlights anonymity and the research purpose to encourage participation. In addition, we use Random Digit Dialing (RDD) to contact older adults and residents in remote areas who may be less accessible online, ensuring their participation in the survey. To increase the completion rate, a small reward system is implemented, with one out of every 100 participants receiving a $5 to $10 incentive.
-
-### Survey Platform: Google Forms and Phone Outreach
-
-Google Forms is used as the primary data collection platform, enabling respondents to complete the survey on a computer or mobile device with ease. We have set Google Forms to restrict submissions to one per Google account to prevent duplicate responses. For those who may not have easy online access, telephone outreach will be conducted, especially targeting older adults and rural voters, to ensure the diversity and inclusivity of the sample.
-
-### Data Validation: Post-Stratification Weighting
-
-To ensure data quality, post-stratification weighting will be applied during the analysis phase based on demographic characteristics. This adjustment aligns the sample structure with the national voter distribution, reducing bias and increasing the accuracy of our findings. Multi-layered data validation measures enhance the reliability and representativeness of the results.
-
-### Poll Aggregation: Multi-Wave Polling and Adjustments
-
-To track changes in voter sentiment over time, we will conduct multiple waves of data collection and aggregation. The survey will be administered in multiple rounds throughout the election cycle, with each round spaced 3-4 weeks apart. Each wave of data will be collected and analyzed independently, then aggregated using weighted averages to smooth out single-instance fluctuations and help identify long-term trends, providing a reliable basis for predictions.
-
-### Budget Allocation: Phased Spending and Testing
-
-To maximize budget efficiency, we will use a phased spending strategy. An initial 30% of the advertising budget will be allocated to testing across platforms to determine effectiveness, with the remaining 70% directed to the most successful channels. The budget breakdown is as follows: social media advertising ($40,000) for broad and targeted outreach, phone outreach ($20,000) for RDD calls to less accessible populations, small rewards ($15,000) to encourage completion, and data cleaning and analysis ($25,000) for validation, weighting, and aggregation across multiple waves.
-
-
-
-### Survey Content and Link
-
-Survey Title: 2024 United States Presidential Election Survey
-
-Survey Link: https://forms.gle/EzyHp3zuX8Cu6Ep8A
-
-Survey Questions:
-
-1.	What is your age?
-
-o	18-29
-
-o	30-44
-
-o	45-64
-
-o	65 and above
-
-2.	What is your gender?
-
-o	Male
-
-o	Female
-
-o	Other
-
-o	Prefer not to say
-
-3.	What is your highest level of education?
-
-o	High school or below
-
-o	Bachelor’s degree
-
-o	Master’s degree or above
-
-4.	Which state do you currently reside in?
-
-(Dropdown menu with state names)
-
-5.	Do you plan to vote in the 2024 election?
-
-o	Yes
-
-o	No
-
-o	Not sure
-
-6.	If the election were held today, which candidate would you be more likely to support?
-
-o	Candidate A (Democratic Party)
-
-o	Candidate B (Republican Party)
-
-o	Other
-
-o	Undecided
-
-7.	Which of the following issues would have the greatest impact on your decision in the 2024 election? (Select one)
-
-o	Economic stability and growth
-
-o	Access to quality healthcare
-
-o	Education reform and funding
-
-o	Environmental sustainability and climate action
-
-o	Addressing social and racial inequalities
-
-o	Other (please specify): ________
-
-8.	If a future candidate proposed a policy that aligns perfectly with your concerns, would you consider changing your voting intention?
-
-o	Yes
-
-o	No
-
-o	Not sure
-
-9.	If you would like to participate in the reward draw, please provide your email address below. Your contact information will only be used to notify winners. We will reach out to winners via email.
-
-Email: ______________________
-
 
 
 # Additional data details
