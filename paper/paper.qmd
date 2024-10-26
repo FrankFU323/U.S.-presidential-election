@@ -226,6 +226,123 @@ Weaknesses and next steps should also be included.
 
 # Appendix {-}
 
+##Appendix B: Idealized Survey Methodology
+
+### Introduction
+
+The budget for this survey is $100,000, aimed at predicting the outcome of the 2024 United States Presidential Election. This methodology includes stratified sampling, multi-platform recruitment, data validation, and multi-wave data aggregation to ensure representative and reliable data.
+
+### Sampling Approach: Stratified Random Sampling
+
+To obtain a representative sample, we use stratified random sampling with a sample size of 5,000 respondents. Sampling is stratified by age, gender, education, and geographic region to ensure broad coverage across voter demographics. The age groups include 18-29, 30-44, 45-64, and 65 and above. Gender is categorized as male, female, and other, while education is classified as high school or below, bachelor’s degree, and master’s degree or above. The geographic region includes all U.S. states. Stratified sampling ensures that the sample accurately reflects voter characteristics, providing a solid foundation for subsequent analysis.
+
+### Recruitment: Multi-Platform and Interactive Engagement
+
+Recruitment is conducted through a multi-platform strategy to ensure wide coverage among voters. Targeted ads are deployed on Google, Facebook, and Twitter to attract respondents with specific demographic characteristics. The ad content is concise and highlights anonymity and the research purpose to encourage participation. In addition, we use Random Digit Dialing (RDD) to contact older adults and residents in remote areas who may be less accessible online, ensuring their participation in the survey. To increase the completion rate, a small reward system is implemented, with one out of every 100 participants receiving a $5 to $10 incentive.
+
+### Survey Platform: Google Forms and Phone Outreach
+
+Google Forms is used as the primary data collection platform, enabling respondents to complete the survey on a computer or mobile device with ease. We have set Google Forms to restrict submissions to one per Google account to prevent duplicate responses. For those who may not have easy online access, telephone outreach will be conducted, especially targeting older adults and rural voters, to ensure the diversity and inclusivity of the sample.
+
+### Data Validation: Post-Stratification Weighting
+
+To ensure data quality, post-stratification weighting will be applied during the analysis phase based on demographic characteristics. This adjustment aligns the sample structure with the national voter distribution, reducing bias and increasing the accuracy of our findings. Multi-layered data validation measures enhance the reliability and representativeness of the results.
+
+### Poll Aggregation: Multi-Wave Polling and Adjustments
+
+To track changes in voter sentiment over time, we will conduct multiple waves of data collection and aggregation. The survey will be administered in multiple rounds throughout the election cycle, with each round spaced 3-4 weeks apart. Each wave of data will be collected and analyzed independently, then aggregated using weighted averages to smooth out single-instance fluctuations and help identify long-term trends, providing a reliable basis for predictions.
+
+### Budget Allocation: Phased Spending and Testing
+
+To maximize budget efficiency, we will use a phased spending strategy. An initial 30% of the advertising budget will be allocated to testing across platforms to determine effectiveness, with the remaining 70% directed to the most successful channels. The budget breakdown is as follows: social media advertising ($40,000) for broad and targeted outreach, phone outreach ($20,000) for RDD calls to less accessible populations, small rewards ($15,000) to encourage completion, and data cleaning and analysis ($25,000) for validation, weighting, and aggregation across multiple waves.
+
+
+
+### Survey Content and Link
+
+Survey Title: 2024 United States Presidential Election Survey
+
+Survey Link: https://forms.gle/EzyHp3zuX8Cu6Ep8A
+
+Survey Questions:
+
+1.	What is your age?
+
+o	18-29
+
+o	30-44
+
+o	45-64
+
+o	65 and above
+
+2.	What is your gender?
+
+o	Male
+
+o	Female
+
+o	Other
+
+o	Prefer not to say
+
+3.	What is your highest level of education?
+
+o	High school or below
+
+o	Bachelor’s degree
+
+o	Master’s degree or above
+
+4.	Which state do you currently reside in?
+
+(Dropdown menu with state names)
+
+5.	Do you plan to vote in the 2024 election?
+
+o	Yes
+
+o	No
+
+o	Not sure
+
+6.	If the election were held today, which candidate would you be more likely to support?
+
+o	Candidate A (Democratic Party)
+
+o	Candidate B (Republican Party)
+
+o	Other
+
+o	Undecided
+
+7.	Which of the following issues would have the greatest impact on your decision in the 2024 election? (Select one)
+
+o	Economic stability and growth
+
+o	Access to quality healthcare
+
+o	Education reform and funding
+
+o	Environmental sustainability and climate action
+
+o	Addressing social and racial inequalities
+
+o	Other (please specify): ________
+
+8.	If a future candidate proposed a policy that aligns perfectly with your concerns, would you consider changing your voting intention?
+
+o	Yes
+
+o	No
+
+o	Not sure
+
+9.	If you would like to participate in the reward draw, please provide your email address below. Your contact information will only be used to notify winners. We will reach out to winners via email.
+
+Email: ______________________
+
+
 
 # Additional data details
 
