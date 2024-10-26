@@ -226,6 +226,46 @@ Weaknesses and next steps should also be included.
 
 # Appendix {-}
 
+## Appendix A: Methodology Overview and Evaluation of YouGov Polling
+
+### Introduction
+
+YouGov is an online polling company that uses a combination of non-probability sampling and a model known as multilevel regression with post-stratification (MRP) to estimate voter intentions. This appendix reviews YouGov’s approach, including sample recruitment, data collection, response handling, questionnaire design, and MRP modeling. It also assesses the strengths and limitations of YouGov’s methods.
+
+### Population, Frame, and Sample Composition
+
+YouGov’s target population for its election polling includes American adults, with a focus on registered voters. It uses an online panel as its frame, drawing participants from a pool of volunteers who sign up and provide demographic information. This setup allows YouGov to adjust samples to align with the population it seeks to represent. Additionally, YouGov uses the TargetSmart voter file to verify that the sample aligns with national voter demographics. During election periods, YouGov increases its sample size, beginning with nearly 100,000 responses and adding another 20,000 in September and October to update its model.
+
+### Sample Recruitment and Representativeness
+
+YouGov recruits panel members online through ads and partnerships with other websites. This approach allows any American adult with internet access to join. Members provide basic demographic information, which YouGov uses to select participants and apply statistical weighting to reflect the population accurately. Panelists earn points for participating, redeemable for small rewards, which encourages engagement and enhances data quality. However, since recruitment is internet-based, some groups without reliable internet access, such as rural or low-income populations, may be underrepresented.
+
+### Sampling Approach and Methodological Trade-offs
+
+YouGov’s approach involves non-probability sampling, meaning that not everyone in the population has an equal chance of being selected. To address this, YouGov applies the MRP model, dividing respondents into subgroups based on characteristics like age, gender, race, education, region, and political affiliation. Each subgroup is weighted to match its share in the population. This method is efficient but has trade-offs, as MRP may not fully capture smaller states or hard-to-reach groups.
+
+### Non-response Handling and Quality Control Measures
+
+YouGov uses strict quality control measures to manage non-response. Surveys include checks for speed and consistency, removing low-quality responses. Panelists who repeatedly fail these checks are excluded, helping to reduce bias and improve data quality. These quality controls are essential for the MRP model, which relies on accurate data to produce reliable estimates.
+
+### Questionnaire Design
+
+YouGov’s questionnaires are neutral and straightforward, with randomized question order to reduce bias. They include various question types, such as text, images, and audio, helping respondents understand the context. Options like “prefer not to say” are included for sensitive questions, supporting respondent privacy. However, since the surveys are conducted online, some groups without internet access may be excluded, and shorter questionnaires may limit the depth of data collected.
+
+### MRP Model for Vote Estimation
+
+YouGov’s MRP model estimates voter intentions through three stages: estimating likelihood to vote, predicting support for a candidate among likely voters, and aggregating results to calculate overall support. By matching responses to the TargetSmart voter file, the model generates estimates at both national and regional levels. The MRP model also helps YouGov track changes in voter intentions over time.
+
+### Strengths and Limitations of the YouGov Approach
+
+YouGov’s approach has several strengths. The MRP model allows for accurate predictions at regional and national levels, and the use of voter files enhances sample representativeness. Repeated interviews with panelists allow YouGov to observe shifts in voter intentions over time. However, limitations include potential representativeness issues due to non-probability sampling, particularly in small states and among underrepresented groups. The internet-based survey method also may not fully capture populations without reliable internet access.
+
+### Conclusion
+
+Through a combination of MRP modeling, quality control, and a large online panel, YouGov provides a structured approach for election polling. Although challenges remain in achieving full representativeness and internet coverage, YouGov’s approach offers useful information on U.S. voter intentions. The MRP model has proven effective in past elections and serves as a practical tool for future polling and tracking trends.
+
+
+
 ## Appendix B: Idealized Survey Methodology
 
 ### Introduction
@@ -262,7 +302,7 @@ To maximize budget efficiency, we will use a phased spending strategy. An initia
 
 Survey Title: 2024 United States Presidential Election Survey
 
-Survey Link: https://forms.gle/EzyHp3zuX8Cu6Ep8A
+Survey Link: https://forms.gle/dDWmYtWVLr4UiWeq6
 
 Survey Questions:
 
