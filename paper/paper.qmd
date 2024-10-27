@@ -24,6 +24,8 @@ library(arrow)
 library(kableExtra)
 library(ggplot2)
 library(dplyr)
+library(rstanarm)
+library(modelsummary)
 ```
 
 
@@ -247,7 +249,79 @@ modelsummary(models = list("Model by glm" = model_final_glm,
 
 ```
 
+```{r}
+#| echo: false
+#| eval: true
+#| label: fig-final
+#| fig-cap: ddd
+#| warning: false
+#| message: false
+library(modelsummary)
+library(modelr)
+analysis_data <- analysis_data |>
+  add_predictions(model_final_glm, var = "final")
 
+ggplot(analysis_data, aes(x = end_date)) +
+  geom_point(aes(y = pct), color = "black") +
+  geom_smooth(aes(y = final), color = "red", linetype = "dotted") +
+  theme_classic() +
+  labs(y = "Trump Percent", x = "Date", title = "Linear Model: pct ~ end_date + numeric_grade")
+```
+
+```{r, fig.pos= 'H', fig.width=10, fig.height=6}
+#| echo: false
+#| eval: true
+#| label: fig-bayes
+#| fig-cap: Poll Percentage over Time with Bayesian Fit
+#| warning: false
+
+new_data <- data.frame(
+  end_date = seq(
+    min(analysis_data$end_date),
+    max(analysis_data$end_date),
+    length.out = 100
+  ),
+  numeric_grade = mean(analysis_data$numeric_grade),
+  pollscore = mean(analysis_data$pollscore),
+  transparency_score = mean(analysis_data$transparency_score),
+  pollster = factor("AtlasIntel")
+)
+
+posterior_preds <- posterior_predict(model_bayes, newdata = new_data)
+
+
+pred_summary <- new_data |>
+  mutate(
+    pred_mean = colMeans(posterior_preds),
+    pred_lower = apply(posterior_preds, 2, quantile, probs = 0.025),
+    pred_upper = apply(posterior_preds, 2, quantile, probs = 0.975)
+  )
+
+
+ggplot(analysis_data, aes(x = end_date, y = pct, color = pollster)) +
+  geom_point() +
+  geom_line(
+    data = pred_summary,
+    aes(x = end_date, y = pred_mean),
+    color = "blue",
+    inherit.aes = FALSE
+  ) +
+  geom_ribbon(
+    data = pred_summary,
+    aes(x = end_date, ymin = pred_lower, ymax = pred_upper),
+    alpha = 0.2,
+    inherit.aes = FALSE
+  ) +
+  labs(
+    x = "End Date",
+    y = "Percentage"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.key.size = unit(1, "cm"),  # 图例项的大小
+    legend.text = element_text(size = 5)  # 图例文字的大小
+  )
+```
 
 
 # Discussion {#sec-data}
