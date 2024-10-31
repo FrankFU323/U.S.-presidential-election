@@ -50,8 +50,7 @@ Telegraphing paragraph: The remainder of this paper is structured as follows. @s
 
 ## Overview
 
-We use the statistical programming language R [@citeR].... Our data [@shelter].... Following @tellingstories, we consider...
-
+We use the statistical programming language @citeR to complete this analysis. Our data about the latest polling outcomes is from the website[@]. It has 52 variables and 15891 observations in this data set, including pollster, poll score, etc.
 
 ```{r, fig.pos= 'H', fig.width=8, fig.height=4}
 #| label: tbl-dataset-example
@@ -66,17 +65,18 @@ kable(example_dataset, col.names = c("pollster", "pollscore", "numeric_grade", "
   row_spec(0, extra_css = "border-bottom: 2px solid black;")  
 ```
 
+## Cleaning Data
+We have cleaned the data set and the detailed procedure see from the appendix.
+
 ## Measurement
 	
-Some paragraphs about how we go from a phenomena in the world to an entry in the dataset.
+After cleaning the data set, we have get about 38 variables and 492 observations about the polling outcomes for Donald Trump. In order to analysis if the different pollster can influence the final result of U.S. president election, we choose some related variable to build the Bayesian model. The related variables has the numeric grade, transparency score, poll score, pollster, the end date and percentage. The explain of each used variable please see in the @appendix-variable.
 
 ## Outcome variables
+The @fig-percentage-pollster shows the distribution of polling data over time, with each color representing a different polling organization. We can see that as time progresses from August to October, there is a steady increase in the amount of polling data, peaking around early October. This suggests that multiple organizations have contributed to polling data on a consistent basis over this period.
 
-Add graphs, tables and text. Use sub-sub-headings for each outcome variable or update the subheading to be singular.
+In the @fig-pct-density, it reveals a central peak around the 45-50% range, indicating that most of the values for this variable are concentrated in this area. The shape of the plot suggests a right-skewed distribution, with relatively few data points falling below 40% or above 50%. This gives an overview of the central tendency and variability of the polling percentages.
 
-
-
-Some of our data is of penguins (@fig-bills), from[]. 
 ```{r, fig.pos= 'H', fig.width=8, fig.height=4}
 #| label: fig-percentage-pollster
 #| fig-cap: Percentage of Each Pollster Over Time
@@ -98,9 +98,7 @@ ggplot(analysis_data, aes(x = pct)) +
 ```
 ## Predictor variables
 
-Add graphs, tables and text.
-
-Use sub-sub-headings for each outcome variable and feel free to combine a few into one if they go together naturally.
+In @fig-frequency-bar, the predictor variable is the count of polls conducted by each pollster. The bar chart displays the number of polls released by different polling organizations, ordered from highest to lowest frequency. The bars range in color from light blue to dark blue, indicating the frequency of polls conducted by each organization. Siena/NYT and YouGov are the most active pollsters, with 94 and 59 polls conducted, respectively. Emerson and Beacon/Shaw also have high polling frequencies, with 58 and 46 polls. In contrast, several pollsters, like Christopher Newport University and Data Orbital, conducted only one poll, indicating their minimal activity in comparison.
 
 ```{r, fig.pos= 'H', fig.width=8, fig.height=4}
 #| label: fig-frequency-bar
@@ -114,6 +112,7 @@ ggplot(analysis_data, aes(y = reorder(pollster, table(pollster)[pollster]))) +
   theme_minimal() +
   theme(axis.text.x = element_text(size = 8)) 
 ```
+In @fig-avg-pollscore, the predictor variable is the average poll score for each pollster over time, from August to October. This heat map visualizes the poll scores of each organization on different dates, with color intensity indicating the score levels—darker colors represent lower scores. The pollsters with the most consistently low average poll scores (darker colors) include Selzer, Siena/NYT, and Marquette Law School. These pollsters frequently show results lower than others over time, suggesting they may consistently lean toward one direction in their results. In contrast, pollsters like YouGov Center for Working Class Politics and YouGov Blue display lighter colors, indicating relatively higher scores across their polls.
 ```{r, fig.pos= 'H', fig.width=8, fig.height=4}
 #| label: fig-avg-pollscore
 #| fig-cap: Average Pollscore by Pollster and End Date
@@ -133,6 +132,7 @@ ggplot(heatmap_data, aes(x = end_date, y = pollster, fill = mean_pollscore)) +
         axis.text.y = element_text(size = 8))
   
 ```
+In @fig-plot, there is a clear positive relationship between transparency score and numeric grade. Pollsters with higher transparency scores, such as those scoring around 10, tend to achieve higher numeric grades, close to 3.0. Conversely, pollsters with lower transparency scores tend to have lower numeric grades, closer to 2.7. This pattern suggests that greater transparency is associated with better overall pollster ratings.
 ```{r, fig.pos= 'H', fig.width=8, fig.height=4}
 #| label: fig-plot
 #| fig-cap: Scatter Plot of transparency score and numeric grade
@@ -344,8 +344,12 @@ Weaknesses and next steps should also be included.
 
 \appendix
 
-# Appendix {-}
+# Appendix {#sec-data}
 
+## Clean data
+It starts by reading the dataset and standardizing column names. Next, it removes irrelevant columns like sponsor_ids, sponsors, and etc and filters for high-quality polls (with a rating of 2.7 or higher) that specifically track Trump’s support. National polls missing state information are labeled as "National," and dates are formatted and filtered to include only those on or after July 21, 2024 (when Trump declared his candidacy). Finally, the percentage supporting Trump is converted to an actual count for further modeling.
+## Variable details
+We have used the variable numeric_grade, transparency_score, pollster, poll score, end_date and pct in the building of Bayesian model. Among these variables in the data set after analysis, the numeric_grade is the numeric rating given to the pollster to indicate their quality or reliability from 2.7 to 3.0. The transparency_score is the grade for how transparent a pollster is, calculated based on how much information it discloses about its polls and weighted by recency from 4.5 to 10.0. The pollster is the name of the polling organization that conducted the poll included Marquette Law School, CNN/SSRS and etc. The poll score is the numeric value representing the score or reliability of the pollster in question from -1.5 to -0.5 and negative numbers of poll score are better. The end_date is the date of polling ends. The pct is the percentage of the vote or support that the candidate received in the poll and keep integer.
 
 # Additional data details
 
