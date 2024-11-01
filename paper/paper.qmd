@@ -1,13 +1,14 @@
 ---
 title: "Predicting the 2024 US Presidential Election: A Polling-Based Forecast"
-subtitle: "My subtitle if needed"
+subtitle: "Utilizing Statistical Models to Assess Donald Trump's Support"
 author: 
   - Tianrui Fu
   - Yiyue Deng
-thanks: "Code and data are available at: [https://github.com/RohanAlexander/starter_folder](https://github.com/RohanAlexander/starter_folder)."
+  - Jianing Li
+thanks: "Code and data are available at: [https://github.com/RohanAlexander/starter_folder](https://github.com/RohanAlexander/starter_folder). and [https://projects.fivethirtyeight.com/polls/president-general/2024/national/](https://projects.fivethirtyeight.com/polls/president-general/2024/national/)"
 date: today
 date-format: long
-abstract: "This paper forecasts the 2024 US Presidential election outcome using polling data from [insert pollster name]. By applying simple and multiple linear regression models, we analyze the effect of polling factors, including sample size, poll score, and transparency, on support percentages for key candidates. Our findings suggest significant relationships between these variables, providing an evidence-based approach to predicting election outcomes. We further explore methodological strengths and weaknesses and propose an ideal polling survey methodology. This work highlights the potential for data-driven insights into political forecasting."
+abstract: "This paper uses polling data to predict the outcome of the 2024 U.S. presidential election. By applying generalized linear regression and Bayesian models, we analyze the factors related to the polls, including polling organizations and the ratings associated with those organizations, on Donald Trump’s support rate. The research results indicate a significant relationship between the variables, with Donald Trump’s support rate showing an upward trend. Additionally, we further discuss the advantages and disadvantages of the two models, as well as potential methods for improvement."
 format: pdf
 toc: true
 number-sections: true
@@ -26,6 +27,7 @@ library(ggplot2)
 library(dplyr)
 library(rstanarm)
 library(modelsummary)
+library(modelr)
 ```
 
 
@@ -50,8 +52,7 @@ Telegraphing paragraph: The remainder of this paper is structured as follows. @s
 
 ## Overview
 
-We use the statistical programming language @citeR to complete this analysis. Our data about the latest polling outcomes is from the website[@]. It has 52 variables and 15891 observations in this data set, including pollster, poll score, etc.
-
+We use the statistical programming language @citeR, the templete from @citeRohan completed by following packages：tidyverse @tidyverse, dplyr @dplyr, rstanarm @rstanarm, arrow @arrow, modelr @modelr, modelsummary @modelsummary, ggplot2 @ggplot2, here @citehere, kableExtra @kableExtra and knitr @citeknitr to complete this analysis. Our data about the latest polling outcomes is from the website @fivethirtyeight2024. It has 52 variables and 15891 observations in this data set, including pollster, poll score, etc.
 ```{r, fig.pos= 'H', fig.width=8, fig.height=4}
 #| label: tbl-dataset-example
 #| tbl-cap: The example of chosen variable datset
@@ -70,7 +71,7 @@ We have cleaned the data set and the detailed procedure see from the appendix.
 
 ## Measurement
 	
-After cleaning the data set, we have get about 38 variables and 492 observations about the polling outcomes for Donald Trump. In order to analysis if the different pollster can influence the final result of U.S. president election, we choose some related variable to build the Bayesian model. The related variables has the numeric grade, transparency score, poll score, pollster, the end date and percentage. The explain of each used variable please see in the @appendix-variable.
+After cleaning the data set, we have get about 38 variables and 492 observations about the polling outcomes for Donald Trump. In order to analysis if the different pollster can influence the final result of U.S. president election, we choose some related variable to build the Bayesian model. The related variables has the numeric grade, transparency score, poll score, pollster, the end date and percentage. The explain of each used variable please see in the @sec-cleandata.
 
 ## Outcome variables
 The @fig-percentage-pollster shows the distribution of polling data over time, with each color representing a different polling organization. We can see that as time progresses from August to October, there is a steady increase in the amount of polling data, peaking around early October. This suggests that multiple organizations have contributed to polling data on a consistent basis over this period.
@@ -150,12 +151,11 @@ suppressWarnings({
 
 # Model {#sec-data}
 
-The goal of our modelling strategy is twofold. Firstly,...
-
-Here we briefly describe the Bayesian analysis model used to investigate... Background details and diagnostics are included in [Appendix -@sec-model-details].
+The goal of our modeling strategy is twofold. Firstly, we aim to estimate the impact of key factors—such as pollster reliability scores, transparency, and specific pollster effects—on polling results. Secondly, we seek to analyze how these effects change over time. Here, we briefly describe the Bayesian analysis model used to investigate these relationships.
+Background details and diagnostics are included in [Appendix -@sec-model-details].
 
 ## Model set-up
-Define $y_i$ as the percentage. Then $\beta_i$ represents the numeric grade, $\gamma_i$ represents the transparency score, and $\delta_i$ represents the pollscore.
+In this Bayesian framework, we assume a normal distribution of poll results around a mean affected by key predictors: numeric grade, transparency score, and pollscore. Define $y_i$ as the percentage. Then $\beta_i$ represents the numeric grade, $\gamma_i$ represents the transparency score, and $\delta_i$ represents the pollscore.
 
 \begin{align}
 y_i|\mu_i, \sigma &\sim \text{Normal}(\mu_i, \sigma) \\
@@ -166,19 +166,16 @@ y_i|\mu_i, \sigma &\sim \text{Normal}(\mu_i, \sigma) \\
 \gamma_j &\sim \text{Normal}(0, 5) \\
 \sigma &\sim \text{Exponential}(1)
 \end{align}
-We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use the default priors from `rstanarm`.
-
+where the intercept $\alpha$ represents an average poll result, and each $\beta$ coefficient captures the unique effect of its respective predictor on the poll percentage. The variable 
+$ pollster_j $ denotes a specific pollster effect, while $ end date_i $ accounts for time trends. Priors are applied as follows: $\alpha$ follows a normal distribution centered at 50 with a standard deviation of 10, and each $\beta$ and $\gamma$ parameter is set to a normal prior of mean 0 and standard deviation 5, reflecting mild assumptions about effect direction without biasing their magnitude. Finally, the noise parameter $\sigma$ follows an exponential distribution with rate 1, allowing flexibility in unexplained variation. We run the model in @citeR using the package of @rstanarm.
 
 ### Model justification
 
-We expect a positive relationship between the size of the wings and time spent aloft. In particular...
-
-We can use maths by including latex between dollar signs, for instance $\theta$.
-
+This model balances complexity with interpretability, accounting for factors like numeric grades and transparency scores while maintaining computational simplicity. Predictors such as pollscore and transparency score were chosen based on their significance in the data section, reflecting reliability and potential biases. Including individual pollster effects as fixed coefficients captures potential pollster-specific deviations, while end date trends allow us to observe temporal shifts in poll support. This structure is intended to balance explanatory power with generalizability.
 
 # Results {#sec-data}
 
-Our results are summarized in @tbl-modelresults.
+Our results are summarized in @tbl-modelresults and the plot for glm and bayesian is in @fig-final and @fig-bayes respectively.
 
 ```{r}
 #| echo: false
@@ -253,7 +250,7 @@ modelsummary(models = list("Model by glm" = model_final_glm,
 #| echo: false
 #| eval: true
 #| label: fig-final
-#| fig-cap: ddd
+#| fig-cap: GLM with pollster, related variable and date
 #| warning: false
 #| message: false
 library(modelsummary)
@@ -265,7 +262,7 @@ ggplot(analysis_data, aes(x = end_date)) +
   geom_point(aes(y = pct), color = "black") +
   geom_smooth(aes(y = final), color = "red", linetype = "dotted") +
   theme_classic() +
-  labs(y = "Trump Percent", x = "Date", title = "Linear Model: pct ~ end_date + numeric_grade")
+  labs(y = "Trump Percent", x = "Date")
 ```
 
 ```{r, fig.pos= 'H', fig.width=10, fig.height=6}
@@ -318,8 +315,8 @@ ggplot(analysis_data, aes(x = end_date, y = pct, color = pollster)) +
   ) +
   theme_minimal() +
   theme(
-    legend.key.size = unit(1, "cm"),  # 图例项的大小
-    legend.text = element_text(size = 5)  # 图例文字的大小
+    legend.key.size = unit(1, "cm"),
+    legend.text = element_text(size = 5) 
   )
 ```
 
@@ -346,14 +343,98 @@ Weaknesses and next steps should also be included.
 
 # Appendix {#sec-data}
 
-## Clean data
+## Clean data {#sec-cleandata}
+
 It starts by reading the dataset and standardizing column names. Next, it removes irrelevant columns like sponsor_ids, sponsors, and etc and filters for high-quality polls (with a rating of 2.7 or higher) that specifically track Trump’s support. National polls missing state information are labeled as "National," and dates are formatted and filtered to include only those on or after July 21, 2024 (when Trump declared his candidacy). Finally, the percentage supporting Trump is converted to an actual count for further modeling.
+
 ## Variable details
+
 We have used the variable numeric_grade, transparency_score, pollster, poll score, end_date and pct in the building of Bayesian model. Among these variables in the data set after analysis, the numeric_grade is the numeric rating given to the pollster to indicate their quality or reliability from 2.7 to 3.0. The transparency_score is the grade for how transparent a pollster is, calculated based on how much information it discloses about its polls and weighted by recency from 4.5 to 10.0. The pollster is the name of the polling organization that conducted the poll included Marquette Law School, CNN/SSRS and etc. The poll score is the numeric value representing the score or reliability of the pollster in question from -1.5 to -0.5 and negative numbers of poll score are better. The end_date is the date of polling ends. The pct is the percentage of the vote or support that the candidate received in the poll and keep integer.
+
+## Survey
+
+We have made a survey for this task with the link: [https://docs.google.com/forms/d/1waQdvN-7UpkHuRuMqqC4tbzqNaqD6A_4DIQ8itGjmxI/edit](https://docs.google.com/forms/d/1waQdvN-7UpkHuRuMqqC4tbzqNaqD6A_4DIQ8itGjmxI/edit) and the following is the copy of survey. 
+2024 United States Presidential Election Survey
+Introduction:
+Thank you for taking part in our survey on the 2024 United States Presidential Election. Your input will help us understand voters’ views on candidates and key policy issues. All responses are confidential and will be used solely for statistical purposes. As a token of appreciation, participants will have a chance to win a small reward, with one in every 100 respondents receiving $5 to $10.
+
+For Questions or Concerns, Please Contact:
+
+Tianrui Fu
+Email: tianrui.fu@mail.utoronto.ca
+
+Jianing Li
+Email: lijianing.li@mail.utoronto.ca
+
+Yiyue Deng
+Email: yiyue.deng@mail.utoronto.ca
+
+What is your age?
+
+18-29
+30-44
+45-64
+65 and above
+
+What is your gender?
+
+Male
+Female
+Other
+Prefer not to say
+
+What is your highest level of education?
+
+High school or below
+Bachelor’s degree
+Master’s degree or above
+
+Which state do you currently reside in? 
+
+Choose one state in the list
+
+Do you plan to vote in the 2024 election?
+
+Yes
+No
+Not sure
+
+If the election were held today, which candidate would you be more likely to support?
+
+Kamala Harris (Democratic Party)
+Donald Trump (Republican Party)
+Other
+Undecided
+
+Which of the following issues would have the greatest impact on your decision in the 2024 election? (Select one)
+
+Economic stability and growth
+Access to quality healthcare
+Education reform and funding
+Addressing social and racial inequalities
+
+Other:
+
+If a future candidate proposed a policy that aligns perfectly with your concerns, would you consider changing your voting intention?
+
+Yes
+No
+Not sure
+
+If you would like to participate in the reward draw, please provide your email address below. Your contact information will only be used to notify winners. We will reach out to winners via email.
+
 
 # Additional data details
 
 # Model details {#sec-model-details}
+
+To maintain readability while demonstrating model robustness, we include the following in the appendix:
+
+- **Prior Justification and Sensitivity Analyses:** Alternative priors and their justifications are provided, alongside a sensitivity analysis to examine the impact of these priors on the posterior distributions.
+
+- **Model Validation and Out-of-Sample Testing:** Validation metrics, such as RMSE calculations, out-of-sample testing, and test-train splits, offer evidence of the model’s predictive accuracy, complementing in-sample performance.
+
+- **Alternative Models and Comparison:** An analysis of simpler and more complex models is included, explaining the rationale for selecting this Bayesian model based on performance metrics and interpretability.
 
 ## Posterior predictive check
 
