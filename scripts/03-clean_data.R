@@ -1,6 +1,6 @@
 #### Preamble ####
 # Purpose: Cleans the president polls dataset
-# Author: Tianrui Fu & Yiyue Deng
+# Author: Tianrui Fu & Yiyue Deng & Jianing Li
 # Date: 21 October 2024
 # Contact: tianrui.fu@mail.utoronto.ca
 # License: MIT

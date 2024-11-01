@@ -2,7 +2,7 @@
 # Purpose: Simulates a dataset of US presidential election division, including the 
   #pollster, transparency score, state, start&end date, the party division and candidate name
   #with .
-# Author: Tianrui Fu & Yiyue Deng
+# Author: Tianrui Fu & Yiyue Deng & Jianing Li
 # Date: 21 October 2024
 # Contact: tianrui.fu@mail.utoronto.ca
 # License: MIT
@@ -109,20 +109,22 @@ parties <- c("DEM", "REP", "GRE", "LIB", "IND", "CON", "PSL", "UNK", "OTH")
 
 # Function to generate poll data for each pollster
 generate_poll_data <- function(pollster) {
-  num_candidates <- sample(3:6, 1)  # Random number of candidates per pollster
+  num_candidates <- sample(3:6, 1)
   selected_candidates <- sample(candidates, num_candidates, replace = FALSE)
   selected_parties <- sample(parties, num_candidates, replace = TRUE)
   
   # Generate probabilities that sum to less than 1
   probs <- runif(num_candidates, min = 0.05, max = 0.3)
   probs <- probs / sum(probs)  # Normalize to sum exactly 1
-  probs <- probs * runif(1, min = 0.8, max = 1)  # Scale it to be less than 1
+  probs <- probs * runif(1, min = 0.8, max = 0.99)
   
   # Poll start date
-  start_date <- sample(seq(as.Date("2024-01-01"), as.Date("2024-10-19"), by="day"), 1)
+  end_date <- sample(seq(as.Date("2024-07-22"), as.Date("2024-10-19"), by="day"), 1)
   
-  # Transparency score
-  transparency_score <- sample(1:10, 1)
+  # Transparency score, numeric grade and poll score
+  transparency_score <- runif(1, min = 4.5, max = 10.0)
+  numeric_grade <- runif(1, min = 2.7, max = 3.0)
+  pollscore <- runif(1, min = -1.5, max = 0)
   
   # Create data frame for the pollster
   data.frame(
@@ -130,8 +132,10 @@ generate_poll_data <- function(pollster) {
     candidate = selected_candidates,
     party = selected_parties,
     probability = round(probs, 2),
-    transparency_score = transparency_score,
-    start_date = start_date
+    transparency_score = round(transparency_score, 1),
+    numeric_grade = round(numeric_grade, 2),
+    pollscore = round(pollscore, 2),
+    end_date = end_date
   )
 }
 

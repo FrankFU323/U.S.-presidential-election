@@ -1,6 +1,6 @@
 #### Preamble ####
 # Purpose: Tests the structure and validity of the simulated US president polls dataset.
-# Author: Tianrui Fu & Yiyue Deng
+# Author: Tianrui Fu & Yiyue Deng & Jianing Li
 # Date:  21 October 2024
 # Contact: tianrui.fu@mail.utoronto.ca 
 # License: MIT
@@ -113,9 +113,9 @@ test_missing_values <- function(poll_data) {
 }
 print(test_missing_values(poll_data))
 
-# Test 2: Check if the transparency score is between 1 and 10
+# Test 2: Check if the transparency score is between 4.5 and 10
 test_transparency_score <- function(poll_data) {
-  return(all(poll_data$transparency_score >= 1 & poll_data$transparency_score <= 10))
+  return(all(poll_data$transparency_score >= 4.5 & poll_data$transparency_score <= 10))
 }
 print(test_transparency_score(poll_data))
 
@@ -137,16 +137,23 @@ test_party_list <- function(poll_data, parties) {
 }
 print(test_party_list(poll_data, parties))
 
-# Test 6: Check if the start date is between 2024-01-01 and 2024-10-19
+# Test 6: Check if the start date is between 2024-07-22 and 2024-10-19
 test_date_range <- function(poll_data) {
-  return(all(poll_data$start_date >= as.Date("2024-01-01") & poll_data$start_date <= as.Date("2024-10-19")))
+  return(all(poll_data$start_date >= as.Date("2024-07-22") & poll_data$start_date <= as.Date("2024-10-19")))
 }
 print(test_date_range(poll_data))
 
 # Test 7: Check if the sum of probabilities for each pollster is less than 1
 test_probabilities_sum <- function(poll_data) {
   prob_sums <- aggregate(probability ~ pollster, data = poll_data, sum)
-  return(all(prob_sums$probability <= 1))
+  return(all(prob_sums$probability <= 1.0))
 }
 print(test_probabilities_sum(poll_data))
+# Test 8: Check if the numeric score is between 2.7 and 3.0
+all(poll_data$numeric_grade >= 2.7 & poll_data$numeric_grade <= 3.0)
+
+# Test 9: Check if the pollscore is between -1.5 and 0
+all(poll_data$pollscore >= -1.5 & poll_data$pollscore <= 0)
+
+
 
