@@ -3,7 +3,7 @@
     "path": "~/Desktop/U.S.-presidential-election/paper/paper.qmd",
     "project_path": "paper/paper.qmd",
     "type": "quarto_markdown",
-    "hash": "1940249288",
+    "hash": "2590150365",
     "contents": "",
     "dirty": false,
     "created": 1729810015525.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "256,203",
-        "scrollLine": "252"
+        "cursorPosition": "356,0",
+        "scrollLine": "352"
     },
     "folds": "",
-    "lastKnownWriteTime": 1729961526,
+    "lastKnownWriteTime": 1730520839,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1729961526497,
+    "last_content_update": 1730520839862,
     "read_only": false,
     "read_only_alternatives": []
 }

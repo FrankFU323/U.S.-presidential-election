@@ -354,7 +354,9 @@ We have used the variable numeric_grade, transparency_score, pollster, poll scor
 ## Survey
 
 We have made a survey for this task with the link: [https://docs.google.com/forms/d/1waQdvN-7UpkHuRuMqqC4tbzqNaqD6A_4DIQ8itGjmxI/edit](https://docs.google.com/forms/d/1waQdvN-7UpkHuRuMqqC4tbzqNaqD6A_4DIQ8itGjmxI/edit) and the following is the copy of survey. 
+
 2024 United States Presidential Election Survey
+
 Introduction:
 Thank you for taking part in our survey on the 2024 United States Presidential Election. Your input will help us understand voters’ views on candidates and key policy issues. All responses are confidential and will be used solely for statistical purposes. As a token of appreciation, participants will have a chance to win a small reward, with one in every 100 respondents receiving $5 to $10.
 
