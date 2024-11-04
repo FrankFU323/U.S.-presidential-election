@@ -346,7 +346,7 @@ ggplot(analysis_trump, aes(x = end_date)) +
   theme(axis.title = element_text(face = "bold"),
         axis.text.x = element_text(angle = 45, hjust = 1))
 ```
-In @fig-bayes-trump, we applied a bayesian model to predict the percentage of polls Trump according each pollster. Each data point is color-coded by pollster, with support rates ranging from 40% to 55%. The shaded gray area around the trend line represents the confidence interval, indicating the uncertainty in support rate variations. The overall trend line (blue) shows a slight upward trend, increasing from about 45% in August to nearly 50% in October. In particular, data points in early August are more dispersed, with some pollsters reporting low support rates (around 40%) and others reporting higher rates (over 50%). By October, most poll results have converged, with support rates centered between 45% and 50%. Notably, certain pollsters, like YouGov and Marist, provide either consistently higher or lower support rate estimates compared to others, indicating some bias or variation among polling organizations.
+In @fig-bayes-trump, we applied a bayesian model to predict the percentage of polls Trump according each pollster. Each data point is color-coded by pollster, with support rates ranging from 35% to 60%. The shaded gray area around the trend line represents the confidence interval, indicating the uncertainty in support rate variations. The overall trend line (blue) shows a slight upward trend, increasing from about 45% in August to nearly 50% in October. In particular, data points in early August are more dispersed, with some pollsters reporting low support rates (around 40%) and others reporting higher rates (over 50%). By November, most poll results have converged, with support rates centered between 45% and 50%. Notably, certain pollsters, like YouGov and Marist, provide either consistently higher or lower support rate estimates compared to others, indicating some bias or variation among polling organizations.
 
 We also applied a Bayesian model to predict the percentage of polls Harris according each pollster. The figure can see it in @sec-model_result.
 
@@ -417,14 +417,12 @@ For example, in predictions from Christopher Newport U. and MassINC Polling Grou
 #| label: fig-pred-mean
 #| fig-cap: Predicted Mean Percentage by Pollster for Trump and Harris
 #| warning: false
-# 获取所有的 pollsters 列表
+
 all_pollsters_trump <- unique(analysis_trump$pollster)
 all_pollsters_harris <- unique(analysis_harris$pollster)
 
-# 定义一个空的数据框，用于存储结果
 all_predictions <- data.frame()
 
-# 循环遍历 Trump 的 pollsters
 for (pollster in all_pollsters_trump) {
   new_data_trump <- data.frame(
     end_date = as.Date("2024-11-05"),
@@ -447,7 +445,6 @@ for (pollster in all_pollsters_trump) {
   all_predictions <- rbind(all_predictions, final_prediction_trump)
 }
 
-# 循环遍历 Harris 的 pollsters
 for (pollster in all_pollsters_harris) {
   new_data_harris <- data.frame(
     end_date = as.Date("2024-11-05"),
@@ -485,7 +482,7 @@ ggplot(all_predictions, aes(x = pollster, y = pred_mean, color = candidate, grou
 
 ```
 
-In @tbl-pred-wide, we merged and compared the Bayesian model predictions of the vote shares for Trump and Harris on November 5, 2024, by pollster. The green background color represents the same pollster, indicating that the side with the larger predicted vote share is expected to win based on the data collected and summarized by that pollster. Conversely, red indicates the losing side. In @tbl-pred-wide, a total of 27 pollsters participated in the polling, with 11 pollsters predicting a Trump victory and 16 pollsters predicting a Harris victory. In @tbl-pred-summary, we calculated the mean support for Trump and Harris, estimating Trump's probability of winning to be 41%. For the further more predictions about the Bayesian model, we can see at @sec-model_result.
+In @tbl-pred-wide, we merged and compared the Bayesian model predictions of the vote shares for Trump and Harris on November 5, 2024, by pollster. The green background color represents the same pollster, indicating that the side with the larger predicted vote share is expected to win based on the data collected and summarized by that pollster. Conversely, red indicates the losing side. In @tbl-pred-wide, a total of 27 pollsters participated in the polling, with 9 pollsters predicting a Trump victory and 18 pollsters predicting a Harris victory. In @tbl-pred-summary, we calculated the mean support for Trump and Harris, estimating Trump's probability of leading probability to be 31% and the mean support be 46.87%. For the further more predictions about the Bayesian model, we can see at @sec-model_result.
 
 ```{r, fig.pos= 'H', fig.width=10, fig.height=6}
 #| echo: false
@@ -495,10 +492,9 @@ In @tbl-pred-wide, we merged and compared the Bayesian model predictions of the 
 #| warning: false
 library(dplyr)
 library(kableExtra)
-# 将 Trump 和 Harris 的预测结果按 pollster 合并
+
 predictions_wide <- reshape(all_predictions, idvar = "pollster", timevar = "candidate", direction = "wide")
 
-# 计算每个 pollster 认为谁的支持率更高
 predictions_wide <- predictions_wide |>
   mutate(
     winner = ifelse(pred_mean.Trump > pred_mean.Harris, "Trump", "Harris"),
@@ -507,20 +503,19 @@ predictions_wide <- predictions_wide |>
 
 
 table_output <- predictions_wide %>%
-  select(pollster, pred_mean.Trump, pred_mean.Harris) %>%  # 仅选择需要的列
+  select(pollster, pred_mean.Trump, pred_mean.Harris) %>% 
   kable(booktabs = TRUE) %>%
   kable_styling(full_width = FALSE, position = "center", latex_options = c("hold_position"), font_size = 8) %>%
   column_spec(1, width = "1cm") %>%
-  column_spec(2, bold = TRUE, width = "4cm") %>%  # 第一列加粗
-  column_spec(3, width = "3.3cm", background = ifelse(predictions_wide$pred_mean.Trump > predictions_wide$pred_mean.Harris, "#CCFFCC", "#FFCCCC")) %>%  # Trump 均值背景色
-  column_spec(4, width = "3.3cm", background = ifelse(predictions_wide$pred_mean.Harris > predictions_wide$pred_mean.Trump, "#CCFFCC", "#FFCCCC")) %>%  # Harris 均值背景色
-  add_header_above(c(" " = 1, "Predictions Summary" = 3)) %>%  # 添加标题
-  row_spec(0, bold = TRUE)  # 表头加粗
+  column_spec(2, bold = TRUE, width = "4cm") %>% 
+  column_spec(3, width = "3.3cm", background = ifelse(predictions_wide$pred_mean.Trump > predictions_wide$pred_mean.Harris, "#CCFFCC", "#FFCCCC")) %>%  
+  column_spec(4, width = "3.3cm", background = ifelse(predictions_wide$pred_mean.Harris > predictions_wide$pred_mean.Trump, "#CCFFCC", "#FFCCCC")) %>%
+  add_header_above(c(" " = 1, "Predictions Summary" = 3)) %>% 
+  row_spec(0, bold = TRUE)
 
 table_output <- table_output %>%
   add_footnote("Green indicates the pollster predicts the winning side, while red indicates the losing side.")
 
-# 输出表格
 table_output
 ```
 ```{r, fig.pos= 'H', fig.width=10, fig.height=6}
@@ -534,13 +529,11 @@ trump_mean <- mean(predictions_wide$pred_mean.Trump, na.rm = TRUE)
 harris_mean <- mean(predictions_wide$pred_mean.Harris, na.rm = TRUE)
 trump_lead_prob <- mean(predictions_wide$prob_trump_lead, na.rm = TRUE)
 
-# 创建表格
 summary_table <- data.frame(
   Metric = c("Trump Mean Support", "Harris Mean Support", "Trump Lead Probability"),
   Value = round(c(trump_mean, harris_mean, trump_lead_prob), 2)
 )
 
-# 打印表格
 library(kableExtra)
 kable(summary_table, col.names = c("Metric", "Value")) %>%
   kable_styling(full_width = FALSE, position = "center")
@@ -802,7 +795,7 @@ modelsummary(models = list("Model by glm" = model_final_glm,
 \newpage
 ### Bayesian model for Harris data set
 
-In @fig-bayes-harris, we applied a bayesian model to predict the percentage of polls Harris according each pollster. Each data point is color-coded by pollster, with support rates ranging from 37.5% to 65%. The shaded gray area around the trend line represents the confidence interval, indicating the uncertainty in support rate variations. The overall trend line (blue) shows a slight upward trend, increasing from about 46% in August to nearly 48% in October. Compared to Trump's model, the increasing trend of Harris is lower than Trump's. By October, most poll results have converged, with support rates centered between 45% and 50%.
+In @fig-bayes-harris, we applied a bayesian model to predict the percentage of polls Harris according each pollster. Each data point is color-coded by pollster, with support rates ranging from 35% to 65%. The shaded gray area around the trend line represents the confidence interval, indicating the uncertainty in support rate variations. The overall trend line (blue) shows a slight upward trend, increasing from about 46% in August to nearly 48% in October. Compared to Trump's model, the increasing trend of Harris is lower than Trump's. By October, most poll results have converged, with support rates centered between 45% and 50%.
 
 ```{r, fig.pos= 'H', fig.width=10, fig.height=6}
 #| echo: false
@@ -871,14 +864,11 @@ In @tbl-all-pred, we summarized the Bayesian model predictions for Trump and Har
 #| tbl-cap: predictions for trump and harris by pollster
 #| warning: false
 
-# 获取所有的 pollsters 列表
 all_pollsters_trump <- unique(analysis_trump$pollster)
 all_pollsters_harris <- unique(analysis_harris$pollster)
 
-# 定义一个空的数据框，用于存储结果
 all_predictions <- data.frame()
 
-# 循环遍历 Trump 的 pollsters
 for (pollster in all_pollsters_trump) {
   new_data_trump <- data.frame(
     end_date = as.Date("2024-11-05"),
@@ -901,7 +891,6 @@ for (pollster in all_pollsters_trump) {
   all_predictions <- rbind(all_predictions, final_prediction_trump)
 }
 
-# 循环遍历 Harris 的 pollsters
 for (pollster in all_pollsters_harris) {
   new_data_harris <- data.frame(
     end_date = as.Date("2024-11-05"),
@@ -924,7 +913,6 @@ for (pollster in all_pollsters_harris) {
   all_predictions <- rbind(all_predictions, final_prediction_harris)
 }
 
-# 打印结果为表格
 kable(all_predictions, col.names = c("Pollster", "Candidate", "Predicted Mean", "Lower Bound", "Upper Bound"), booktabs = TRUE) %>%
   kable_styling(full_width = FALSE, position = "center", latex_options = c("hold_position")) %>%
   column_spec(1, width = "2cm") %>%
