@@ -17,7 +17,7 @@ library(janitor)
 data <- read_csv("/Users/frankstrove/Desktop/STA304/US Preseident forecast/data/01-raw_data/president_polls.csv") |>
   clean_names()
 
-just_trump_high_quality <- data |>
+data <- data |>
   select(
     -"sponsor_ids" , 
     -"sponsors" , 
@@ -40,7 +40,7 @@ just_trump_high_quality <- data |>
     -"url_crosstab"
   )
 
-just_trump_high_quality <- just_trump_high_quality |>
+just_trump_high_quality <- data |>
   filter(
     candidate_name == "Donald Trump",
     numeric_grade >= 2.7 # Need to investigate this choice - come back and fix. 
@@ -50,12 +50,29 @@ just_trump_high_quality <- just_trump_high_quality |>
     state = if_else(is.na(state), "National", state), # Hacky fix for national polls - come back and check
     end_date = mdy(end_date)
   ) |>
-  filter(end_date >= as.Date("2024-07-21")) |># When Trump declared
-  drop_na(pct, sample_size) |>
+  filter(end_date >= as.Date("2024-07-21")) |>
+  drop_na(pct, transparency_score, pollster, pollscore, numeric_grade, end_date) |>
+  mutate(
+    num_Trump = round((pct / 100) * sample_size, 0) # Need number not percent for some models
+  )
+
+just_harris_high_quality <- data |>
+  filter(
+    candidate_name == "Kamala Harris",
+    numeric_grade >= 2.7 # Need to investigate this choice - come back and fix. 
+    # Also need to look at whether the pollster has multiple polls or just one or two - filter out later
+  ) |>
+  mutate(
+    state = if_else(is.na(state), "National", state), # Hacky fix for national polls - come back and check
+    end_date = mdy(end_date)
+  ) |>
+  filter(end_date >= as.Date("2024-07-21")) |>
+  drop_na(pct, transparency_score, pollster, pollscore, numeric_grade, end_date) |>
   mutate(
     num_Trump = round((pct / 100) * sample_size, 0) # Need number not percent for some models
   )
 
 #### Save data ####
-write_parquet(x = just_trump_high_quality, sink = "data/02-analysis_data/analysis_data.parquet")
+write_parquet(x = just_trump_high_quality, sink = "data/02-analysis_data/analysis_data_trump.parquet")
+write_parquet(x = just_harris_high_quality, sink = "data/02-analysis_data/analysis_data_harris.parquet")
 

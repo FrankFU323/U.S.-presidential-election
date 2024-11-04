@@ -1,6 +1,6 @@
 #### Preamble ####
 # Purpose: To check the data after cleaned
-# Author: Tianrui Fu & Yiyue Deng
+# Author: Tianrui Fu & Yiyue Deng & Jianing Li
 # Date: 21 October 2024
 # Contact: tianrui.fu@mail.utoronto.ca
 # License: MIT
@@ -9,50 +9,114 @@
 
 #### Workspace setup ####
 library(tidyverse)
-library(testthat)
+library(arrow)
 
-data <- read_csv("data/02-analysis_data/analysis_data.csv")
+just_trump_high_quality <- read_parquet("data/02-analysis_data/analysis_data_trump.parquet")
+just_harris_high_quality <- read_parquet("data/02-analysis_data/analysis_data_harris.parquet")
 
 
 #### Test data ####
-# Test that the 'division' column is character type
-test_that("'division' is character", {
-  expect_type(analysis_data$division, "character")
-})
 
-# Test that the 'party' column is character type
-test_that("'party' is character", {
-  expect_type(analysis_data$party, "character")
-})
+# Check if just_trump_high_quality is a data frame
+test_1 <- is.data.frame(just_trump_high_quality)
+print(test_1)
 
-# Test that the 'state' column is character type
-test_that("'state' is character", {
-  expect_type(analysis_data$state, "character")
-})
+# Check if just_trump_high_quality contains the required columns
+test_2 <- all(c("candidate_name", "numeric_grade", "end_date", "pct", 
+                "sample_size", "pollscore", "transparency_score") %in% colnames(just_trump_high_quality))
+print(test_2)
 
-# Test that there are no missing values in the dataset
-test_that("no missing values in dataset", {
-  expect_true(all(!is.na(analysis_data)))
-})
+# Check if candidate_name in just_trump_high_quality is "Donald Trump"
+test_3 <- all(just_trump_high_quality$candidate_name == "Donald Trump")
+print(test_3)
 
-# Test that 'division' contains unique values (no duplicates)
-test_that("'division' column contains unique values", {
-  expect_equal(length(unique(analysis_data$division)), 151)
-})
+# Check if numeric_grade in just_trump_high_quality is greater than or equal to 2.7
+test_4 <- all(just_trump_high_quality$numeric_grade >= 2.7)
+print(test_4)
 
-# Test that 'state' contains only valid Australian state or territory names
-valid_states <- c("New South Wales", "Victoria", "Queensland", "South Australia", "Western Australia", 
-                  "Tasmania", "Northern Territory", "Australian Capital Territory")
-test_that("'state' contains valid Australian state names", {
-  expect_true(all(analysis_data$state %in% valid_states))
-})
+# Check if pollscore in just_trump_high_quality is between -1.5 and -0.5
+test_5 <- all(just_trump_high_quality$pollscore >= -1.5 & just_trump_high_quality$pollscore <= -0.5)
+print(test_5)
 
-# Test that there are no empty strings in 'division', 'party', or 'state' columns
-test_that("no empty strings in 'division', 'party', or 'state' columns", {
-  expect_false(any(analysis_data$division == "" | analysis_data$party == "" | analysis_data$state == ""))
-})
+# Check if transparency_score in just_trump_high_quality is less than or equal to 10
+test_6 <- all(just_trump_high_quality$transparency_score <= 10)
+print(test_6)
 
-# Test that the 'party' column contains at least 2 unique values
-test_that("'party' column contains at least 2 unique values", {
-  expect_true(length(unique(analysis_data$party)) >= 2)
-})
+# Check if end_date in just_trump_high_quality is on or after 2024-07-21
+test_7 <- all(just_trump_high_quality$end_date >= as.Date("2024-07-21"))
+print(test_7)
+
+# Check for NA values in each relevant column of just_trump_high_quality
+test_pct <- !any(is.na(just_trump_high_quality$pct))
+print(test_pct)  
+
+test_transparency_score <- !any(is.na(just_trump_high_quality$transparency_score))
+print(test_transparency_score)  
+
+test_pollster <- !any(is.na(just_trump_high_quality$pollster))
+print(test_pollster)  
+
+test_pollscore <- !any(is.na(just_trump_high_quality$pollscore))
+print(test_pollscore)  
+
+test_numeric_grade <- !any(is.na(just_trump_high_quality$numeric_grade))
+print(test_numeric_grade)  
+
+test_end_date <- !any(is.na(just_trump_high_quality$end_date))
+print(test_end_date)  
+
+# Check if end_date in just_trump_high_quality has the correct date format
+test_8 <- all(!is.na(as.Date(just_trump_high_quality$end_date, format="%Y-%m-%d")))
+print(test_8)
+
+# Check if just_harris_high_quality is a data frame
+test_9 <- is.data.frame(just_harris_high_quality)
+print(test_9)
+
+# Check if just_harris_high_quality contains the required columns
+test_10 <- all(c("candidate_name", "numeric_grade", "end_date", "pct", 
+                 "sample_size", "pollscore", "transparency_score") %in% colnames(just_harris_high_quality))
+print(test_10)
+
+# Check if candidate_name in just_harris_high_quality is "Kamala Harris"
+test_11 <- all(just_harris_high_quality$candidate_name == "Kamala Harris")
+print(test_11)
+
+# Check if numeric_grade in just_harris_high_quality is greater than or equal to 2.7
+test_12 <- all(just_harris_high_quality$numeric_grade >= 2.7)
+print(test_12)
+
+# Check if pollscore in just_harris_high_quality is between -1.5 and -0.5
+test_13 <- all(just_harris_high_quality$pollscore >= -1.5 & just_harris_high_quality$pollscore <= -0.5)
+print(test_13)
+
+# Check if transparency_score in just_harris_high_quality is less than or equal to 10
+test_14 <- all(just_harris_high_quality$transparency_score <= 10)
+print(test_14)
+
+# Check if end_date in just_harris_high_quality is on or after 2024-07-21
+test_15 <- all(just_harris_high_quality$end_date >= as.Date("2024-07-21"))
+print(test_15)
+
+# Check for NA values in each relevant column of just_harris_high_quality
+test_pct_harris <- !any(is.na(just_harris_high_quality$pct))
+print(test_pct_harris)  
+
+test_transparency_score_harris <- !any(is.na(just_harris_high_quality$transparency_score))
+print(test_transparency_score_harris)  
+
+test_pollster_harris <- !any(is.na(just_harris_high_quality$pollster))
+print(test_pollster_harris)  
+
+test_pollscore_harris <- !any(is.na(just_harris_high_quality$pollscore))
+print(test_pollscore_harris)  
+
+test_numeric_grade_harris <- !any(is.na(just_harris_high_quality$numeric_grade))
+print(test_numeric_grade_harris)  
+
+test_end_date_harris <- !any(is.na(just_harris_high_quality$end_date))
+print(test_end_date_harris)  
+
+# Check if end_date in just_harris_high_quality has the correct date format
+test_16 <- all(!is.na(as.Date(just_harris_high_quality$end_date, format="%Y-%m-%d")))
+print(test_16)

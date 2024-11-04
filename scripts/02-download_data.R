@@ -1,6 +1,6 @@
 #### Preamble ####
 # Purpose: Downloads and saves the data from the website "https://projects.fivethirtyeight.com/polls/president-general/2024/national/"
-# Author: Tianrui Fu & Yiyue Deng
+# Author: Tianrui Fu & Yiyue Deng & Jianing Li
 # Date:  21 October 2024
 # Contact: tianrui.fu@mail.utoronto.ca 
 # License: MIT
@@ -9,18 +9,12 @@
 
 
 #### Workspace setup ####
-library(opendatatoronto)
 library(tidyverse)
-# 
 
 #### Download data ####
-# [...ADD CODE HERE TO DOWNLOAD...]
-
-
+president_polls <- read_csv(file = "https://projects.fivethirtyeight.com/polls/data/president_polls.csv")
 
 #### Save data ####
-# 
-# change the_raw_data to whatever name you assigned when you downloaded it.
-write_csv(the_raw_data, "inputs/data/raw_data.csv") 
+write_csv(president_polls, "data/01-raw_data/president_polls.csv") 
 
          
