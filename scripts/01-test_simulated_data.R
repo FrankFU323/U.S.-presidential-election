@@ -2,7 +2,7 @@
 # Purpose: Tests the structure and validity of the simulated US president polls dataset.
 # Author: Tianrui Fu & Yiyue Deng & Jianing Li
 # Date:  21 October 2024
-# Contact: tianrui.fu@mail.utoronto.ca 
+# Contact: tianrui.fu@mail.utoronto.ca, yiyue.deng@mail.utoronto.ca & lijianing.li@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: 
   # - The `tidyverse` package must be installed and loaded

@@ -2,7 +2,7 @@
 # Purpose: Cleans the president polls dataset
 # Author: Tianrui Fu & Yiyue Deng & Jianing Li
 # Date: 21 October 2024
-# Contact: tianrui.fu@mail.utoronto.ca
+# Contact: tianrui.fu@mail.utoronto.ca, yiyue.deng@mail.utoronto.ca & lijianing.li@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: Download the dataset from the website
 # Any other information needed? None

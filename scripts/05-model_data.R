@@ -2,7 +2,7 @@
 # Purpose: Models the analysis data of president polls
 # Author: Tianrui Fu & Yiyue Deng & Jianing Li
 # Date: 21 October 2024
-# Contact: tianrui.fu@mail.utoronto.ca
+# Contact: tianrui.fu@mail.utoronto.ca, yiyue.deng@mail.utoronto.ca & lijianing.li@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: The analysis data has been cleaned.
 # Any other information needed? None
