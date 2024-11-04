@@ -659,7 +659,7 @@ To maximize budget efficiency, we will use a phased spending strategy. An initia
 
 Survey Title: 2024 United States Presidential Election Survey
 
-Survey Link: https://forms.gle/EzyHp3zuX8Cu6Ep8A
+Survey Link: [https://forms.gle/EzyHp3zuX8Cu6Ep8A](https://forms.gle/EzyHp3zuX8Cu6Ep8A)
 
 Introduction:
 
@@ -669,15 +669,15 @@ For Questions or Concerns, Please Contact:
 
 Tianrui Fu
 
-Email: tianrui.fu@mail.utoronto.ca
+Email: [tianrui.fu@mail.utoronto.ca](tianrui.fu@mail.utoronto.ca)
 
 Yiyue Deng
 
-Email: yiyue.deng@mail.utoronto.ca
+Email: [yiyue.deng@mail.utoronto.ca](yiyue.deng@mail.utoronto.ca)
 
 Jianing Li
 
-Email: lijianing.li@mail.utoronto.ca
+Email: [lijianing.li@mail.utoronto.ca](lijianing.li@mail.utoronto.ca)
 
 Survey Questions:
 
