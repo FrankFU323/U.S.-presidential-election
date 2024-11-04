@@ -1,1027 +1,501 @@
-pollster,candidate,party,probability,transparency_score,numeric_grade,pollscore,end_date
-TIPP,Gretchen Whitmer,IND,0.12,7.8,2.79,-1.28,2024-10-01
-TIPP,Gavin Newsom,LIB,0.25,7.8,2.79,-1.28,2024-10-01
-TIPP,Jill Stein,CON,0.24,7.8,2.79,-1.28,2024-10-01
-TIPP,Mitt Romney,OTH,0.2,7.8,2.79,-1.28,2024-10-01
-TIPP,Tim Scott,IND,0.18,7.8,2.79,-1.28,2024-10-01
-ActiVote,Roy A. Cooper,DEM,0.27,5.3,2.77,-0.8,2024-07-28
-ActiVote,Ron DeSantis,PSL,0.22,5.3,2.77,-0.8,2024-07-28
-ActiVote,Gavin Newsom,IND,0.39,5.3,2.77,-0.8,2024-07-28
-Bullfinch,Andy Beshear,OTH,0.2,4.5,2.84,-1.17,2024-10-08
-Bullfinch,Randall A. Terry,REP,0.2,4.5,2.84,-1.17,2024-10-08
-Bullfinch,Ted Cruz,IND,0.2,4.5,2.84,-1.17,2024-10-08
-Bullfinch,Taylor Swift,UNK,0.13,4.5,2.84,-1.17,2024-10-08
-Bullfinch,Liz Cheney,REP,0.19,4.5,2.84,-1.17,2024-10-08
-PPP,Charles Ballay,CON,0.13,6.3,2.85,-0.07,2024-08-15
-PPP,Josh Shapiro,CON,0.21,6.3,2.85,-0.07,2024-08-15
-PPP,Lars Mapstead,PSL,0.13,6.3,2.85,-0.07,2024-08-15
-PPP,Robert F. Kennedy,DEM,0.1,6.3,2.85,-0.07,2024-08-15
-PPP,Tim Scott,CON,0.24,6.3,2.85,-0.07,2024-08-15
-PPP,Joseph Kishore,REP,0.07,6.3,2.85,-0.07,2024-08-15
-Quantus Insights,Larry Hogan,OTH,0.09,7.4,2.9,-0.27,2024-09-09
-Quantus Insights,Al Gore,GRE,0.07,7.4,2.9,-0.27,2024-09-09
-Quantus Insights,Bernie Sanders,PSL,0.08,7.4,2.9,-0.27,2024-09-09
-Quantus Insights,Nikki Haley,GRE,0.22,7.4,2.9,-0.27,2024-09-09
-Quantus Insights,Vivek G. Ramaswamy,PSL,0.2,7.4,2.9,-0.27,2024-09-09
-Quantus Insights,Lars Mapstead,CON,0.27,7.4,2.9,-0.27,2024-09-09
-RMG Research,J.B. Pritzker,DEM,0.24,7.6,2.77,-0.83,2024-10-16
-RMG Research,JD Vance,CON,0.27,7.6,2.77,-0.83,2024-10-16
-RMG Research,Raphael Warnock,GRE,0.18,7.6,2.77,-0.83,2024-10-16
-RMG Research,Larry Hogan,UNK,0.15,7.6,2.77,-0.83,2024-10-16
-AtlasIntel,Bernie Sanders,PSL,0.2,6,2.88,-0.78,2024-10-12
-AtlasIntel,Elizabeth Ann Warren,IND,0.14,6,2.88,-0.78,2024-10-12
-AtlasIntel,Liz Cheney,CON,0.18,6,2.88,-0.78,2024-10-12
-AtlasIntel,Larry Hogan,UNK,0.26,6,2.88,-0.78,2024-10-12
-AtlasIntel,Taylor Swift,IND,0.19,6,2.88,-0.78,2024-10-12
-Emerson,Claudia De La Cruz,GRE,0.35,6.7,2.96,-0.95,2024-10-18
-Emerson,Randall A. Terry,UNK,0.14,6.7,2.96,-0.95,2024-10-18
-Emerson,"Joe Manchin, III",LIB,0.31,6.7,2.96,-0.95,2024-10-18
-Emerson,Andy Cohen,PSL,0.18,6.7,2.96,-0.95,2024-10-18
-OnMessage Inc.,Andy Cohen,LIB,0.27,9.5,2.89,-0.86,2024-09-25
-OnMessage Inc.,Raphael Warnock,LIB,0.22,9.5,2.89,-0.86,2024-09-25
-OnMessage Inc.,Vivek G. Ramaswamy,CON,0.21,9.5,2.89,-0.86,2024-09-25
-OnMessage Inc.,Jill Stein,DEM,0.06,9.5,2.89,-0.86,2024-09-25
-OnMessage Inc.,Cory A. Booker,LIB,0.14,9.5,2.89,-0.86,2024-09-25
-YouGov,Joseph Kishore,IND,0.36,5.4,2.82,-0.79,2024-07-30
-YouGov,Glenn Youngkin,PSL,0.28,5.4,2.82,-0.79,2024-07-30
-YouGov,Taylor Swift,DEM,0.14,5.4,2.82,-0.79,2024-07-30
-YouGov,Ron DeSantis,UNK,0.13,5.4,2.82,-0.79,2024-07-30
-Gateway Political Strategies,Shiva Ayyadurai,DEM,0.16,8.1,2.93,-1.29,2024-08-01
-Gateway Political Strategies,Hillary Rodham Clinton,OTH,0.42,8.1,2.93,-1.29,2024-08-01
-Gateway Political Strategies,Bernie Sanders,GRE,0.41,8.1,2.93,-1.29,2024-08-01
-InsiderAdvantage,Al Gore,UNK,0.24,4.6,2.93,-0.41,2024-10-19
-InsiderAdvantage,Bernie Sanders,OTH,0.26,4.6,2.93,-0.41,2024-10-19
-InsiderAdvantage,Elizabeth Ann Warren,OTH,0.3,4.6,2.93,-0.41,2024-10-19
-InsiderAdvantage,Taylor Swift,OTH,0.08,4.6,2.93,-0.41,2024-10-19
-InsiderAdvantage,Raphael Warnock,IND,0.08,4.6,2.93,-0.41,2024-10-19
-Morning Consult,Cory A. Booker,IND,0.5,9.2,2.96,-1.06,2024-08-21
-Morning Consult,Elizabeth Ann Warren,PSL,0.14,9.2,2.96,-1.06,2024-08-21
-Morning Consult,Andy Beshear,IND,0.31,9.2,2.96,-1.06,2024-08-21
-Mitchell,Raphael Warnock,DEM,0.17,8.3,2.89,-0.53,2024-08-15
-Mitchell,Nikki Haley,REP,0.33,8.3,2.89,-0.53,2024-08-15
-Mitchell,Al Gore,LIB,0.36,8.3,2.89,-0.53,2024-08-15
-Patriot Polling,Chris Christie,CON,0.27,7.9,3,-0.5,2024-09-22
-Patriot Polling,Mark Kelly,PSL,0.51,7.9,3,-0.5,2024-09-22
-Patriot Polling,Mitt Romney,OTH,0.21,7.9,3,-0.5,2024-09-22
-Redfield & Wilton Strategies,Randall A. Terry,DEM,0.17,8.8,2.76,-1.04,2024-09-22
-Redfield & Wilton Strategies,Raphael Warnock,REP,0.16,8.8,2.76,-1.04,2024-09-22
-Redfield & Wilton Strategies,Mark Kelly,DEM,0.14,8.8,2.76,-1.04,2024-09-22
-Redfield & Wilton Strategies,Cory A. Booker,REP,0.27,8.8,2.76,-1.04,2024-09-22
-Redfield & Wilton Strategies,Pete Buttigieg,UNK,0.17,8.8,2.76,-1.04,2024-09-22
-Cygnal,Robert F. Kennedy,GRE,0.2,9.5,2.87,-0.91,2024-08-13
-Cygnal,Mitt Romney,LIB,0.13,9.5,2.87,-0.91,2024-08-13
-Cygnal,Marco Rubio,GRE,0.14,9.5,2.87,-0.91,2024-08-13
-Cygnal,Liz Cheney,PSL,0.52,9.5,2.87,-0.91,2024-08-13
-Beacon/Shaw,Lars Mapstead,REP,0.12,9.7,2.87,-1.01,2024-10-10
-Beacon/Shaw,Charles Ballay,CON,0.26,9.7,2.87,-1.01,2024-10-10
-Beacon/Shaw,Ted Cruz,OTH,0.19,9.7,2.87,-1.01,2024-10-10
-Beacon/Shaw,Claudia De La Cruz,PSL,0.12,9.7,2.87,-1.01,2024-10-10
-Beacon/Shaw,Ron DeSantis,IND,0.14,9.7,2.87,-1.01,2024-10-10
-Quinnipiac,Lars Mapstead,DEM,0.09,6.9,2.84,-1.25,2024-07-29
-Quinnipiac,Al Gore,CON,0.23,6.9,2.84,-1.25,2024-07-29
-Quinnipiac,Donald Trump Jr.,UNK,0.22,6.9,2.84,-1.25,2024-07-29
-Quinnipiac,Jill Stein,LIB,0.2,6.9,2.84,-1.25,2024-07-29
-Quinnipiac,Mark Kelly,CON,0.08,6.9,2.84,-1.25,2024-07-29
-SurveyUSA,Mark Kelly,REP,0.1,7,2.91,-1.37,2024-08-02
-SurveyUSA,Vivek G. Ramaswamy,GRE,0.1,7,2.91,-1.37,2024-08-02
-SurveyUSA,Mitt Romney,GRE,0.27,7,2.91,-1.37,2024-08-02
-SurveyUSA,Joel Skousen,CON,0.19,7,2.91,-1.37,2024-08-02
-SurveyUSA,Glenn Youngkin,IND,0.32,7,2.91,-1.37,2024-08-02
-East Carolina University,JD Vance,GRE,0.08,4.8,2.94,-1.05,2024-09-04
-East Carolina University,Donald Trump Jr.,GRE,0.31,4.8,2.94,-1.05,2024-09-04
-East Carolina University,Robert F. Kennedy,DEM,0.17,4.8,2.94,-1.05,2024-09-04
-East Carolina University,Josh Shapiro,UNK,0.27,4.8,2.94,-1.05,2024-09-04
-Fairleigh Dickinson,Mark Cuban,UNK,0.17,8.9,2.82,-1.01,2024-09-15
-Fairleigh Dickinson,Mark Kelly,REP,0.05,8.9,2.82,-1.01,2024-09-15
-Fairleigh Dickinson,Pete Buttigieg,IND,0.17,8.9,2.82,-1.01,2024-09-15
-Fairleigh Dickinson,Raphael Warnock,REP,0.08,8.9,2.82,-1.01,2024-09-15
-Fairleigh Dickinson,Claudia De La Cruz,CON,0.16,8.9,2.82,-1.01,2024-09-15
-Fairleigh Dickinson,Joel Skousen,OTH,0.19,8.9,2.82,-1.01,2024-09-15
-HarrisX/Harris Poll,Chase Oliver,UNK,0.18,8.4,2.82,-1.47,2024-08-15
-HarrisX/Harris Poll,Hillary Rodham Clinton,CON,0.13,8.4,2.82,-1.47,2024-08-15
-HarrisX/Harris Poll,Amy Klobuchar,LIB,0.21,8.4,2.82,-1.47,2024-08-15
-HarrisX/Harris Poll,Jill Stein,PSL,0.16,8.4,2.82,-1.47,2024-08-15
-HarrisX/Harris Poll,Larry Hogan,UNK,0.23,8.4,2.82,-1.47,2024-08-15
-SoCal Strategies,Chris Sununu,IND,0.11,5.8,2.91,-1.16,2024-09-07
-SoCal Strategies,Hillary Rodham Clinton,CON,0.4,5.8,2.91,-1.16,2024-09-07
-SoCal Strategies,Mark Cuban,GRE,0.26,5.8,2.91,-1.16,2024-09-07
-SoCal Strategies,Donald Trump Jr.,UNK,0.2,5.8,2.91,-1.16,2024-09-07
-Ipsos,Joel Skousen,PSL,0.26,4.7,2.97,-0.2,2024-09-05
-Ipsos,Tim Scott,REP,0.32,4.7,2.97,-0.2,2024-09-05
-Ipsos,Lars Mapstead,OTH,0.36,4.7,2.97,-0.2,2024-09-05
-Trafalgar Group,Joseph Kishore,GRE,0.1,8.9,2.97,-0.92,2024-07-27
-Trafalgar Group,Joel Skousen,PSL,0.29,8.9,2.97,-0.92,2024-07-27
-Trafalgar Group,Michelle Obama,UNK,0.24,8.9,2.97,-0.92,2024-07-27
-Trafalgar Group,Randall A. Terry,IND,0.25,8.9,2.97,-0.92,2024-07-27
-Elway,Chris Sununu,IND,0.1,6.1,2.83,-0.62,2024-08-13
-Elway,Nikki Haley,LIB,0.06,6.1,2.83,-0.62,2024-08-13
-Elway,Amy Klobuchar,REP,0.27,6.1,2.83,-0.62,2024-08-13
-Elway,Donald Trump Jr.,PSL,0.08,6.1,2.83,-0.62,2024-08-13
-Elway,Raphael Warnock,GRE,0.2,6.1,2.83,-0.62,2024-08-13
-Elway,Kamala Harris,GRE,0.09,6.1,2.83,-0.62,2024-08-13
-HarrisX,Cory A. Booker,REP,0.13,8.1,2.92,-0.77,2024-10-15
-HarrisX,Bernie Sanders,REP,0.21,8.1,2.92,-0.77,2024-10-15
-HarrisX,Joel Skousen,UNK,0.19,8.1,2.92,-0.77,2024-10-15
-HarrisX,Kanye West,LIB,0.14,8.1,2.92,-0.77,2024-10-15
-HarrisX,Jill Stein,OTH,0.1,8.1,2.92,-0.77,2024-10-15
-HarrisX,Andy Cohen,PSL,0.16,8.1,2.92,-0.77,2024-10-15
-MRG (Marketing Resource Group),Marco Rubio,PSL,0.09,7.8,2.8,-0.71,2024-08-26
-MRG (Marketing Resource Group),Charles Ballay,IND,0.18,7.8,2.8,-0.71,2024-08-26
-MRG (Marketing Resource Group),Larry Hogan,DEM,0.21,7.8,2.8,-0.71,2024-08-26
-MRG (Marketing Resource Group),Joseph Kishore,OTH,0.09,7.8,2.8,-0.71,2024-08-26
-MRG (Marketing Resource Group),Hillary Rodham Clinton,OTH,0.04,7.8,2.8,-0.71,2024-08-26
-MRG (Marketing Resource Group),Lars Mapstead,PSL,0.21,7.8,2.8,-0.71,2024-08-26
-Marist,Liz Cheney,DEM,0.23,7.3,2.77,-0.64,2024-08-31
-Marist,Chris Christie,PSL,0.23,7.3,2.77,-0.64,2024-08-31
-Marist,Elizabeth Ann Warren,IND,0.36,7.3,2.77,-0.64,2024-08-31
-Siena/NYT,Donald Trump,UNK,0.16,5.9,2.95,-1.48,2024-07-23
-Siena/NYT,Vivek G. Ramaswamy,OTH,0.22,5.9,2.95,-1.48,2024-07-23
-Siena/NYT,Gavin Newsom,UNK,0.26,5.9,2.95,-1.48,2024-07-23
-Siena/NYT,JD Vance,OTH,0.29,5.9,2.95,-1.48,2024-07-23
-UMass Amherst/YouGov,Joe Biden,PSL,0.1,8.2,2.71,-0.46,2024-09-08
-UMass Amherst/YouGov,Cory A. Booker,LIB,0.08,8.2,2.71,-0.46,2024-09-08
-UMass Amherst/YouGov,Raphael Warnock,OTH,0.14,8.2,2.71,-0.46,2024-09-08
-UMass Amherst/YouGov,Gavin Newsom,LIB,0.36,8.2,2.71,-0.46,2024-09-08
-UMass Amherst/YouGov,Josh Shapiro,OTH,0.21,8.2,2.71,-0.46,2024-09-08
-American Pulse,Bernie Sanders,DEM,0.15,7.6,2.91,-0.51,2024-08-23
-American Pulse,Nikki Haley,UNK,0.26,7.6,2.91,-0.51,2024-08-23
-American Pulse,Robert F. Kennedy,IND,0.06,7.6,2.91,-0.51,2024-08-23
-American Pulse,Randall A. Terry,GRE,0.27,7.6,2.91,-0.51,2024-08-23
-American Pulse,Chase Oliver,IND,0.19,7.6,2.91,-0.51,2024-08-23
-University of Massachusetts Lowell/YouGov,Dean Phillips,LIB,0.22,4.7,2.89,-0.8,2024-08-31
-University of Massachusetts Lowell/YouGov,"Joe Manchin, III",IND,0.2,4.7,2.89,-0.8,2024-08-31
-University of Massachusetts Lowell/YouGov,Kamala Harris,CON,0.36,4.7,2.89,-0.8,2024-08-31
-University of Massachusetts Lowell/YouGov,Amy Klobuchar,LIB,0.1,4.7,2.89,-0.8,2024-08-31
-University of Massachusetts Lowell/YouGov,Lars Mapstead,GRE,0.09,4.7,2.89,-0.8,2024-08-31
-Marquette Law School,Michelle Obama,REP,0.22,8,2.73,-0.12,2024-10-01
-Marquette Law School,Cornel West,CON,0.32,8,2.73,-0.12,2024-10-01
-Marquette Law School,JD Vance,REP,0.26,8,2.73,-0.12,2024-10-01
-U. Houston,Joel Skousen,OTH,0.31,6.6,2.72,-0.3,2024-08-26
-U. Houston,Gretchen Whitmer,UNK,0.27,6.6,2.72,-0.3,2024-08-26
-U. Houston,Marco Rubio,LIB,0.36,6.6,2.72,-0.3,2024-08-26
-Alaska Survey Research,Vivek G. Ramaswamy,PSL,0.15,5.4,2.86,-0.19,2024-09-01
-Alaska Survey Research,Dean Phillips,IND,0.07,5.4,2.86,-0.19,2024-09-01
-Alaska Survey Research,Hillary Rodham Clinton,UNK,0.2,5.4,2.86,-0.19,2024-09-01
-Alaska Survey Research,Liz Cheney,OTH,0.22,5.4,2.86,-0.19,2024-09-01
-Alaska Survey Research,Chase Oliver,GRE,0.08,5.4,2.86,-0.19,2024-09-01
-Alaska Survey Research,Jill Stein,UNK,0.2,5.4,2.86,-0.19,2024-09-01
-Fabrizio/McLaughlin,Pete Buttigieg,REP,0.07,7.3,2.83,-0.57,2024-07-30
-Fabrizio/McLaughlin,Raphael Warnock,PSL,0.16,7.3,2.83,-0.57,2024-07-30
-Fabrizio/McLaughlin,Kanye West,UNK,0.33,7.3,2.83,-0.57,2024-07-30
-Fabrizio/McLaughlin,Dean Phillips,GRE,0.24,7.3,2.83,-0.57,2024-07-30
-Yale Youth Poll,Andy Cohen,IND,0.13,6.8,2.84,-0.43,2024-07-25
-Yale Youth Poll,Joseph Kishore,PSL,0.13,6.8,2.84,-0.43,2024-07-25
-Yale Youth Poll,Cory A. Booker,OTH,0.23,6.8,2.84,-0.43,2024-07-25
-Yale Youth Poll,Mike Pence,REP,0.31,6.8,2.84,-0.43,2024-07-25
-co/efficient,Joel Skousen,OTH,0.07,6.1,2.72,-0.84,2024-08-07
-co/efficient,Kanye West,REP,0.1,6.1,2.72,-0.84,2024-08-07
-co/efficient,Ted Cruz,GRE,0.18,6.1,2.72,-0.84,2024-08-07
-co/efficient,Liz Cheney,GRE,0.08,6.1,2.72,-0.84,2024-08-07
-co/efficient,Michelle Obama,REP,0.23,6.1,2.72,-0.84,2024-08-07
-co/efficient,Shiva Ayyadurai,UNK,0.23,6.1,2.72,-0.84,2024-08-07
-Torchlight Strategies,Joseph Kishore,DEM,0.35,9,2.8,-0.63,2024-08-05
-Torchlight Strategies,Liz Cheney,PSL,0.25,9,2.8,-0.63,2024-08-05
-Torchlight Strategies,Joel Skousen,PSL,0.35,9,2.8,-0.63,2024-08-05
-J.L. Partners,Pete Buttigieg,IND,0.31,8.4,2.95,-0.16,2024-08-19
-J.L. Partners,Kanye West,OTH,0.19,8.4,2.95,-0.16,2024-08-19
-J.L. Partners,Mark Kelly,GRE,0.12,8.4,2.95,-0.16,2024-08-19
-J.L. Partners,Raphael Warnock,PSL,0.25,8.4,2.95,-0.16,2024-08-19
-J.L. Partners,Andy Beshear,PSL,0.09,8.4,2.95,-0.16,2024-08-19
-Tarrance,Mitt Romney,GRE,0.14,6,2.71,-0.87,2024-07-23
-Tarrance,Cornel West,CON,0.19,6,2.71,-0.87,2024-07-23
-Tarrance,Donald Trump,REP,0.2,6,2.71,-0.87,2024-07-23
-Tarrance,Mark Kelly,OTH,0.2,6,2.71,-0.87,2024-07-23
-Tarrance,JD Vance,GRE,0.19,6,2.71,-0.87,2024-07-23
-Hart/POS,Andy Cohen,LIB,0.14,7.9,2.79,-1.2,2024-08-08
-Hart/POS,Cornel West,PSL,0.16,7.9,2.79,-1.2,2024-08-08
-Hart/POS,Michelle Obama,GRE,0.17,7.9,2.79,-1.2,2024-08-08
-Hart/POS,Charles Ballay,PSL,0.48,7.9,2.79,-1.2,2024-08-08
-Change Research,Gretchen Whitmer,UNK,0.48,6.7,2.79,-1.13,2024-09-27
-Change Research,Pete Buttigieg,DEM,0.36,6.7,2.79,-1.13,2024-09-27
-Change Research,Randall A. Terry,OTH,0.11,6.7,2.79,-1.13,2024-09-27
-Fabrizio/Impact,Mark Kelly,PSL,0.2,9.7,2.77,-0.89,2024-08-15
-Fabrizio/Impact,Gavin Newsom,PSL,0.12,9.7,2.77,-0.89,2024-08-15
-Fabrizio/Impact,Jill Stein,PSL,0.1,9.7,2.77,-0.89,2024-08-15
-Fabrizio/Impact,Amy Klobuchar,PSL,0.15,9.7,2.77,-0.89,2024-08-15
-Fabrizio/Impact,Chris Sununu,UNK,0.09,9.7,2.77,-0.89,2024-08-15
-Fabrizio/Impact,Larry Hogan,UNK,0.21,9.7,2.77,-0.89,2024-08-15
-Fabrizio/GBAO,Taylor Swift,DEM,0.18,6.7,2.89,-0.13,2024-08-14
-Fabrizio/GBAO,Joseph Kishore,OTH,0.12,6.7,2.89,-0.13,2024-08-14
-Fabrizio/GBAO,Josh Shapiro,UNK,0.09,6.7,2.89,-0.13,2024-08-14
-Fabrizio/GBAO,Mark Cuban,GRE,0.07,6.7,2.89,-0.13,2024-08-14
-Fabrizio/GBAO,Ted Cruz,UNK,0.24,6.7,2.89,-0.13,2024-08-14
-Fabrizio/GBAO,Andy Cohen,CON,0.13,6.7,2.89,-0.13,2024-08-14
-Targoz Market Research,Shiva Ayyadurai,IND,0.15,9.2,2.97,-0.77,2024-08-19
-Targoz Market Research,J.B. Pritzker,OTH,0.13,9.2,2.97,-0.77,2024-08-19
-Targoz Market Research,Pete Buttigieg,LIB,0.19,9.2,2.97,-0.77,2024-08-19
-Targoz Market Research,Claudia De La Cruz,GRE,0.05,9.2,2.97,-0.77,2024-08-19
-Targoz Market Research,Nikki Haley,GRE,0.08,9.2,2.97,-0.77,2024-08-19
-Targoz Market Research,Dean Phillips,CON,0.22,9.2,2.97,-0.77,2024-08-19
-Research Co.,Al Gore,GRE,0.31,9.7,2.8,-0.72,2024-09-03
-Research Co.,Cory A. Booker,PSL,0.12,9.7,2.8,-0.72,2024-09-03
-Research Co.,Raphael Warnock,LIB,0.44,9.7,2.8,-0.72,2024-09-03
-The Washington Post,Josh Shapiro,DEM,0.1,8.5,2.95,-0.73,2024-10-12
-The Washington Post,Joel Skousen,CON,0.16,8.5,2.95,-0.73,2024-10-12
-The Washington Post,Bernie Sanders,CON,0.12,8.5,2.95,-0.73,2024-10-12
-The Washington Post,Lars Mapstead,LIB,0.19,8.5,2.95,-0.73,2024-10-12
-The Washington Post,Taylor Swift,OTH,0.09,8.5,2.95,-0.73,2024-10-12
-The Washington Post,Andy Beshear,OTH,0.15,8.5,2.95,-0.73,2024-10-12
-Hunt Research,JD Vance,PSL,0.3,7.9,2.79,-0.91,2024-10-16
-Hunt Research,Gretchen Whitmer,REP,0.06,7.9,2.79,-0.91,2024-10-16
-Hunt Research,Chris Sununu,OTH,0.24,7.9,2.79,-0.91,2024-10-16
-Hunt Research,Nikki Haley,IND,0.17,7.9,2.79,-0.91,2024-10-16
-Hunt Research,Cory A. Booker,DEM,0.2,7.9,2.79,-0.91,2024-10-16
-Noble Predictive Insights,Josh Shapiro,REP,0.46,6.2,2.93,-0.4,2024-10-18
-Noble Predictive Insights,Elizabeth Ann Warren,REP,0.33,6.2,2.93,-0.4,2024-10-18
-Noble Predictive Insights,Ted Cruz,IND,0.18,6.2,2.93,-0.4,2024-10-18
-Florida Atlantic University/Mainstreet Research,Larry Hogan,REP,0.13,8.9,2.8,-0.13,2024-09-05
-Florida Atlantic University/Mainstreet Research,Ted Cruz,GRE,0.27,8.9,2.8,-0.13,2024-09-05
-Florida Atlantic University/Mainstreet Research,Andy Cohen,DEM,0.09,8.9,2.8,-0.13,2024-09-05
-Florida Atlantic University/Mainstreet Research,Shiva Ayyadurai,DEM,0.29,8.9,2.8,-0.13,2024-09-05
-Florida Atlantic University/Mainstreet Research,Amy Klobuchar,DEM,0.13,8.9,2.8,-0.13,2024-09-05
-Arc Insights,Marco Rubio,OTH,0.22,4.6,2.73,-0.79,2024-08-25
-Arc Insights,Mark Cuban,GRE,0.09,4.6,2.73,-0.79,2024-08-25
-Arc Insights,Elizabeth Ann Warren,CON,0.16,4.6,2.73,-0.79,2024-08-25
-Arc Insights,Ron DeSantis,IND,0.14,4.6,2.73,-0.79,2024-08-25
-Arc Insights,Andy Cohen,REP,0.15,4.6,2.73,-0.79,2024-08-25
-Arc Insights,Jill Stein,CON,0.04,4.6,2.73,-0.79,2024-08-25
-Pew,Gretchen Whitmer,REP,0.31,5.5,2.8,-1.22,2024-08-13
-Pew,Nikki Haley,IND,0.35,5.5,2.8,-1.22,2024-08-13
-Pew,Lars Mapstead,IND,0.25,5.5,2.8,-1.22,2024-08-13
-Suffolk,Roy A. Cooper,GRE,0.3,10,2.9,-0.85,2024-08-25
-Suffolk,Claudia De La Cruz,IND,0.11,10,2.9,-0.85,2024-08-25
-Suffolk,Ted Cruz,PSL,0.11,10,2.9,-0.85,2024-08-25
-Suffolk,Larry Hogan,UNK,0.29,10,2.9,-0.85,2024-08-25
-Big Village,Pete Buttigieg,LIB,0.08,7.7,2.82,-0.1,2024-08-04
-Big Village,Randall A. Terry,OTH,0.08,7.7,2.82,-0.1,2024-08-04
-Big Village,Joe Biden,IND,0.2,7.7,2.82,-0.1,2024-08-04
-Big Village,Nikki Haley,OTH,0.17,7.7,2.82,-0.1,2024-08-04
-Big Village,Chris Sununu,OTH,0.11,7.7,2.82,-0.1,2024-08-04
-Big Village,Gavin Newsom,IND,0.21,7.7,2.82,-0.1,2024-08-04
-Glengariff Group Inc.,Donald Trump Jr.,UNK,0.23,5.1,2.87,-0.3,2024-09-05
-Glengariff Group Inc.,Vivek G. Ramaswamy,DEM,0.06,5.1,2.87,-0.3,2024-09-05
-Glengariff Group Inc.,Chris Christie,PSL,0.16,5.1,2.87,-0.3,2024-09-05
-Glengariff Group Inc.,Charles Ballay,PSL,0.17,5.1,2.87,-0.3,2024-09-05
-Glengariff Group Inc.,Mark Cuban,IND,0.12,5.1,2.87,-0.3,2024-09-05
-Glengariff Group Inc.,Dean Phillips,DEM,0.2,5.1,2.87,-0.3,2024-09-05
-Mason-Dixon,Pete Buttigieg,PSL,0.47,4.9,2.92,-0.91,2024-09-22
-Mason-Dixon,Claudia De La Cruz,CON,0.14,4.9,2.92,-0.91,2024-09-22
-Mason-Dixon,Chris Christie,DEM,0.28,4.9,2.92,-0.91,2024-09-22
-Christopher Newport U.,Larry Hogan,CON,0.39,7.7,2.95,-1.48,2024-10-18
-Christopher Newport U.,Roy A. Cooper,LIB,0.46,7.7,2.95,-1.48,2024-10-18
-Christopher Newport U.,Kanye West,UNK,0.1,7.7,2.95,-1.48,2024-10-18
-Data for Progress,Hillary Rodham Clinton,GRE,0.26,8.4,2.7,-0.4,2024-07-23
-Data for Progress,Cornel West,LIB,0.11,8.4,2.7,-0.4,2024-07-23
-Data for Progress,Gavin Newsom,GRE,0.16,8.4,2.7,-0.4,2024-07-23
-Data for Progress,Kanye West,REP,0.16,8.4,2.7,-0.4,2024-07-23
-Data for Progress,Kamala Harris,GRE,0.06,8.4,2.7,-0.4,2024-07-23
-Data for Progress,Dean Phillips,IND,0.15,8.4,2.7,-0.4,2024-07-23
-Impact Research,Ted Cruz,UNK,0.2,5,2.85,-0.91,2024-09-28
-Impact Research,Mark Kelly,DEM,0.23,5,2.85,-0.91,2024-09-28
-Impact Research,Elizabeth Ann Warren,REP,0.12,5,2.85,-0.91,2024-09-28
-Impact Research,Lars Mapstead,LIB,0.07,5,2.85,-0.91,2024-09-28
-Impact Research,Roy A. Cooper,PSL,0.16,5,2.85,-0.91,2024-09-28
-Impact Research,Cornel West,IND,0.21,5,2.85,-0.91,2024-09-28
-St. Anselm,Shiva Ayyadurai,DEM,0.38,6.5,2.71,-0.38,2024-08-09
-St. Anselm,Cory A. Booker,PSL,0.1,6.5,2.71,-0.38,2024-08-09
-St. Anselm,Lars Mapstead,REP,0.37,6.5,2.71,-0.38,2024-08-09
-YouGov/Center for Working Class Politics,Mark Kelly,REP,0.27,8.6,2.79,-0.54,2024-08-30
-YouGov/Center for Working Class Politics,Jill Stein,OTH,0.21,8.6,2.79,-0.54,2024-08-30
-YouGov/Center for Working Class Politics,Tim Scott,DEM,0.2,8.6,2.79,-0.54,2024-08-30
-YouGov/Center for Working Class Politics,Dean Phillips,PSL,0.13,8.6,2.79,-0.54,2024-08-30
-UC Berkeley,Elizabeth Ann Warren,GRE,0.32,6.7,2.88,-0.98,2024-08-10
-UC Berkeley,Mark Kelly,CON,0.39,6.7,2.88,-0.98,2024-08-10
-UC Berkeley,Cornel West,CON,0.28,6.7,2.88,-0.98,2024-08-10
-Susquehanna,Mike Pence,DEM,0.31,9.1,2.93,-0.08,2024-08-01
-Susquehanna,Gavin Newsom,UNK,0.31,9.1,2.93,-0.08,2024-08-01
-Susquehanna,Cory A. Booker,GRE,0.11,9.1,2.93,-0.08,2024-08-01
-Susquehanna,Joel Skousen,OTH,0.13,9.1,2.93,-0.08,2024-08-01
-Susquehanna,Raphael Warnock,CON,0.09,9.1,2.93,-0.08,2024-08-01
-WPAi,Andy Beshear,LIB,0.1,6.1,2.88,-0.66,2024-07-30
-WPAi,Donald Trump,PSL,0.18,6.1,2.88,-0.66,2024-07-30
-WPAi,Mark Cuban,LIB,0.21,6.1,2.88,-0.66,2024-07-30
-WPAi,Robert F. Kennedy,OTH,0.13,6.1,2.88,-0.66,2024-07-30
-WPAi,Chris Sununu,IND,0.25,6.1,2.88,-0.66,2024-07-30
-Leger,Joel Skousen,GRE,0.07,8.4,2.73,-0.81,2024-08-07
-Leger,Cory A. Booker,LIB,0.17,8.4,2.73,-0.81,2024-08-07
-Leger,Pete Buttigieg,PSL,0.17,8.4,2.73,-0.81,2024-08-07
-Leger,Mike Pence,OTH,0.17,8.4,2.73,-0.81,2024-08-07
-Leger,Al Gore,UNK,0.18,8.4,2.73,-0.81,2024-08-07
-Leger,JD Vance,GRE,0.14,8.4,2.73,-0.81,2024-08-07
-HighGround,Liz Cheney,GRE,0.12,7,2.71,-0.09,2024-08-25
-HighGround,Al Gore,GRE,0.06,7,2.71,-0.09,2024-08-25
-HighGround,Randall A. Terry,IND,0.22,7,2.71,-0.09,2024-08-25
-HighGround,Mark Cuban,REP,0.09,7,2.71,-0.09,2024-08-25
-HighGround,JD Vance,LIB,0.2,7,2.71,-0.09,2024-08-25
-HighGround,Mike Pence,DEM,0.15,7,2.71,-0.09,2024-08-25
-National Research,Glenn Youngkin,UNK,0.09,7.9,2.99,-0.75,2024-08-13
-National Research,Joe Biden,OTH,0.45,7.9,2.99,-0.75,2024-08-13
-National Research,Kanye West,REP,0.44,7.9,2.99,-0.75,2024-08-13
-Global Strategy Group/North Star Opinion Research,Tim Scott,PSL,0.15,7.8,2.78,-0.81,2024-10-06
-Global Strategy Group/North Star Opinion Research,Roy A. Cooper,REP,0.24,7.8,2.78,-0.81,2024-10-06
-Global Strategy Group/North Star Opinion Research,Josh Shapiro,UNK,0.3,7.8,2.78,-0.81,2024-10-06
-Global Strategy Group/North Star Opinion Research,Donald Trump Jr.,GRE,0.23,7.8,2.78,-0.81,2024-10-06
-Winthrop U.,Jill Stein,IND,0.31,6.5,2.8,-0.53,2024-08-07
-Winthrop U.,Al Gore,IND,0.37,6.5,2.8,-0.53,2024-08-07
-Winthrop U.,Michelle Obama,GRE,0.16,6.5,2.8,-0.53,2024-08-07
-Winthrop U.,Vivek G. Ramaswamy,PSL,0.08,6.5,2.8,-0.53,2024-08-07
-High Point University,Kanye West,GRE,0.17,9.3,2.71,-0.18,2024-10-04
-High Point University,"Joe Manchin, III",UNK,0.21,9.3,2.71,-0.18,2024-10-04
-High Point University,Shiva Ayyadurai,DEM,0.05,9.3,2.71,-0.18,2024-10-04
-High Point University,Marco Rubio,CON,0.31,9.3,2.71,-0.18,2024-10-04
-High Point University,Liz Cheney,UNK,0.16,9.3,2.71,-0.18,2024-10-04
-High Point University,Joe Biden,DEM,0.08,9.3,2.71,-0.18,2024-10-04
-UMBC,Roy A. Cooper,OTH,0.06,8.3,2.73,-0.2,2024-09-01
-UMBC,Michelle Obama,IND,0.17,8.3,2.73,-0.2,2024-09-01
-UMBC,Chris Sununu,IND,0.17,8.3,2.73,-0.2,2024-09-01
-UMBC,Robert F. Kennedy,UNK,0.26,8.3,2.73,-0.2,2024-09-01
-UMBC,Cornel West,LIB,0.12,8.3,2.73,-0.2,2024-09-01
-UMBC,Hillary Rodham Clinton,LIB,0.19,8.3,2.73,-0.2,2024-09-01
-McCourtney Institute/YouGov,Vivek G. Ramaswamy,DEM,0.19,7.8,2.86,-0.01,2024-10-14
-McCourtney Institute/YouGov,Michelle Obama,REP,0.15,7.8,2.86,-0.01,2024-10-14
-McCourtney Institute/YouGov,Dean Phillips,GRE,0.08,7.8,2.86,-0.01,2024-10-14
-McCourtney Institute/YouGov,Taylor Swift,LIB,0.33,7.8,2.86,-0.01,2024-10-14
-McCourtney Institute/YouGov,Roy A. Cooper,LIB,0.13,7.8,2.86,-0.01,2024-10-14
-Bowling Green State University/YouGov,Cornel West,CON,0.15,8.5,2.89,-0.58,2024-08-28
-Bowling Green State University/YouGov,Cory A. Booker,OTH,0.44,8.5,2.89,-0.58,2024-08-28
-Bowling Green State University/YouGov,Claudia De La Cruz,GRE,0.31,8.5,2.89,-0.58,2024-08-28
-Lake Research,Donald Trump Jr.,CON,0.14,4.8,2.75,-0.8,2024-08-31
-Lake Research,Cory A. Booker,UNK,0.05,4.8,2.75,-0.8,2024-08-31
-Lake Research,Mitt Romney,DEM,0.14,4.8,2.75,-0.8,2024-08-31
-Lake Research,Josh Shapiro,CON,0.22,4.8,2.75,-0.8,2024-08-31
-Lake Research,Kanye West,DEM,0.14,4.8,2.75,-0.8,2024-08-31
-Lake Research,Liz Cheney,CON,0.12,4.8,2.75,-0.8,2024-08-31
-Outward Intelligence,J.B. Pritzker,CON,0.14,8.8,2.87,-1.27,2024-08-17
-Outward Intelligence,Bernie Sanders,UNK,0.4,8.8,2.87,-1.27,2024-08-17
-Outward Intelligence,Al Gore,LIB,0.17,8.8,2.87,-1.27,2024-08-17
-Outward Intelligence,Liz Cheney,CON,0.19,8.8,2.87,-1.27,2024-08-17
-Echelon Insights,Michelle Obama,UNK,0.21,7,2.74,-1.19,2024-08-17
-Echelon Insights,Kanye West,PSL,0.18,7,2.74,-1.19,2024-08-17
-Echelon Insights,Joseph Kishore,GRE,0.07,7,2.74,-1.19,2024-08-17
-Echelon Insights,Pete Buttigieg,DEM,0.11,7,2.74,-1.19,2024-08-17
-Echelon Insights,Lars Mapstead,UNK,0.25,7,2.74,-1.19,2024-08-17
-ARW Strategies,J.B. Pritzker,GRE,0.22,7.3,2.85,-0.58,2024-09-08
-ARW Strategies,"Joe Manchin, III",LIB,0.41,7.3,2.85,-0.58,2024-09-08
-ARW Strategies,Cornel West,UNK,0.26,7.3,2.85,-0.58,2024-09-08
-McLaughlin,Kamala Harris,REP,0.34,8.5,2.87,-0.63,2024-08-12
-McLaughlin,"Joe Manchin, III",LIB,0.11,8.5,2.87,-0.63,2024-08-12
-McLaughlin,Joel Skousen,UNK,0.09,8.5,2.87,-0.63,2024-08-12
-McLaughlin,Al Gore,UNK,0.13,8.5,2.87,-0.63,2024-08-12
-McLaughlin,Gavin Newsom,IND,0.25,8.5,2.87,-0.63,2024-08-12
-Victory Insights,Mark Kelly,REP,0.07,8.1,2.94,-0.35,2024-09-13
-Victory Insights,JD Vance,DEM,0.18,8.1,2.94,-0.35,2024-09-13
-Victory Insights,Randall A. Terry,CON,0.21,8.1,2.94,-0.35,2024-09-13
-Victory Insights,Jill Stein,CON,0.08,8.1,2.94,-0.35,2024-09-13
-Victory Insights,Larry Hogan,LIB,0.3,8.1,2.94,-0.35,2024-09-13
-CNN/SSRS,Cory A. Booker,REP,0.31,6.7,2.99,-1.43,2024-08-17
-CNN/SSRS,Donald Trump Jr.,IND,0.23,6.7,2.99,-1.43,2024-08-17
-CNN/SSRS,Taylor Swift,IND,0.17,6.7,2.99,-1.43,2024-08-17
-CNN/SSRS,Kamala Harris,PSL,0.24,6.7,2.99,-1.43,2024-08-17
-Benenson Strategy Group/GS Strategy Group,Dean Phillips,OTH,0.16,5.6,2.96,-0.24,2024-09-06
-Benenson Strategy Group/GS Strategy Group,Pete Buttigieg,GRE,0.06,5.6,2.96,-0.24,2024-09-06
-Benenson Strategy Group/GS Strategy Group,Larry Hogan,REP,0.19,5.6,2.96,-0.24,2024-09-06
-Benenson Strategy Group/GS Strategy Group,Nikki Haley,DEM,0.12,5.6,2.96,-0.24,2024-09-06
-Benenson Strategy Group/GS Strategy Group,Mitt Romney,OTH,0.14,5.6,2.96,-0.24,2024-09-06
-Benenson Strategy Group/GS Strategy Group,Joe Biden,GRE,0.26,5.6,2.96,-0.24,2024-09-06
-Virginia Commonwealth U.,Donald Trump,LIB,0.16,6.5,2.71,-1.27,2024-10-08
-Virginia Commonwealth U.,Kamala Harris,IND,0.14,6.5,2.71,-1.27,2024-10-08
-Virginia Commonwealth U.,Mark Kelly,DEM,0.12,6.5,2.71,-1.27,2024-10-08
-Virginia Commonwealth U.,Randall A. Terry,OTH,0.18,6.5,2.71,-1.27,2024-10-08
-Virginia Commonwealth U.,Andy Beshear,PSL,0.21,6.5,2.71,-1.27,2024-10-08
-Virginia Commonwealth U.,Andy Cohen,IND,0.13,6.5,2.71,-1.27,2024-10-08
-USC Dornsife/CSU Long Beach/Cal Poly Pomona,Andy Cohen,GRE,0.3,7,2.76,-0.86,2024-09-03
-USC Dornsife/CSU Long Beach/Cal Poly Pomona,Al Gore,UNK,0.06,7,2.76,-0.86,2024-09-03
-USC Dornsife/CSU Long Beach/Cal Poly Pomona,Jill Stein,DEM,0.29,7,2.76,-0.86,2024-09-03
-USC Dornsife/CSU Long Beach/Cal Poly Pomona,Bernie Sanders,OTH,0.23,7,2.76,-0.86,2024-09-03
-Clarity,Liz Cheney,GRE,0.13,8.8,2.91,-0.61,2024-10-19
-Clarity,Joe Biden,IND,0.26,8.8,2.91,-0.61,2024-10-19
-Clarity,Mike Pence,PSL,0.24,8.8,2.91,-0.61,2024-10-19
-Clarity,Joel Skousen,REP,0.1,8.8,2.91,-0.61,2024-10-19
-Clarity,Larry Hogan,CON,0.24,8.8,2.91,-0.61,2024-10-19
-University of Maryland/Washington Post,Amy Klobuchar,REP,0.39,5.1,2.86,-1.35,2024-07-26
-University of Maryland/Washington Post,Josh Shapiro,IND,0.24,5.1,2.86,-1.35,2024-07-26
-University of Maryland/Washington Post,Chris Sununu,GRE,0.3,5.1,2.86,-1.35,2024-07-26
-Slingshot Strategies,Roy A. Cooper,CON,0.19,5.9,2.9,-1.39,2024-08-09
-Slingshot Strategies,Liz Cheney,UNK,0.12,5.9,2.9,-1.39,2024-08-09
-Slingshot Strategies,Elizabeth Ann Warren,CON,0.15,5.9,2.9,-1.39,2024-08-09
-Slingshot Strategies,Glenn Youngkin,GRE,0.25,5.9,2.9,-1.39,2024-08-09
-Slingshot Strategies,Chris Christie,PSL,0.1,5.9,2.9,-1.39,2024-08-09
-Meredith College,Liz Cheney,DEM,0.26,9.2,2.84,-1.31,2024-08-26
-Meredith College,Dean Phillips,IND,0.21,9.2,2.84,-1.31,2024-08-26
-Meredith College,Randall A. Terry,IND,0.4,9.2,2.84,-1.31,2024-08-26
-Embold Research,Amy Klobuchar,UNK,0.14,9.3,2.89,-0.21,2024-08-31
-Embold Research,Michelle Obama,UNK,0.08,9.3,2.89,-0.21,2024-08-31
-Embold Research,Bernie Sanders,DEM,0.21,9.3,2.89,-0.21,2024-08-31
-Embold Research,Ron DeSantis,PSL,0.08,9.3,2.89,-0.21,2024-08-31
-Embold Research,Mark Kelly,REP,0.12,9.3,2.89,-0.21,2024-08-31
-Embold Research,Larry Hogan,CON,0.21,9.3,2.89,-0.21,2024-08-31
-Remington,Chris Christie,UNK,0.24,5.7,2.89,-0.42,2024-08-09
-Remington,Claudia De La Cruz,UNK,0.18,5.7,2.89,-0.42,2024-08-09
-Remington,Randall A. Terry,UNK,0.11,5.7,2.89,-0.42,2024-08-09
-Remington,Hillary Rodham Clinton,REP,0.17,5.7,2.89,-0.42,2024-08-09
-Remington,Mitt Romney,DEM,0.07,5.7,2.89,-0.42,2024-08-09
-Remington,Mark Kelly,OTH,0.12,5.7,2.89,-0.42,2024-08-09
-Muhlenberg,Joseph Kishore,IND,0.35,7,2.84,-0.33,2024-08-02
-Muhlenberg,Randall A. Terry,GRE,0.35,7,2.84,-0.33,2024-08-02
-Muhlenberg,Gretchen Whitmer,PSL,0.12,7,2.84,-0.33,2024-08-02
-University of Delaware,Claudia De La Cruz,UNK,0.08,9.9,2.81,-0.02,2024-08-06
-University of Delaware,Taylor Swift,DEM,0.14,9.9,2.81,-0.02,2024-08-06
-University of Delaware,Ron DeSantis,PSL,0.12,9.9,2.81,-0.02,2024-08-06
-University of Delaware,Roy A. Cooper,REP,0.09,9.9,2.81,-0.02,2024-08-06
-University of Delaware,Mike Pence,GRE,0.23,9.9,2.81,-0.02,2024-08-06
-University of Delaware,"Joe Manchin, III",REP,0.14,9.9,2.81,-0.02,2024-08-06
-Texas Hispanic Policy Foundation,Larry Hogan,PSL,0.36,5.7,2.97,-0.3,2024-08-13
-Texas Hispanic Policy Foundation,Amy Klobuchar,UNK,0.12,5.7,2.97,-0.3,2024-08-13
-Texas Hispanic Policy Foundation,Ron DeSantis,GRE,0.23,5.7,2.97,-0.3,2024-08-13
-Texas Hispanic Policy Foundation,Roy A. Cooper,PSL,0.26,5.7,2.97,-0.3,2024-08-13
-MassINC Polling Group,Larry Hogan,CON,0.14,7,2.93,-0.31,2024-08-05
-MassINC Polling Group,Al Gore,OTH,0.21,7,2.93,-0.31,2024-08-05
-MassINC Polling Group,Marco Rubio,PSL,0.27,7,2.93,-0.31,2024-08-05
-MassINC Polling Group,Pete Buttigieg,OTH,0.14,7,2.93,-0.31,2024-08-05
-MassINC Polling Group,J.B. Pritzker,GRE,0.15,7,2.93,-0.31,2024-08-05
-Angus Reid,Gavin Newsom,GRE,0.36,4.6,2.95,-1.11,2024-10-19
-Angus Reid,Pete Buttigieg,IND,0.31,4.6,2.95,-1.11,2024-10-19
-Angus Reid,Donald Trump,UNK,0.16,4.6,2.95,-1.11,2024-10-19
-U. New Hampshire,Al Gore,GRE,0.12,7.2,2.93,-1.25,2024-08-23
-U. New Hampshire,Shiva Ayyadurai,GRE,0.24,7.2,2.93,-1.25,2024-08-23
-U. New Hampshire,"Joe Manchin, III",UNK,0.1,7.2,2.93,-1.25,2024-08-23
-U. New Hampshire,Amy Klobuchar,PSL,0.09,7.2,2.93,-1.25,2024-08-23
-U. New Hampshire,Robert F. Kennedy,REP,0.15,7.2,2.93,-1.25,2024-08-23
-U. New Hampshire,JD Vance,IND,0.22,7.2,2.93,-1.25,2024-08-23
-Capitol Weekly,Kanye West,UNK,0.25,5.3,2.96,-0.5,2024-08-08
-Capitol Weekly,Amy Klobuchar,UNK,0.29,5.3,2.96,-0.5,2024-08-08
-Capitol Weekly,Vivek G. Ramaswamy,UNK,0.31,5.3,2.96,-0.5,2024-08-08
-Siena,Roy A. Cooper,CON,0.12,9.6,2.73,-0.75,2024-08-20
-Siena,Andy Cohen,REP,0.06,9.6,2.73,-0.75,2024-08-20
-Siena,Donald Trump,DEM,0.15,9.6,2.73,-0.75,2024-08-20
-Siena,Mike Pence,REP,0.23,9.6,2.73,-0.75,2024-08-20
-Siena,Bernie Sanders,REP,0.22,9.6,2.73,-0.75,2024-08-20
-Siena,Cornel West,IND,0.15,9.6,2.73,-0.75,2024-08-20
-Focaldata,Donald Trump Jr.,IND,0.16,7.1,2.95,-1.48,2024-08-12
-Focaldata,Joe Biden,OTH,0.09,7.1,2.95,-1.48,2024-08-12
-Focaldata,Andy Beshear,GRE,0.16,7.1,2.95,-1.48,2024-08-12
-Focaldata,Mark Kelly,OTH,0.1,7.1,2.95,-1.48,2024-08-12
-Focaldata,Ted Cruz,IND,0.12,7.1,2.95,-1.48,2024-08-12
-Focaldata,Glenn Youngkin,UNK,0.25,7.1,2.95,-1.48,2024-08-12
-U. Georgia SPIA,Gretchen Whitmer,CON,0.15,5.1,2.76,-0.24,2024-08-16
-U. Georgia SPIA,Chris Sununu,REP,0.22,5.1,2.76,-0.24,2024-08-16
-U. Georgia SPIA,Andy Beshear,OTH,0.19,5.1,2.76,-0.24,2024-08-16
-U. Georgia SPIA,Joseph Kishore,UNK,0.14,5.1,2.76,-0.24,2024-08-16
-U. Georgia SPIA,J.B. Pritzker,GRE,0.11,5.1,2.76,-0.24,2024-08-16
-U. Georgia SPIA,Tim Scott,GRE,0.14,5.1,2.76,-0.24,2024-08-16
-Pan Atlantic Research,Chase Oliver,PSL,0.36,5.1,2.82,-0.69,2024-08-28
-Pan Atlantic Research,Shiva Ayyadurai,GRE,0.17,5.1,2.82,-0.69,2024-08-28
-Pan Atlantic Research,Josh Shapiro,GRE,0.37,5.1,2.82,-0.69,2024-08-28
-Franklin and Marshall College,Larry Hogan,LIB,0.17,4.7,2.73,-0.15,2024-08-01
-Franklin and Marshall College,Ron DeSantis,GRE,0.08,4.7,2.73,-0.15,2024-08-01
-Franklin and Marshall College,Shiva Ayyadurai,PSL,0.29,4.7,2.73,-0.15,2024-08-01
-Franklin and Marshall College,Dean Phillips,CON,0.31,4.7,2.73,-0.15,2024-08-01
-Keating Research,Robert F. Kennedy,IND,0.14,6,2.92,-1.23,2024-08-05
-Keating Research,Cornel West,DEM,0.25,6,2.92,-1.23,2024-08-05
-Keating Research,Cory A. Booker,REP,0.18,6,2.92,-1.23,2024-08-05
-Keating Research,Mike Pence,GRE,0.28,6,2.92,-1.23,2024-08-05
-Keating Research,Andy Cohen,PSL,0.08,6,2.92,-1.23,2024-08-05
-Research & Polling,Marco Rubio,UNK,0.5,6.3,2.83,-0.88,2024-08-24
-Research & Polling,Shiva Ayyadurai,UNK,0.17,6.3,2.83,-0.88,2024-08-24
-Research & Polling,JD Vance,OTH,0.14,6.3,2.83,-0.88,2024-08-24
-Elon U.,Joseph Kishore,DEM,0.29,9,2.96,-0.27,2024-10-05
-Elon U.,Al Gore,IND,0.42,9,2.96,-0.27,2024-10-05
-Elon U.,Elizabeth Ann Warren,CON,0.23,9,2.96,-0.27,2024-10-05
-Quantus Polls and News,Kamala Harris,LIB,0.28,9,2.84,-0.48,2024-09-04
-Quantus Polls and News,Bernie Sanders,PSL,0.25,9,2.84,-0.48,2024-09-04
-Quantus Polls and News,Nikki Haley,PSL,0.09,9,2.84,-0.48,2024-09-04
-Quantus Polls and News,Larry Hogan,PSL,0.08,9,2.84,-0.48,2024-09-04
-Quantus Polls and News,Shiva Ayyadurai,CON,0.08,9,2.84,-0.48,2024-09-04
-Quantus Polls and News,Amy Klobuchar,OTH,0.16,9,2.84,-0.48,2024-09-04
-GQR,Chris Sununu,OTH,0.07,8.2,2.82,-0.43,2024-07-26
-GQR,Chase Oliver,IND,0.24,8.2,2.82,-0.43,2024-07-26
-GQR,Shiva Ayyadurai,UNK,0.2,8.2,2.82,-0.43,2024-07-26
-GQR,Ted Cruz,LIB,0.14,8.2,2.82,-0.43,2024-07-26
-GQR,Cornel West,REP,0.18,8.2,2.82,-0.43,2024-07-26
-GQR,Joel Skousen,DEM,0.1,8.2,2.82,-0.43,2024-07-26
-Selzer,Amy Klobuchar,CON,0.21,9.9,2.96,-0.62,2024-09-16
-Selzer,Donald Trump Jr.,PSL,0.25,9.9,2.96,-0.62,2024-09-16
-Selzer,Robert F. Kennedy,LIB,0.4,9.9,2.96,-0.62,2024-09-16
-Data Orbital,Dean Phillips,DEM,0.22,7.6,2.78,-1.39,2024-07-24
-Data Orbital,Al Gore,GRE,0.27,7.6,2.78,-1.39,2024-07-24
-Data Orbital,Liz Cheney,UNK,0.31,7.6,2.78,-1.39,2024-07-24
-Data Orbital,Amy Klobuchar,REP,0.17,7.6,2.78,-1.39,2024-07-24
-CWS Research,Taylor Swift,DEM,0.11,6.6,2.92,-0.18,2024-08-27
-CWS Research,Joe Biden,DEM,0.55,6.6,2.92,-0.18,2024-08-27
-CWS Research,Claudia De La Cruz,DEM,0.27,6.6,2.92,-0.18,2024-08-27
-Research America,Marco Rubio,IND,0.23,6.7,2.96,-0.41,2024-09-15
-Research America,Vivek G. Ramaswamy,UNK,0.42,6.7,2.96,-0.41,2024-09-15
-Research America,Nikki Haley,IND,0.29,6.7,2.96,-0.41,2024-09-15
-PPIC,Claudia De La Cruz,UNK,0.25,9.2,2.8,-1.1,2024-10-06
-PPIC,Ted Cruz,IND,0.36,9.2,2.8,-1.1,2024-10-06
-PPIC,Pete Buttigieg,OTH,0.13,9.2,2.8,-1.1,2024-10-06
-PPIC,Mike Pence,PSL,0.09,9.2,2.8,-1.1,2024-10-06
-Washington Post/George Mason University,Joe Biden,GRE,0.16,9.8,2.87,-0.42,2024-09-02
-Washington Post/George Mason University,Gavin Newsom,OTH,0.1,9.8,2.87,-0.42,2024-09-02
-Washington Post/George Mason University,Joseph Kishore,OTH,0.26,9.8,2.87,-0.42,2024-09-02
-Washington Post/George Mason University,Randall A. Terry,IND,0.4,9.8,2.87,-0.42,2024-09-02
-U. Rhode Island,Kanye West,DEM,0.22,8.2,2.9,-0.87,2024-10-16
-U. Rhode Island,Michelle Obama,IND,0.27,8.2,2.9,-0.87,2024-10-16
-U. Rhode Island,Mike Pence,PSL,0.12,8.2,2.9,-0.87,2024-10-16
-U. Rhode Island,Glenn Youngkin,CON,0.25,8.2,2.9,-0.87,2024-10-16
-U. Rhode Island,Pete Buttigieg,DEM,0.08,8.2,2.9,-0.87,2024-10-16
-Hendrix College,Mike Pence,REP,0.52,8.2,2.71,-0.8,2024-10-02
-Hendrix College,Kamala Harris,UNK,0.14,8.2,2.71,-0.8,2024-10-02
-Hendrix College,Joel Skousen,UNK,0.13,8.2,2.71,-0.8,2024-10-02
-Hendrix College,Joseph Kishore,PSL,0.18,8.2,2.71,-0.8,2024-10-02
-SurveyMonkey,Mitt Romney,DEM,0.05,5.2,2.76,-1.18,2024-08-01
-SurveyMonkey,Dean Phillips,UNK,0.13,5.2,2.76,-1.18,2024-08-01
-SurveyMonkey,Claudia De La Cruz,GRE,0.13,5.2,2.76,-1.18,2024-08-01
-SurveyMonkey,Jill Stein,CON,0.23,5.2,2.76,-1.18,2024-08-01
-SurveyMonkey,"Joe Manchin, III",UNK,0.07,5.2,2.76,-1.18,2024-08-01
-SurveyMonkey,Nikki Haley,DEM,0.2,5.2,2.76,-1.18,2024-08-01
-Kaiser Family Foundation,Ron DeSantis,LIB,0.13,8.2,2.89,-1.43,2024-09-17
-Kaiser Family Foundation,Lars Mapstead,OTH,0.29,8.2,2.89,-1.43,2024-09-17
-Kaiser Family Foundation,Amy Klobuchar,REP,0.31,8.2,2.89,-1.43,2024-09-17
-Kaiser Family Foundation,Michelle Obama,REP,0.23,8.2,2.89,-1.43,2024-09-17
-PRRI,Hillary Rodham Clinton,REP,0.13,6,2.92,-0.94,2024-07-29
-PRRI,"Joe Manchin, III",OTH,0.13,6,2.92,-0.94,2024-07-29
-PRRI,Mitt Romney,DEM,0.06,6,2.92,-0.94,2024-07-29
-PRRI,Raphael Warnock,PSL,0.11,6,2.92,-0.94,2024-07-29
-PRRI,Liz Cheney,UNK,0.22,6,2.92,-0.94,2024-07-29
-PRRI,Cornel West,GRE,0.15,6,2.92,-0.94,2024-07-29
-Big Data Poll,Tim Scott,IND,0.17,8.7,2.91,-0.2,2024-08-29
-Big Data Poll,Joel Skousen,REP,0.12,8.7,2.91,-0.2,2024-08-29
-Big Data Poll,Shiva Ayyadurai,OTH,0.2,8.7,2.91,-0.2,2024-08-29
-Big Data Poll,Randall A. Terry,PSL,0.19,8.7,2.91,-0.2,2024-08-29
-Big Data Poll,Michelle Obama,LIB,0.12,8.7,2.91,-0.2,2024-08-29
-Big Data Poll,Larry Hogan,LIB,0.1,8.7,2.91,-0.2,2024-08-29
-Echelon Insights/GBAO,Dean Phillips,IND,0.18,9.1,2.74,-0.27,2024-08-12
-Echelon Insights/GBAO,Mitt Romney,IND,0.11,9.1,2.74,-0.27,2024-08-12
-Echelon Insights/GBAO,Andy Cohen,OTH,0.19,9.1,2.74,-0.27,2024-08-12
-Echelon Insights/GBAO,Charles Ballay,DEM,0.33,9.1,2.74,-0.27,2024-08-12
-Echelon Insights/GBAO,J.B. Pritzker,IND,0.12,9.1,2.74,-0.27,2024-08-12
-SoonerPoll.com,Bernie Sanders,GRE,0.19,5.2,2.9,-0.27,2024-08-23
-SoonerPoll.com,Mike Pence,OTH,0.2,5.2,2.9,-0.27,2024-08-23
-SoonerPoll.com,Raphael Warnock,PSL,0.13,5.2,2.9,-0.27,2024-08-23
-SoonerPoll.com,Glenn Youngkin,DEM,0.2,5.2,2.9,-0.27,2024-08-23
-SoonerPoll.com,Shiva Ayyadurai,LIB,0.16,5.2,2.9,-0.27,2024-08-23
-Gonzales Research & Media Services,Bernie Sanders,DEM,0.22,9.1,2.87,-1.14,2024-09-13
-Gonzales Research & Media Services,Dean Phillips,LIB,0.25,9.1,2.87,-1.14,2024-09-13
-Gonzales Research & Media Services,Pete Buttigieg,PSL,0.21,9.1,2.87,-1.14,2024-09-13
-Gonzales Research & Media Services,Vivek G. Ramaswamy,GRE,0.16,9.1,2.87,-1.14,2024-09-13
-Wick,Raphael Warnock,LIB,0.1,4.6,2.96,-0.67,2024-07-26
-Wick,Roy A. Cooper,DEM,0.18,4.6,2.96,-0.67,2024-07-26
-Wick,Chase Oliver,OTH,0.42,4.6,2.96,-0.67,2024-07-26
-Wick,Elizabeth Ann Warren,OTH,0.2,4.6,2.96,-0.67,2024-07-26
-Wick,Joseph Kishore,IND,0.09,4.6,2.96,-0.67,2024-07-26
-Global Strategy Group,"Joe Manchin, III",GRE,0.24,7.9,2.71,-0.59,2024-09-19
-Global Strategy Group,Ron DeSantis,DEM,0.3,7.9,2.71,-0.59,2024-09-19
-Global Strategy Group,Liz Cheney,LIB,0.17,7.9,2.71,-0.59,2024-09-19
-Global Strategy Group,Cornel West,LIB,0.17,7.9,2.71,-0.59,2024-09-19
-Fabrizio/David Binder Research,Tim Scott,LIB,0.06,7.5,2.89,-1.06,2024-08-20
-Fabrizio/David Binder Research,Josh Shapiro,PSL,0.13,7.5,2.89,-1.06,2024-08-20
-Fabrizio/David Binder Research,Mark Cuban,OTH,0.17,7.5,2.89,-1.06,2024-08-20
-Fabrizio/David Binder Research,Vivek G. Ramaswamy,LIB,0.18,7.5,2.89,-1.06,2024-08-20
-Fabrizio/David Binder Research,Charles Ballay,IND,0.25,7.5,2.89,-1.06,2024-08-20
-Fabrizio/David Binder Research,Dean Phillips,DEM,0.17,7.5,2.89,-1.06,2024-08-20
-EPIC/MRA,Taylor Swift,LIB,0.27,9.8,2.96,-1.07,2024-08-25
-EPIC/MRA,Nikki Haley,CON,0.25,9.8,2.96,-1.07,2024-08-25
-EPIC/MRA,Andy Beshear,LIB,0.17,9.8,2.96,-1.07,2024-08-25
-EPIC/MRA,Gavin Newsom,PSL,0.05,9.8,2.96,-1.07,2024-08-25
-EPIC/MRA,Mike Pence,GRE,0.11,9.8,2.96,-1.07,2024-08-25
-Z to A Research,Claudia De La Cruz,GRE,0.14,5.4,2.71,-1.35,2024-09-14
-Z to A Research,Taylor Swift,REP,0.19,5.4,2.71,-1.35,2024-09-14
-Z to A Research,Charles Ballay,PSL,0.1,5.4,2.71,-1.35,2024-09-14
-Z to A Research,Lars Mapstead,IND,0.19,5.4,2.71,-1.35,2024-09-14
-Z to A Research,Al Gore,REP,0.05,5.4,2.71,-1.35,2024-09-14
-Z to A Research,Glenn Youngkin,GRE,0.18,5.4,2.71,-1.35,2024-09-14
-Survey Center on American Life,Kanye West,GRE,0.22,5.9,2.94,-1.4,2024-07-28
-Survey Center on American Life,Glenn Youngkin,UNK,0.11,5.9,2.94,-1.4,2024-07-28
-Survey Center on American Life,Raphael Warnock,UNK,0.19,5.9,2.94,-1.4,2024-07-28
-Survey Center on American Life,Mitt Romney,CON,0.07,5.9,2.94,-1.4,2024-07-28
-Survey Center on American Life,Robert F. Kennedy,LIB,0.26,5.9,2.94,-1.4,2024-07-28
-Cherry Communications,Dean Phillips,DEM,0.4,9.2,2.89,-0.23,2024-09-25
-Cherry Communications,Gretchen Whitmer,DEM,0.18,9.2,2.89,-0.23,2024-09-25
-Cherry Communications,Pete Buttigieg,IND,0.28,9.2,2.89,-0.23,2024-09-25
-Kaplan Strategies,Roy A. Cooper,UNK,0.23,7.9,2.8,-0.52,2024-08-26
-Kaplan Strategies,"Joe Manchin, III",DEM,0.14,7.9,2.8,-0.52,2024-08-26
-Kaplan Strategies,Hillary Rodham Clinton,IND,0.25,7.9,2.8,-0.52,2024-08-26
-Kaplan Strategies,Ron DeSantis,CON,0.06,7.9,2.8,-0.52,2024-08-26
-Kaplan Strategies,Andy Beshear,REP,0.22,7.9,2.8,-0.52,2024-08-26
-SurveyUSA/High Point University,Andy Cohen,UNK,0.4,5.9,2.71,-1.29,2024-09-13
-SurveyUSA/High Point University,Joe Biden,PSL,0.07,5.9,2.71,-1.29,2024-09-13
-SurveyUSA/High Point University,Chase Oliver,PSL,0.38,5.9,2.71,-1.29,2024-09-13
-SurveyUSA/High Point University,Donald Trump Jr.,OTH,0.1,5.9,2.71,-1.29,2024-09-13
-Fabrizio Ward,Vivek G. Ramaswamy,LIB,0.21,5.7,2.99,-0.85,2024-10-05
-Fabrizio Ward,Josh Shapiro,REP,0.19,5.7,2.99,-0.85,2024-10-05
-Fabrizio Ward,Glenn Youngkin,LIB,0.19,5.7,2.99,-0.85,2024-10-05
-Fabrizio Ward,Shiva Ayyadurai,CON,0.16,5.7,2.99,-0.85,2024-10-05
-Fabrizio Ward,Joseph Kishore,PSL,0.11,5.7,2.99,-0.85,2024-10-05
-BK Strategies,Glenn Youngkin,UNK,0.18,5.9,2.98,-0.02,2024-08-29
-BK Strategies,Randall A. Terry,IND,0.16,5.9,2.98,-0.02,2024-08-29
-BK Strategies,Mitt Romney,GRE,0.2,5.9,2.98,-0.02,2024-08-29
-BK Strategies,Mark Cuban,PSL,0.12,5.9,2.98,-0.02,2024-08-29
-BK Strategies,Cory A. Booker,UNK,0.13,5.9,2.98,-0.02,2024-08-29
-BK Strategies,Shiva Ayyadurai,OTH,0.12,5.9,2.98,-0.02,2024-08-29
-Spry Strategies,Elizabeth Ann Warren,DEM,0.28,4.9,2.75,-0.5,2024-09-18
-Spry Strategies,Donald Trump Jr.,LIB,0.15,4.9,2.75,-0.5,2024-09-18
-Spry Strategies,Kamala Harris,LIB,0.25,4.9,2.75,-0.5,2024-09-18
-Spry Strategies,Randall A. Terry,CON,0.19,4.9,2.75,-0.5,2024-09-18
-Roanoke College,Elizabeth Ann Warren,IND,0.08,9.2,2.81,-0.32,2024-10-02
-Roanoke College,Randall A. Terry,IND,0.19,9.2,2.81,-0.32,2024-10-02
-Roanoke College,Cornel West,DEM,0.17,9.2,2.81,-0.32,2024-10-02
-Roanoke College,Cory A. Booker,PSL,0.16,9.2,2.81,-0.32,2024-10-02
-Roanoke College,Hillary Rodham Clinton,PSL,0.15,9.2,2.81,-0.32,2024-10-02
-Roanoke College,Michelle Obama,LIB,0.06,9.2,2.81,-0.32,2024-10-02
-University of Houston/Texas Southern University,Mike Pence,UNK,0.23,5.5,2.74,-0.64,2024-08-08
-University of Houston/Texas Southern University,Joel Skousen,CON,0.31,5.5,2.74,-0.64,2024-08-08
-University of Houston/Texas Southern University,Roy A. Cooper,PSL,0.14,5.5,2.74,-0.64,2024-08-08
-University of Houston/Texas Southern University,Ted Cruz,LIB,0.18,5.5,2.74,-0.64,2024-08-08
-Strategies 360,Cory A. Booker,UNK,0.21,7.5,2.99,-0.04,2024-10-03
-Strategies 360,Roy A. Cooper,PSL,0.37,7.5,2.99,-0.04,2024-10-03
-Strategies 360,Marco Rubio,LIB,0.17,7.5,2.99,-0.04,2024-10-03
-Strategies 360,Liz Cheney,DEM,0.23,7.5,2.99,-0.04,2024-10-03
-YouGov Blue,Glenn Youngkin,CON,0.2,5.3,2.73,-0.72,2024-08-03
-YouGov Blue,Donald Trump,GRE,0.14,5.3,2.73,-0.72,2024-08-03
-YouGov Blue,Kanye West,OTH,0.16,5.3,2.73,-0.72,2024-08-03
-YouGov Blue,Michelle Obama,LIB,0.19,5.3,2.73,-0.72,2024-08-03
-YouGov Blue,Roy A. Cooper,GRE,0.15,5.3,2.73,-0.72,2024-08-03
-YouGov Blue,Gretchen Whitmer,LIB,0.16,5.3,2.73,-0.72,2024-08-03
-Navigator,Donald Trump,OTH,0.23,7.6,2.73,-0.56,2024-09-15
-Navigator,Lars Mapstead,OTH,0.18,7.6,2.73,-0.56,2024-09-15
-Navigator,JD Vance,GRE,0.19,7.6,2.73,-0.56,2024-09-15
-Navigator,Elizabeth Ann Warren,REP,0.33,7.6,2.73,-0.56,2024-09-15
-Peak Insights,Marco Rubio,CON,0.2,7.9,2.9,-1.06,2024-08-16
-Peak Insights,Mark Cuban,IND,0.12,7.9,2.9,-1.06,2024-08-16
-Peak Insights,Amy Klobuchar,IND,0.24,7.9,2.9,-1.06,2024-08-16
-Peak Insights,Cornel West,LIB,0.26,7.9,2.9,-1.06,2024-08-16
-Iron Light,Gavin Newsom,UNK,0.22,9.8,2.76,-1.16,2024-09-13
-Iron Light,Shiva Ayyadurai,REP,0.22,9.8,2.76,-1.16,2024-09-13
-Iron Light,Amy Klobuchar,UNK,0.08,9.8,2.76,-1.16,2024-09-13
-Iron Light,Andy Cohen,PSL,0.08,9.8,2.76,-1.16,2024-09-13
-Iron Light,Ted Cruz,REP,0.28,9.8,2.76,-1.16,2024-09-13
-Fabrizio,Mark Cuban,UNK,0.24,6.8,2.71,-0.09,2024-10-08
-Fabrizio,Hillary Rodham Clinton,UNK,0.15,6.8,2.71,-0.09,2024-10-08
-Fabrizio,Chris Christie,IND,0.24,6.8,2.71,-0.09,2024-10-08
-Fabrizio,Gretchen Whitmer,LIB,0.31,6.8,2.71,-0.09,2024-10-08
-Trafalgar Group/InsiderAdvantage,Shiva Ayyadurai,REP,0.15,8.8,2.72,-1.37,2024-07-27
-Trafalgar Group/InsiderAdvantage,Roy A. Cooper,CON,0.15,8.8,2.72,-1.37,2024-07-27
-Trafalgar Group/InsiderAdvantage,Taylor Swift,GRE,0.21,8.8,2.72,-1.37,2024-07-27
-Trafalgar Group/InsiderAdvantage,Cornel West,REP,0.16,8.8,2.72,-1.37,2024-07-27
-Trafalgar Group/InsiderAdvantage,Kamala Harris,UNK,0.14,8.8,2.72,-1.37,2024-07-27
-Civiqs,Mike Pence,UNK,0.37,6,2.87,-0.07,2024-10-13
-Civiqs,Taylor Swift,CON,0.37,6,2.87,-0.07,2024-10-13
-Civiqs,Gretchen Whitmer,CON,0.24,6,2.87,-0.07,2024-10-13
-YouGov/SNF Agora,Charles Ballay,REP,0.26,8.4,2.78,-1.46,2024-09-09
-YouGov/SNF Agora,Josh Shapiro,UNK,0.09,8.4,2.78,-1.46,2024-09-09
-YouGov/SNF Agora,Shiva Ayyadurai,CON,0.26,8.4,2.78,-1.46,2024-09-09
-YouGov/SNF Agora,Ron DeSantis,PSL,0.06,8.4,2.78,-1.46,2024-09-09
-YouGov/SNF Agora,Kanye West,REP,0.25,8.4,2.78,-1.46,2024-09-09
-YouGov/SNF Agora,Joel Skousen,LIB,0.06,8.4,2.78,-1.46,2024-09-09
-Public Opinion Strategies,Pete Buttigieg,LIB,0.15,9.2,2.71,-1.16,2024-07-25
-Public Opinion Strategies,Tim Scott,CON,0.08,9.2,2.71,-1.16,2024-07-25
-Public Opinion Strategies,Shiva Ayyadurai,IND,0.17,9.2,2.71,-1.16,2024-07-25
-Public Opinion Strategies,Donald Trump Jr.,REP,0.19,9.2,2.71,-1.16,2024-07-25
-Public Opinion Strategies,Raphael Warnock,LIB,0.18,9.2,2.71,-1.16,2024-07-25
-Public Opinion Strategies,Josh Shapiro,CON,0.05,9.2,2.71,-1.16,2024-07-25
-U. North Florida,Cornel West,UNK,0.2,7.2,2.95,-0.08,2024-10-11
-U. North Florida,Mark Kelly,UNK,0.19,7.2,2.95,-0.08,2024-10-11
-U. North Florida,Hillary Rodham Clinton,GRE,0.11,7.2,2.95,-0.08,2024-10-11
-U. North Florida,Gavin Newsom,REP,0.23,7.2,2.95,-0.08,2024-10-11
-U. North Florida,Claudia De La Cruz,LIB,0.14,7.2,2.95,-0.08,2024-10-11
-SoCal Research,J.B. Pritzker,IND,0.26,7.7,2.84,-1.2,2024-07-27
-SoCal Research,Larry Hogan,IND,0.19,7.7,2.84,-1.2,2024-07-27
-SoCal Research,Lars Mapstead,LIB,0.2,7.7,2.84,-1.2,2024-07-27
-SoCal Research,Robert F. Kennedy,PSL,0.21,7.7,2.84,-1.2,2024-07-27
-SoCal Research,Chase Oliver,PSL,0.11,7.7,2.84,-1.2,2024-07-27
-Hoffman Research,Chris Christie,UNK,0.27,8.6,2.88,-1.35,2024-09-29
-Hoffman Research,Marco Rubio,LIB,0.09,8.6,2.88,-1.35,2024-09-29
-Hoffman Research,Lars Mapstead,OTH,0.11,8.6,2.88,-1.35,2024-09-29
-Hoffman Research,Kamala Harris,IND,0.27,8.6,2.88,-1.35,2024-09-29
-Hoffman Research,Donald Trump Jr.,GRE,0.17,8.6,2.88,-1.35,2024-09-29
-North Star Opinion Research,Joel Skousen,REP,0.1,6.6,2.88,-0.99,2024-07-25
-North Star Opinion Research,JD Vance,REP,0.14,6.6,2.88,-0.99,2024-07-25
-North Star Opinion Research,Al Gore,REP,0.13,6.6,2.88,-0.99,2024-07-25
-North Star Opinion Research,Andy Beshear,UNK,0.19,6.6,2.88,-0.99,2024-07-25
-North Star Opinion Research,Josh Shapiro,IND,0.11,6.6,2.88,-0.99,2024-07-25
-North Star Opinion Research,Michelle Obama,OTH,0.21,6.6,2.88,-0.99,2024-07-25
-Landmark Communications,Kanye West,PSL,0.51,7.6,2.71,-0.22,2024-08-25
-Landmark Communications,Marco Rubio,IND,0.14,7.6,2.71,-0.22,2024-08-25
-Landmark Communications,Elizabeth Ann Warren,PSL,0.25,7.6,2.71,-0.22,2024-08-25
-Praecones Analytica,Gretchen Whitmer,IND,0.27,4.9,2.74,-0.99,2024-10-16
-Praecones Analytica,Jill Stein,GRE,0.28,4.9,2.74,-0.99,2024-10-16
-Praecones Analytica,Cornel West,UNK,0.08,4.9,2.74,-0.99,2024-10-16
-Praecones Analytica,Mark Kelly,IND,0.11,4.9,2.74,-0.99,2024-10-16
-Praecones Analytica,Lars Mapstead,GRE,0.24,4.9,2.74,-0.99,2024-10-16
-3W Insights,Cornel West,DEM,0.2,5.2,2.89,-0.27,2024-09-06
-3W Insights,Tim Scott,PSL,0.23,5.2,2.89,-0.27,2024-09-06
-3W Insights,JD Vance,DEM,0.18,5.2,2.89,-0.27,2024-09-06
-3W Insights,Robert F. Kennedy,REP,0.12,5.2,2.89,-0.27,2024-09-06
-3W Insights,Nikki Haley,GRE,0.24,5.2,2.89,-0.27,2024-09-06
-DHM Research,Ron DeSantis,REP,0.27,7.6,2.99,-1.1,2024-08-21
-DHM Research,Joel Skousen,UNK,0.21,7.6,2.99,-1.1,2024-08-21
-DHM Research,Al Gore,GRE,0.27,7.6,2.99,-1.1,2024-08-21
-DHM Research,Glenn Youngkin,IND,0.13,7.6,2.99,-1.1,2024-08-21
-DHM Research,Joe Biden,REP,0.09,7.6,2.99,-1.1,2024-08-21
-Manhattan Institute,Josh Shapiro,OTH,0.29,8.2,2.93,-0.34,2024-08-18
-Manhattan Institute,Joel Skousen,DEM,0.19,8.2,2.93,-0.34,2024-08-18
-Manhattan Institute,Claudia De La Cruz,OTH,0.46,8.2,2.93,-0.34,2024-08-18
-Lord Ashcroft Polls,Joel Skousen,LIB,0.17,7.8,2.96,-0.76,2024-09-21
-Lord Ashcroft Polls,Cornel West,GRE,0.38,7.8,2.96,-0.76,2024-09-21
-Lord Ashcroft Polls,Hillary Rodham Clinton,IND,0.37,7.8,2.96,-0.76,2024-09-21
-Bendixen & Amandi International,Jill Stein,REP,0.31,5.3,2.76,-0.99,2024-08-22
-Bendixen & Amandi International,Mark Kelly,REP,0.39,5.3,2.76,-0.99,2024-08-22
-Bendixen & Amandi International,Dean Phillips,CON,0.12,5.3,2.76,-0.99,2024-08-22
-PureSpectrum,JD Vance,DEM,0.23,8.3,2.79,-1.05,2024-08-24
-PureSpectrum,Mark Kelly,UNK,0.25,8.3,2.79,-1.05,2024-08-24
-PureSpectrum,Chase Oliver,OTH,0.06,8.3,2.79,-1.05,2024-08-24
-PureSpectrum,Michelle Obama,GRE,0.26,8.3,2.79,-1.05,2024-08-24
-PureSpectrum,Larry Hogan,IND,0.14,8.3,2.79,-1.05,2024-08-24
-Split Ticket/Data for Progress,Mitt Romney,UNK,0.24,7.7,2.85,-0.61,2024-08-25
-Split Ticket/Data for Progress,Andy Beshear,REP,0.21,7.7,2.85,-0.61,2024-08-25
-Split Ticket/Data for Progress,Chris Sununu,GRE,0.13,7.7,2.85,-0.61,2024-08-25
-Split Ticket/Data for Progress,Mark Kelly,IND,0.16,7.7,2.85,-0.61,2024-08-25
-Split Ticket/Data for Progress,Jill Stein,OTH,0.19,7.7,2.85,-0.61,2024-08-25
-National Public Affairs,Shiva Ayyadurai,REP,0.18,6,2.95,-0.42,2024-07-28
-National Public Affairs,Mark Cuban,IND,0.32,6,2.95,-0.42,2024-07-28
-National Public Affairs,Bernie Sanders,LIB,0.24,6,2.95,-0.42,2024-07-28
-National Public Affairs,Elizabeth Ann Warren,OTH,0.06,6,2.95,-0.42,2024-07-28
-1983 Labs,Andy Beshear,GRE,0.08,7.8,2.76,-0.08,2024-09-07
-1983 Labs,Donald Trump Jr.,REP,0.36,7.8,2.76,-0.08,2024-09-07
-1983 Labs,Liz Cheney,REP,0.36,7.8,2.76,-0.08,2024-09-07
-1892 Polling,Bernie Sanders,REP,0.47,9.2,2.92,-0.65,2024-09-09
-1892 Polling,Randall A. Terry,DEM,0.2,9.2,2.92,-0.65,2024-09-09
-1892 Polling,Chase Oliver,DEM,0.17,9.2,2.92,-0.65,2024-09-09
-University of Texas at Tyler,"Joe Manchin, III",REP,0.06,5.2,2.95,-0.9,2024-09-17
-University of Texas at Tyler,Michelle Obama,PSL,0.2,5.2,2.95,-0.9,2024-09-17
-University of Texas at Tyler,Mitt Romney,IND,0.16,5.2,2.95,-0.9,2024-09-17
-University of Texas at Tyler,Joel Skousen,LIB,0.23,5.2,2.95,-0.9,2024-09-17
-University of Texas at Tyler,Lars Mapstead,OTH,0.17,5.2,2.95,-0.9,2024-09-17
-University of Texas at Tyler,Joseph Kishore,REP,0.15,5.2,2.95,-0.9,2024-09-17
-P2 Insights,Gretchen Whitmer,LIB,0.3,6.7,2.97,-1.08,2024-08-11
-P2 Insights,Amy Klobuchar,OTH,0.32,6.7,2.97,-1.08,2024-08-11
-P2 Insights,Liz Cheney,LIB,0.27,6.7,2.97,-1.08,2024-08-11
-Innovative Research Group,Glenn Youngkin,REP,0.27,8.9,2.71,-0.23,2024-08-28
-Innovative Research Group,Mark Cuban,GRE,0.4,8.9,2.71,-0.23,2024-08-28
-Innovative Research Group,Ron DeSantis,GRE,0.17,8.9,2.71,-0.23,2024-08-28
-Innovative Research Group,Tim Scott,IND,0.11,8.9,2.71,-0.23,2024-08-28
-SSRS,Shiva Ayyadurai,DEM,0.17,9.7,2.83,-0.25,2024-08-04
-SSRS,Mark Kelly,UNK,0.15,9.7,2.83,-0.25,2024-08-04
-SSRS,Mitt Romney,CON,0.24,9.7,2.83,-0.25,2024-08-04
-SSRS,Donald Trump,REP,0.13,9.7,2.83,-0.25,2024-08-04
-SSRS,"Joe Manchin, III",OTH,0.29,9.7,2.83,-0.25,2024-08-04
-The Tyson Group,Ron DeSantis,OTH,0.12,5.5,2.89,-1.48,2024-09-17
-The Tyson Group,Claudia De La Cruz,OTH,0.22,5.5,2.89,-1.48,2024-09-17
-The Tyson Group,J.B. Pritzker,REP,0.21,5.5,2.89,-1.48,2024-09-17
-The Tyson Group,Mike Pence,OTH,0.19,5.5,2.89,-1.48,2024-09-17
-The Tyson Group,"Joe Manchin, III",UNK,0.13,5.5,2.89,-1.48,2024-09-17
-KAConsulting LLC,Liz Cheney,IND,0.14,5.3,2.79,-0.91,2024-10-18
-KAConsulting LLC,Ron DeSantis,REP,0.2,5.3,2.79,-0.91,2024-10-18
-KAConsulting LLC,Raphael Warnock,REP,0.23,5.3,2.79,-0.91,2024-10-18
-KAConsulting LLC,Mitt Romney,LIB,0.11,5.3,2.79,-0.91,2024-10-18
-KAConsulting LLC,Chris Sununu,DEM,0.14,5.3,2.79,-0.91,2024-10-18
-KAConsulting LLC,Vivek G. Ramaswamy,DEM,0.13,5.3,2.79,-0.91,2024-10-18
-Prime Group,Taylor Swift,GRE,0.22,10,2.88,-1.03,2024-08-28
-Prime Group,Roy A. Cooper,REP,0.08,10,2.88,-1.03,2024-08-28
-Prime Group,Vivek G. Ramaswamy,GRE,0.24,10,2.88,-1.03,2024-08-28
-Prime Group,Joel Skousen,REP,0.07,10,2.88,-1.03,2024-08-28
-Prime Group,Gretchen Whitmer,OTH,0.14,10,2.88,-1.03,2024-08-28
-Prime Group,Randall A. Terry,REP,0.14,10,2.88,-1.03,2024-08-28
-Digital Research,Andy Cohen,GRE,0.18,7.7,2.91,-0.16,2024-09-30
-Digital Research,Randall A. Terry,IND,0.14,7.7,2.91,-0.16,2024-09-30
-Digital Research,Kanye West,LIB,0.13,7.7,2.91,-0.16,2024-09-30
-Digital Research,Ted Cruz,OTH,0.14,7.7,2.91,-0.16,2024-09-30
-Digital Research,"Joe Manchin, III",GRE,0.14,7.7,2.91,-0.16,2024-09-30
-Digital Research,Vivek G. Ramaswamy,DEM,0.19,7.7,2.91,-0.16,2024-09-30
-Meeting Street Insights,Gretchen Whitmer,LIB,0.22,8.6,2.76,-1.07,2024-07-27
-Meeting Street Insights,Josh Shapiro,LIB,0.19,8.6,2.76,-1.07,2024-07-27
-Meeting Street Insights,Lars Mapstead,DEM,0.24,8.6,2.76,-1.07,2024-07-27
-Meeting Street Insights,Mark Cuban,OTH,0.2,8.6,2.76,-1.07,2024-07-27
-Faucheux Strategies,Kamala Harris,UNK,0.36,8.6,2.81,-0.97,2024-09-08
-Faucheux Strategies,Jill Stein,REP,0.18,8.6,2.81,-0.97,2024-09-08
-Faucheux Strategies,Robert F. Kennedy,UNK,0.44,8.6,2.81,-0.97,2024-09-08
-John Zogby Strategies,Randall A. Terry,CON,0.19,5.4,2.88,-1.17,2024-09-27
-John Zogby Strategies,Elizabeth Ann Warren,UNK,0.16,5.4,2.88,-1.17,2024-09-27
-John Zogby Strategies,Raphael Warnock,GRE,0.08,5.4,2.88,-1.17,2024-09-27
-John Zogby Strategies,Josh Shapiro,CON,0.16,5.4,2.88,-1.17,2024-09-27
-John Zogby Strategies,Hillary Rodham Clinton,CON,0.14,5.4,2.88,-1.17,2024-09-27
-John Zogby Strategies,Kamala Harris,REP,0.1,5.4,2.88,-1.17,2024-09-27
-Texas Lyceum,Lars Mapstead,DEM,0.24,9.6,2.87,-1.11,2024-08-19
-Texas Lyceum,Donald Trump,CON,0.17,9.6,2.87,-1.11,2024-08-19
-Texas Lyceum,Raphael Warnock,OTH,0.23,9.6,2.87,-1.11,2024-08-19
-Texas Lyceum,Chris Sununu,DEM,0.2,9.6,2.87,-1.11,2024-08-19
-Hart Research Associates,Cornel West,UNK,0.4,7,2.89,-1.38,2024-08-01
-Hart Research Associates,J.B. Pritzker,PSL,0.36,7,2.89,-1.38,2024-08-01
-Hart Research Associates,Larry Hogan,CON,0.12,7,2.89,-1.38,2024-08-01
-RABA Research,Pete Buttigieg,DEM,0.24,5.4,2.74,-0.17,2024-09-02
-RABA Research,Larry Hogan,REP,0.23,5.4,2.74,-0.17,2024-09-02
-RABA Research,Joel Skousen,OTH,0.36,5.4,2.74,-0.17,2024-09-02
-UpOne Insights/BSG,Chris Sununu,PSL,0.2,9.3,2.77,-0.99,2024-08-23
-UpOne Insights/BSG,JD Vance,CON,0.07,9.3,2.77,-0.99,2024-08-23
-UpOne Insights/BSG,Claudia De La Cruz,GRE,0.31,9.3,2.77,-0.99,2024-08-23
-UpOne Insights/BSG,Josh Shapiro,PSL,0.25,9.3,2.77,-0.99,2024-08-23
-Split Ticket,Dean Phillips,DEM,0.16,8.2,2.92,-1.33,2024-08-24
-Split Ticket,Josh Shapiro,CON,0.19,8.2,2.92,-1.33,2024-08-24
-Split Ticket,Nikki Haley,IND,0.11,8.2,2.92,-1.33,2024-08-24
-Split Ticket,Gretchen Whitmer,OTH,0.2,8.2,2.92,-1.33,2024-08-24
-Split Ticket,Al Gore,OTH,0.17,8.2,2.92,-1.33,2024-08-24
-Split Ticket,Vivek G. Ramaswamy,IND,0.09,8.2,2.92,-1.33,2024-08-24
-New Bridge Strategy/Aspect Strategic,Cornel West,DEM,0.34,7.7,2.97,-0.86,2024-09-20
-New Bridge Strategy/Aspect Strategic,Chris Christie,PSL,0.2,7.7,2.97,-0.86,2024-09-20
-New Bridge Strategy/Aspect Strategic,Joe Biden,REP,0.13,7.7,2.97,-0.86,2024-09-20
-New Bridge Strategy/Aspect Strategic,Gretchen Whitmer,OTH,0.15,7.7,2.97,-0.86,2024-09-20
-New Bridge Strategy/Aspect Strategic,Robert F. Kennedy,LIB,0.08,7.7,2.97,-0.86,2024-09-20
-St. Pete Polls,Randall A. Terry,UNK,0.17,8.8,2.86,-1.34,2024-09-12
-St. Pete Polls,Amy Klobuchar,GRE,0.07,8.8,2.86,-1.34,2024-09-12
-St. Pete Polls,Josh Shapiro,DEM,0.33,8.8,2.86,-1.34,2024-09-12
-St. Pete Polls,Cornel West,LIB,0.22,8.8,2.86,-1.34,2024-09-12
-St. Pete Polls,Hillary Rodham Clinton,LIB,0.16,8.8,2.86,-1.34,2024-09-12
-GS Strategy Group,Kamala Harris,LIB,0.19,9.2,2.81,-0.9,2024-07-29
-GS Strategy Group,Chris Christie,REP,0.19,9.2,2.81,-0.9,2024-07-29
-GS Strategy Group,Charles Ballay,UNK,0.16,9.2,2.81,-0.9,2024-07-29
-GS Strategy Group,Mitt Romney,CON,0.22,9.2,2.81,-0.9,2024-07-29
-GS Strategy Group,Chase Oliver,GRE,0.06,9.2,2.81,-0.9,2024-07-29
-Axis Research,Donald Trump Jr.,OTH,0.11,5.4,2.83,-0.49,2024-08-18
-Axis Research,Bernie Sanders,PSL,0.19,5.4,2.83,-0.49,2024-08-18
-Axis Research,Donald Trump,OTH,0.16,5.4,2.83,-0.49,2024-08-18
-Axis Research,Gretchen Whitmer,UNK,0.18,5.4,2.83,-0.49,2024-08-18
-Axis Research,Dean Phillips,OTH,0.19,5.4,2.83,-0.49,2024-08-18
-Rasmussen,Mark Kelly,GRE,0.16,4.7,2.94,-0.24,2024-07-28
-Rasmussen,Gavin Newsom,REP,0.16,4.7,2.94,-0.24,2024-07-28
-Rasmussen,Randall A. Terry,OTH,0.24,4.7,2.94,-0.24,2024-07-28
-Rasmussen,Chris Christie,OTH,0.09,4.7,2.94,-0.24,2024-07-28
-Rasmussen,Charles Ballay,OTH,0.18,4.7,2.94,-0.24,2024-07-28
-The Citadel,Michelle Obama,GRE,0.37,6.3,2.84,-0.26,2024-08-07
-The Citadel,Tim Scott,LIB,0.2,6.3,2.84,-0.26,2024-08-07
-The Citadel,Gavin Newsom,DEM,0.23,6.3,2.84,-0.26,2024-08-07
-Chism Strategies,Andy Beshear,OTH,0.26,6.8,2.91,-0.08,2024-09-21
-Chism Strategies,Jill Stein,OTH,0.13,6.8,2.91,-0.08,2024-09-21
-Chism Strategies,Glenn Youngkin,GRE,0.2,6.8,2.91,-0.08,2024-09-21
-Chism Strategies,J.B. Pritzker,UNK,0.11,6.8,2.91,-0.08,2024-09-21
-Chism Strategies,Chris Sununu,DEM,0.14,6.8,2.91,-0.08,2024-09-21
-Dan Jones,Lars Mapstead,DEM,0.3,8,2.9,-0.58,2024-08-04
-Dan Jones,Dean Phillips,DEM,0.1,8,2.9,-0.58,2024-08-04
-Dan Jones,Charles Ballay,UNK,0.37,8,2.9,-0.58,2024-08-04
-Dan Jones,Ted Cruz,GRE,0.08,8,2.9,-0.58,2024-08-04
-Dan Jones,Hillary Rodham Clinton,LIB,0.11,8,2.9,-0.58,2024-08-04
-Target Insyght,Pete Buttigieg,IND,0.16,9.5,2.87,-0.29,2024-09-11
-Target Insyght,Chris Christie,OTH,0.1,9.5,2.87,-0.29,2024-09-11
-Target Insyght,Raphael Warnock,UNK,0.21,9.5,2.87,-0.29,2024-09-11
-Target Insyght,Donald Trump,IND,0.29,9.5,2.87,-0.29,2024-09-11
-Target Insyght,Josh Shapiro,REP,0.22,9.5,2.87,-0.29,2024-09-11
-VCreek/AMG,Chase Oliver,LIB,0.07,4.6,2.83,-1.19,2024-08-22
-VCreek/AMG,Mike Pence,REP,0.34,4.6,2.83,-1.19,2024-08-22
-VCreek/AMG,Donald Trump Jr.,PSL,0.2,4.6,2.83,-1.19,2024-08-22
-VCreek/AMG,Donald Trump,LIB,0.3,4.6,2.83,-1.19,2024-08-22
-Cygnal/Aspect Strategic,Pete Buttigieg,UNK,0.15,7.4,2.77,-0.39,2024-08-19
-Cygnal/Aspect Strategic,Vivek G. Ramaswamy,GRE,0.2,7.4,2.77,-0.39,2024-08-19
-Cygnal/Aspect Strategic,Hillary Rodham Clinton,REP,0.32,7.4,2.77,-0.39,2024-08-19
-Cygnal/Aspect Strategic,Mark Cuban,DEM,0.25,7.4,2.77,-0.39,2024-08-19
-Tulchin Research,Mark Cuban,REP,0.1,7.1,2.79,-0.05,2024-08-24
-Tulchin Research,Chase Oliver,LIB,0.34,7.1,2.79,-0.05,2024-08-24
-Tulchin Research,Randall A. Terry,LIB,0.46,7.1,2.79,-0.05,2024-08-24
-NORC,Ron DeSantis,UNK,0.11,4.8,2.9,-0.07,2024-07-23
-NORC,Nikki Haley,GRE,0.1,4.8,2.9,-0.07,2024-07-23
-NORC,Chris Sununu,DEM,0.12,4.8,2.9,-0.07,2024-07-23
-NORC,Chris Christie,IND,0.12,4.8,2.9,-0.07,2024-07-23
-NORC,Hillary Rodham Clinton,PSL,0.18,4.8,2.9,-0.07,2024-07-23
-NORC,Chase Oliver,IND,0.19,4.8,2.9,-0.07,2024-07-23
-Abacus Data,Gavin Newsom,REP,0.23,7,2.85,-1.26,2024-08-13
-Abacus Data,Bernie Sanders,PSL,0.21,7,2.85,-1.26,2024-08-13
-Abacus Data,Robert F. Kennedy,REP,0.2,7,2.85,-1.26,2024-08-13
-Abacus Data,Marco Rubio,LIB,0.29,7,2.85,-1.26,2024-08-13
-Let's Preserve the American Dream,Donald Trump,DEM,0.23,7.9,2.89,-0.98,2024-09-24
-Let's Preserve the American Dream,Donald Trump Jr.,GRE,0.17,7.9,2.89,-0.98,2024-09-24
-Let's Preserve the American Dream,Andy Cohen,DEM,0.14,7.9,2.89,-0.98,2024-09-24
-Let's Preserve the American Dream,Pete Buttigieg,REP,0.15,7.9,2.89,-0.98,2024-09-24
-Let's Preserve the American Dream,Nikki Haley,LIB,0.05,7.9,2.89,-0.98,2024-09-24
-Let's Preserve the American Dream,Ted Cruz,PSL,0.2,7.9,2.89,-0.98,2024-09-24
-Ohio Northern University Institute for Civics and Public Policy,Lars Mapstead,PSL,0.07,9.2,2.85,-1.3,2024-09-10
-Ohio Northern University Institute for Civics and Public Policy,Bernie Sanders,CON,0.09,9.2,2.85,-1.3,2024-09-10
-Ohio Northern University Institute for Civics and Public Policy,Kanye West,OTH,0.27,9.2,2.85,-1.3,2024-09-10
-Ohio Northern University Institute for Civics and Public Policy,Shiva Ayyadurai,IND,0.06,9.2,2.85,-1.3,2024-09-10
-Ohio Northern University Institute for Civics and Public Policy,Randall A. Terry,LIB,0.17,9.2,2.85,-1.3,2024-09-10
-Ohio Northern University Institute for Civics and Public Policy,Liz Cheney,CON,0.2,9.2,2.85,-1.3,2024-09-10
-Murphy Nasica & Associates,Mitt Romney,REP,0.11,6.1,2.86,-0.33,2024-09-16
-Murphy Nasica & Associates,Pete Buttigieg,CON,0.3,6.1,2.86,-0.33,2024-09-16
-Murphy Nasica & Associates,Elizabeth Ann Warren,OTH,0.23,6.1,2.86,-0.33,2024-09-16
-Murphy Nasica & Associates,Raphael Warnock,LIB,0.21,6.1,2.86,-0.33,2024-09-16
-Premise,Ted Cruz,REP,0.17,8.8,2.71,-0.37,2024-09-12
-Premise,Elizabeth Ann Warren,PSL,0.19,8.8,2.71,-0.37,2024-09-12
-Premise,Donald Trump,CON,0.1,8.8,2.71,-0.37,2024-09-12
-Premise,Raphael Warnock,CON,0.16,8.8,2.71,-0.37,2024-09-12
-Premise,Joe Biden,OTH,0.15,8.8,2.71,-0.37,2024-09-12
-Premise,JD Vance,OTH,0.08,8.8,2.71,-0.37,2024-09-12
-Zogby,Taylor Swift,LIB,0.13,5.8,2.73,-0.55,2024-10-16
-Zogby,Raphael Warnock,REP,0.48,5.8,2.73,-0.55,2024-10-16
-Zogby,Chris Christie,IND,0.24,5.8,2.73,-0.55,2024-10-16
-Causeway Solutions,Bernie Sanders,CON,0.29,4.7,2.82,-0.95,2024-09-24
-Causeway Solutions,Mark Cuban,DEM,0.31,4.7,2.82,-0.95,2024-09-24
-Causeway Solutions,Randall A. Terry,DEM,0.08,4.7,2.82,-0.95,2024-09-24
-Causeway Solutions,Roy A. Cooper,LIB,0.06,4.7,2.82,-0.95,2024-09-24
-Causeway Solutions,J.B. Pritzker,IND,0.23,4.7,2.82,-0.95,2024-09-24
-Data Viewpoint,Mitt Romney,LIB,0.09,9.8,2.73,-1.18,2024-08-20
-Data Viewpoint,Chris Christie,PSL,0.21,9.8,2.73,-1.18,2024-08-20
-Data Viewpoint,Donald Trump,LIB,0.26,9.8,2.73,-1.18,2024-08-20
-Data Viewpoint,Elizabeth Ann Warren,OTH,0.25,9.8,2.73,-1.18,2024-08-20
-Gravis Marketing (post 2020),Nikki Haley,GRE,0.21,4.5,2.78,-1.08,2024-08-04
-Gravis Marketing (post 2020),Larry Hogan,IND,0.16,4.5,2.78,-1.08,2024-08-04
-Gravis Marketing (post 2020),Bernie Sanders,CON,0.08,4.5,2.78,-1.08,2024-08-04
-Gravis Marketing (post 2020),Gavin Newsom,PSL,0.15,4.5,2.78,-1.08,2024-08-04
-Gravis Marketing (post 2020),Marco Rubio,IND,0.1,4.5,2.78,-1.08,2024-08-04
-Gravis Marketing (post 2020),Mike Pence,LIB,0.17,4.5,2.78,-1.08,2024-08-04
-ABC/Washington Post,Shiva Ayyadurai,IND,0.07,5.1,2.74,-0.02,2024-08-08
-ABC/Washington Post,Lars Mapstead,UNK,0.18,5.1,2.74,-0.02,2024-08-08
-ABC/Washington Post,Al Gore,OTH,0.14,5.1,2.74,-0.02,2024-08-08
-ABC/Washington Post,Josh Shapiro,LIB,0.11,5.1,2.74,-0.02,2024-08-08
-ABC/Washington Post,Joe Biden,REP,0.26,5.1,2.74,-0.02,2024-08-08
-ABC/Washington Post,Glenn Youngkin,CON,0.12,5.1,2.74,-0.02,2024-08-08
-Project Home Fire,Marco Rubio,REP,0.08,5.3,2.73,-0.79,2024-09-20
-Project Home Fire,Liz Cheney,CON,0.31,5.3,2.73,-0.79,2024-09-20
-Project Home Fire,"Joe Manchin, III",UNK,0.28,5.3,2.73,-0.79,2024-09-20
-Project Home Fire,Andy Cohen,OTH,0.31,5.3,2.73,-0.79,2024-09-20
-Cor Strategies,Nikki Haley,CON,0.39,7.7,2.76,-0.29,2024-10-06
-Cor Strategies,Pete Buttigieg,CON,0.08,7.7,2.76,-0.29,2024-10-06
-Cor Strategies,"Joe Manchin, III",DEM,0.23,7.7,2.76,-0.29,2024-10-06
-Cor Strategies,Donald Trump,OTH,0.25,7.7,2.76,-0.29,2024-10-06
-Schoen Cooperman,Amy Klobuchar,DEM,0.16,9.3,2.86,-1.01,2024-09-11
-Schoen Cooperman,J.B. Pritzker,CON,0.19,9.3,2.86,-1.01,2024-09-11
-Schoen Cooperman,Glenn Youngkin,REP,0.16,9.3,2.86,-1.01,2024-09-11
-Schoen Cooperman,Ron DeSantis,CON,0.25,9.3,2.86,-1.01,2024-09-11
-Schoen Cooperman,Nikki Haley,UNK,0.11,9.3,2.86,-1.01,2024-09-11
-Opinion Diagnostics,Raphael Warnock,LIB,0.27,8.3,2.76,-0.88,2024-07-22
-Opinion Diagnostics,Hillary Rodham Clinton,GRE,0.12,8.3,2.76,-0.88,2024-07-22
-Opinion Diagnostics,Bernie Sanders,DEM,0.24,8.3,2.76,-0.88,2024-07-22
-Opinion Diagnostics,Chase Oliver,REP,0.13,8.3,2.76,-0.88,2024-07-22
-Opinion Diagnostics,Andy Cohen,REP,0.1,8.3,2.76,-0.88,2024-07-22
-VoteTXT,Nikki Haley,DEM,0.32,9.3,2.74,-1.1,2024-09-22
-VoteTXT,Raphael Warnock,PSL,0.2,9.3,2.74,-1.1,2024-09-22
-VoteTXT,JD Vance,REP,0.2,9.3,2.74,-1.1,2024-09-22
-VoteTXT,Josh Shapiro,LIB,0.24,9.3,2.74,-1.1,2024-09-22
-Metropolitan Research,Elizabeth Ann Warren,GRE,0.16,8.3,2.97,-0.5,2024-09-05
-Metropolitan Research,Mitt Romney,PSL,0.18,8.3,2.97,-0.5,2024-09-05
-Metropolitan Research,Cornel West,OTH,0.18,8.3,2.97,-0.5,2024-09-05
-Metropolitan Research,Dean Phillips,UNK,0.06,8.3,2.97,-0.5,2024-09-05
-Metropolitan Research,J.B. Pritzker,CON,0.15,8.3,2.97,-0.5,2024-09-05
-Metropolitan Research,Chase Oliver,REP,0.17,8.3,2.97,-0.5,2024-09-05
-OH Predictive Insights / MBQF,Taylor Swift,PSL,0.12,9.1,2.79,-0.35,2024-10-09
-OH Predictive Insights / MBQF,Joel Skousen,UNK,0.32,9.1,2.79,-0.35,2024-10-09
-OH Predictive Insights / MBQF,JD Vance,IND,0.36,9.1,2.79,-0.35,2024-10-09
-OH Predictive Insights / MBQF,Mark Kelly,IND,0.14,9.1,2.79,-0.35,2024-10-09
-Differentiators,Al Gore,PSL,0.22,5.8,2.79,-1.47,2024-09-26
-Differentiators,Donald Trump,REP,0.11,5.8,2.79,-1.47,2024-09-26
-Differentiators,"Joe Manchin, III",LIB,0.05,5.8,2.79,-1.47,2024-09-26
-Differentiators,Dean Phillips,UNK,0.15,5.8,2.79,-1.47,2024-09-26
-Differentiators,Cornel West,GRE,0.19,5.8,2.79,-1.47,2024-09-26
-Differentiators,Larry Hogan,DEM,0.15,5.8,2.79,-1.47,2024-09-26
-Blueprint Polling,Kanye West,UNK,0.07,8,2.93,-0.15,2024-07-31
-Blueprint Polling,Joe Biden,PSL,0.14,8,2.93,-0.15,2024-07-31
-Blueprint Polling,Chris Sununu,PSL,0.11,8,2.93,-0.15,2024-07-31
-Blueprint Polling,Andy Cohen,CON,0.27,8,2.93,-0.15,2024-07-31
-Blueprint Polling,Charles Ballay,IND,0.16,8,2.93,-0.15,2024-07-31
-Blueprint Polling,Robert F. Kennedy,OTH,0.13,8,2.93,-0.15,2024-07-31
-U. Massachusetts - Lowell,Michelle Obama,OTH,0.13,9.8,2.83,-0.24,2024-09-13
-U. Massachusetts - Lowell,Chase Oliver,IND,0.12,9.8,2.83,-0.24,2024-09-13
-U. Massachusetts - Lowell,Donald Trump Jr.,DEM,0.27,9.8,2.83,-0.24,2024-09-13
-U. Massachusetts - Lowell,Charles Ballay,DEM,0.15,9.8,2.83,-0.24,2024-09-13
-U. Massachusetts - Lowell,Mark Kelly,UNK,0.19,9.8,2.83,-0.24,2024-09-13
-Benenson,Josh Shapiro,IND,0.21,7,2.97,-0.52,2024-08-04
-Benenson,Lars Mapstead,GRE,0.14,7,2.97,-0.52,2024-08-04
-Benenson,Chase Oliver,IND,0.18,7,2.97,-0.52,2024-08-04
-Benenson,Shiva Ayyadurai,PSL,0.12,7,2.97,-0.52,2024-08-04
-Benenson,Chris Christie,OTH,0.19,7,2.97,-0.52,2024-08-04
-Benenson,Al Gore,UNK,0.13,7,2.97,-0.52,2024-08-04
-Florida Atlantic University,Roy A. Cooper,REP,0.16,8.7,2.98,-1.49,2024-10-10
-Florida Atlantic University,JD Vance,GRE,0.17,8.7,2.98,-1.49,2024-10-10
-Florida Atlantic University,Donald Trump Jr.,REP,0.18,8.7,2.98,-1.49,2024-10-10
-Florida Atlantic University,Glenn Youngkin,REP,0.16,8.7,2.98,-1.49,2024-10-10
-Florida Atlantic University,Robert F. Kennedy,CON,0.09,8.7,2.98,-1.49,2024-10-10
-Florida Atlantic University,Andy Cohen,DEM,0.22,8.7,2.98,-1.49,2024-10-10
-Fleming & Associates,Vivek G. Ramaswamy,DEM,0.18,6.4,2.7,-0.82,2024-07-27
-Fleming & Associates,Gretchen Whitmer,OTH,0.15,6.4,2.7,-0.82,2024-07-27
-Fleming & Associates,Marco Rubio,PSL,0.18,6.4,2.7,-0.82,2024-07-27
-Fleming & Associates,Bernie Sanders,CON,0.13,6.4,2.7,-0.82,2024-07-27
-Fleming & Associates,Joseph Kishore,REP,0.1,6.4,2.7,-0.82,2024-07-27
-Fleming & Associates,Elizabeth Ann Warren,CON,0.18,6.4,2.7,-0.82,2024-07-27
-Probolsky Research,Glenn Youngkin,DEM,0.18,10,2.95,-0.45,2024-07-26
-Probolsky Research,Al Gore,OTH,0.29,10,2.95,-0.45,2024-07-26
-Probolsky Research,Cory A. Booker,UNK,0.12,10,2.95,-0.45,2024-07-26
-Probolsky Research,Amy Klobuchar,CON,0.16,10,2.95,-0.45,2024-07-26
-Probolsky Research,Chris Sununu,UNK,0.09,10,2.95,-0.45,2024-07-26
-PEM Management Corporation,Taylor Swift,OTH,0.23,6.2,2.89,-1.25,2024-08-22
-PEM Management Corporation,Larry Hogan,OTH,0.32,6.2,2.89,-1.25,2024-08-22
-PEM Management Corporation,"Joe Manchin, III",PSL,0.32,6.2,2.89,-1.25,2024-08-22
-Harris Poll,Chase Oliver,DEM,0.18,7.6,2.74,-0.14,2024-09-30
-Harris Poll,Mark Cuban,PSL,0.25,7.6,2.74,-0.14,2024-09-30
-Harris Poll,Ted Cruz,REP,0.14,7.6,2.74,-0.14,2024-09-30
-Harris Poll,Ron DeSantis,UNK,0.14,7.6,2.74,-0.14,2024-09-30
-Harris Poll,Bernie Sanders,IND,0.12,7.6,2.74,-0.14,2024-09-30
-NewsNation/Decision Desk HQ,J.B. Pritzker,PSL,0.1,9.2,2.7,-0.01,2024-09-04
-NewsNation/Decision Desk HQ,Joe Biden,DEM,0.33,9.2,2.7,-0.01,2024-09-04
-NewsNation/Decision Desk HQ,Josh Shapiro,PSL,0.16,9.2,2.7,-0.01,2024-09-04
-NewsNation/Decision Desk HQ,Chris Christie,PSL,0.24,9.2,2.7,-0.01,2024-09-04
-The Political Matrix/The Listener Group,Pete Buttigieg,LIB,0.47,5.2,2.73,-0.82,2024-09-19
-The Political Matrix/The Listener Group,Roy A. Cooper,LIB,0.25,5.2,2.73,-0.82,2024-09-19
-The Political Matrix/The Listener Group,Al Gore,UNK,0.08,5.2,2.73,-0.82,2024-09-19
-"Cor Services, Inc.",Larry Hogan,UNK,0.1,7,2.76,-1.11,2024-09-13
-"Cor Services, Inc.",Chris Christie,PSL,0.06,7,2.76,-1.11,2024-09-13
-"Cor Services, Inc.",J.B. Pritzker,PSL,0.18,7,2.76,-1.11,2024-09-13
-"Cor Services, Inc.",Ron DeSantis,REP,0.22,7,2.76,-1.11,2024-09-13
-"Cor Services, Inc.",Mark Cuban,DEM,0.2,7,2.76,-1.11,2024-09-13
-"Cor Services, Inc.",Jill Stein,PSL,0.17,7,2.76,-1.11,2024-09-13
+pollster,numeric_grade,pollscore,transparency_score,candidate_name,pct,date
+Christopher Newport U.,2.9,-0.7,5.2,Kamala Harris,45.58,2024-07-25
+Marist,2.9,-0.9,5,Kamala Harris,56.44,2024-07-09
+McCourtney Institute/YouGov,2.8,-0.3,8.7,Kamala Harris,51.88,2024-08-12
+Muhlenberg,2.8,-1.5,4.6,Kamala Harris,49.32,2024-08-25
+YouGov,2.8,-0.1,5.2,Kamala Harris,56.87,2024-08-24
+Marquette Law School,3,-0.6,6.3,Kamala Harris,52.08,2024-09-12
+AtlasIntel,2.8,-0.7,8.9,Kamala Harris,49.75,2024-07-05
+Beacon/Shaw,2.9,-1.5,9.5,Kamala Harris,50.76,2024-08-30
+Washington Post/George Mason University,2.9,-0.2,7,Kamala Harris,40.58,2024-07-17
+McCourtney Institute/YouGov,2.7,-1.4,5,Kamala Harris,64.16,2024-09-14
+YouGov,2.8,-0.7,8.1,Kamala Harris,45.93,2024-08-13
+Emerson,2.9,-1,8.8,Kamala Harris,49.12,2024-09-01
+SurveyUSA,2.8,-1,4.8,Donald Trump,45.63,2024-09-15
+The Washington Post,2.9,-0.6,9.3,Kamala Harris,55.33,2024-08-01
+McCourtney Institute/YouGov,2.7,-1,7.2,Donald Trump,52.33,2024-08-18
+YouGov/Center for Working Class Politics,3,-0.2,5.2,Donald Trump,49.18,2024-09-05
+Siena/NYT,3,-0.2,7.7,Kamala Harris,46.99,2024-08-06
+Echelon Insights,3,-1.3,9.7,Donald Trump,41.43,2024-09-05
+Data Orbital,2.9,-0.7,9.8,Kamala Harris,55.04,2024-07-22
+MassINC Polling Group,2.8,-0.1,8.8,Kamala Harris,46.12,2024-08-05
+Siena/NYT,2.8,-0.3,9.2,Donald Trump,50.01,2024-07-28
+Ipsos,2.9,-1.3,9.5,Donald Trump,51.62,2024-09-08
+YouGov,2.8,-0.7,6.4,Donald Trump,48.04,2024-07-03
+YouGov/Center for Working Class Politics,3,-1,8.5,Donald Trump,46.6,2024-07-31
+YouGov Blue,2.8,-1.2,9.9,Kamala Harris,41.16,2024-08-20
+Emerson,3,-0.9,7.1,Donald Trump,49.19,2024-08-06
+Quinnipiac,2.8,-0.7,5,Donald Trump,41.4,2024-07-22
+Beacon/Shaw,2.8,-0.3,9.3,Donald Trump,52.22,2024-07-28
+SurveyUSA,2.8,-1.2,8.1,Kamala Harris,47.48,2024-08-08
+YouGov,2.7,-0.3,7,Kamala Harris,49.71,2024-07-06
+Washington Post/George Mason University,2.9,-1.5,8,Kamala Harris,59.65,2024-08-06
+McCourtney Institute/YouGov,2.7,-0.6,8.6,Donald Trump,35.7,2024-09-27
+Data Orbital,2.9,-1.2,9.2,Kamala Harris,49.65,2024-09-20
+Echelon Insights,3,-0.9,7.2,Donald Trump,47.07,2024-07-15
+SurveyUSA/High Point University,2.9,-1.4,8.3,Donald Trump,54.75,2024-07-24
+Marist,3,-0.2,9.8,Kamala Harris,44.35,2024-08-26
+CNN/SSRS,2.8,-1.3,7.1,Kamala Harris,48.93,2024-09-09
+Suffolk,2.9,-0.9,6.5,Donald Trump,46.84,2024-08-15
+Washington Post/George Mason University,2.8,-1.1,6.3,Donald Trump,52.81,2024-08-02
+SurveyUSA/High Point University,2.9,-0.9,6,Kamala Harris,48.25,2024-08-27
+McCourtney Institute/YouGov,2.7,-0.3,5,Kamala Harris,52.39,2024-08-05
+MassINC Polling Group,3,-0.1,7.9,Donald Trump,48.26,2024-08-05
+Ipsos,2.9,-1,9.3,Donald Trump,46.75,2024-08-16
+SurveyUSA/High Point University,2.8,-0.2,8.8,Kamala Harris,48.11,2024-07-27
+Ipsos,2.8,-1,7.2,Kamala Harris,48.57,2024-09-01
+Quinnipiac,2.9,-0.5,7.4,Kamala Harris,42.95,2024-08-08
+Marquette Law School,3,-1.3,6,Kamala Harris,60.5,2024-09-21
+YouGov/Center for Working Class Politics,2.9,-0.3,9.3,Donald Trump,58.17,2024-07-19
+Selzer,2.8,-0.8,9,Kamala Harris,48.43,2024-08-29
+Washington Post/George Mason University,2.9,-0.3,5.1,Kamala Harris,50.7,2024-07-14
+Marist,2.9,-0.3,8.8,Donald Trump,44.97,2024-09-22
+Data Orbital,2.8,-1.2,7.9,Kamala Harris,51.37,2024-07-20
+SurveyUSA,2.9,-0.3,7.9,Kamala Harris,40.93,2024-09-28
+YouGov,2.7,-0.2,6,Kamala Harris,51.87,2024-07-29
+The Washington Post,2.8,-0.3,4.8,Kamala Harris,40.45,2024-07-24
+Suffolk,2.9,-0.3,6.1,Kamala Harris,44.45,2024-08-05
+Suffolk,2.9,-0.5,8.3,Kamala Harris,60.83,2024-09-24
+Siena,2.8,-0,4.7,Kamala Harris,49.81,2024-08-01
+Selzer,3,-1.3,10,Kamala Harris,49.96,2024-08-22
+Beacon/Shaw,2.8,-0.3,6.8,Kamala Harris,48.59,2024-07-15
+McCourtney Institute/YouGov,2.9,-0.6,4.9,Kamala Harris,48.31,2024-09-26
+YouGov,3,-0.3,6.5,Kamala Harris,54.85,2024-07-08
+SurveyUSA/High Point University,3,-1.1,6,Donald Trump,50.18,2024-07-02
+Emerson,3,-1.4,8.5,Kamala Harris,53.43,2024-09-16
+Ipsos,2.8,-0.9,9.3,Kamala Harris,60.75,2024-08-01
+Echelon Insights,2.8,-0.3,8.9,Donald Trump,57.39,2024-07-26
+YouGov/Center for Working Class Politics,2.9,-0.2,7.6,Kamala Harris,46.95,2024-09-17
+Suffolk,2.7,-0.7,9.8,Kamala Harris,51.65,2024-07-06
+Selzer,2.9,-0.7,8.2,Donald Trump,52.84,2024-08-11
+Suffolk,2.9,-0.9,7.9,Donald Trump,47.76,2024-08-01
+Ipsos,2.9,-0.5,8,Kamala Harris,46.24,2024-07-06
+Ipsos,2.8,-0.3,7.8,Kamala Harris,51.43,2024-08-17
+YouGov/Center for Working Class Politics,3,-0.5,6.5,Donald Trump,58.83,2024-07-17
+Ipsos,2.9,-0.2,9.4,Kamala Harris,49.08,2024-07-23
+Echelon Insights,2.8,-0.4,8.5,Donald Trump,50.97,2024-07-08
+Echelon Insights,2.7,-0.4,6.5,Kamala Harris,40.71,2024-09-01
+McCourtney Institute/YouGov,2.8,-1.3,7.8,Kamala Harris,56.51,2024-07-13
+Selzer,2.8,-1.1,5.7,Kamala Harris,48.29,2024-09-07
+U. North Florida,2.9,-0.5,5.3,Kamala Harris,53.57,2024-07-23
+YouGov Blue,2.8,-0.5,9.3,Kamala Harris,44.87,2024-09-18
+The Washington Post,2.9,-0.3,4.7,Donald Trump,46.11,2024-09-05
+Christopher Newport U.,2.9,-0.8,7.9,Donald Trump,62.8,2024-09-23
+YouGov/Center for Working Class Politics,2.8,-1.3,7.2,Donald Trump,59.98,2024-07-17
+YouGov Blue,2.8,-1,4.8,Donald Trump,45.48,2024-08-17
+YouGov/Center for Working Class Politics,2.7,-1,4.6,Kamala Harris,54.46,2024-09-17
+Echelon Insights,2.8,-0.9,8.6,Donald Trump,44.69,2024-09-01
+Data Orbital,2.7,-1.5,6.1,Donald Trump,49,2024-09-06
+Data Orbital,2.9,-0.1,7.6,Kamala Harris,54.29,2024-09-04
+Marquette Law School,2.8,-0.6,7,Kamala Harris,48.64,2024-08-01
+Siena,2.9,-0.5,5.4,Donald Trump,57.35,2024-07-05
+Siena/NYT,2.9,-0.8,10,Kamala Harris,53.97,2024-08-14
+Marquette Law School,2.8,-0.9,8.1,Donald Trump,42.83,2024-07-01
+SurveyUSA/High Point University,2.9,-1.3,4.5,Donald Trump,47.09,2024-08-19
+Emerson,3,-0.5,5.2,Donald Trump,44.12,2024-09-28
+McCourtney Institute/YouGov,2.9,-1,9.1,Donald Trump,52.23,2024-07-10
+Quinnipiac,3,-0.5,4.7,Kamala Harris,46.49,2024-07-23
+Muhlenberg,2.9,-1.4,5.8,Kamala Harris,44.39,2024-09-22
+Muhlenberg,2.9,-1,4.9,Kamala Harris,49.4,2024-07-30
+Quinnipiac,3,-0.3,4.6,Donald Trump,47.2,2024-07-14
+MassINC Polling Group,2.8,-1.1,9.9,Kamala Harris,46.28,2024-08-28
+MassINC Polling Group,2.7,-1.2,5.1,Donald Trump,55.28,2024-07-06
+Selzer,2.9,-0.7,8.2,Kamala Harris,43.6,2024-09-12
+Marquette Law School,2.8,-0.4,8.5,Donald Trump,41.84,2024-08-24
+Beacon/Shaw,2.8,-1.1,5.3,Donald Trump,56.76,2024-08-22
+Siena,2.8,-0.9,6.8,Donald Trump,56.47,2024-08-26
+MassINC Polling Group,2.8,-0.4,5.2,Kamala Harris,55.79,2024-08-20
+Ipsos,3,-0.5,7.4,Kamala Harris,47.96,2024-07-29
+McCourtney Institute/YouGov,2.8,-1,7.1,Kamala Harris,55.41,2024-08-11
+Washington Post/George Mason University,2.8,-1.1,6.4,Kamala Harris,49.66,2024-08-11
+Marquette Law School,2.8,-0.5,9.9,Donald Trump,49.78,2024-07-13
+Siena,2.9,-0.3,7,Donald Trump,46.19,2024-07-24
+YouGov,3,-0.7,8.8,Kamala Harris,55.63,2024-07-10
+YouGov/Center for Working Class Politics,3,-0.8,4.9,Donald Trump,43.55,2024-07-22
+YouGov Blue,2.8,-0.7,8.3,Donald Trump,43.61,2024-07-22
+YouGov/Center for Working Class Politics,3,-0.5,9,Donald Trump,42.69,2024-09-04
+Echelon Insights,3,-0.5,6.6,Donald Trump,58.02,2024-08-27
+Siena/NYT,2.9,-0.5,9.4,Donald Trump,39.96,2024-08-18
+YouGov,2.7,-0.1,5.6,Donald Trump,51.79,2024-07-05
+Emerson,2.8,-0.3,8.7,Donald Trump,54.22,2024-09-21
+YouGov/Center for Working Class Politics,2.9,-0.5,7.1,Donald Trump,55.48,2024-09-26
+Muhlenberg,2.9,-0.7,5.1,Kamala Harris,60.95,2024-07-13
+SurveyUSA/High Point University,2.7,-0.3,9.6,Kamala Harris,42.41,2024-07-11
+YouGov,2.7,-0.5,6.6,Kamala Harris,56.98,2024-09-03
+Emerson,2.8,-1.2,8,Donald Trump,44.85,2024-08-15
+Quinnipiac,2.7,-1.1,8.5,Kamala Harris,50.14,2024-08-27
+Marist,2.9,-1,4.8,Donald Trump,53.47,2024-09-04
+McCourtney Institute/YouGov,2.7,-1.5,8.3,Donald Trump,46.41,2024-09-20
+Marquette Law School,2.9,-0.2,6,Kamala Harris,50.48,2024-09-22
+Siena,3,-0.3,4.6,Donald Trump,57.58,2024-07-15
+YouGov,2.8,-0.3,7.5,Kamala Harris,51,2024-08-30
+Washington Post/George Mason University,2.9,-0.7,4.9,Donald Trump,45.86,2024-08-15
+Quinnipiac,2.8,-0.6,5.9,Kamala Harris,53.02,2024-08-13
+Washington Post/George Mason University,3,-1.2,5.7,Kamala Harris,47.72,2024-09-09
+Christopher Newport U.,2.8,-1.3,4.8,Kamala Harris,48.55,2024-08-22
+CNN/SSRS,2.9,-1.2,4.7,Kamala Harris,52.47,2024-09-17
+SurveyUSA,2.7,-0.3,8.9,Donald Trump,47.62,2024-08-21
+Ipsos,2.8,-0.8,8.9,Kamala Harris,55.71,2024-09-28
+The Washington Post,2.9,-0.8,7.9,Kamala Harris,56.84,2024-09-04
+Data Orbital,2.9,-1.5,6.4,Donald Trump,49.88,2024-07-25
+SurveyUSA,2.7,-0.4,6,Kamala Harris,55.22,2024-08-10
+Marquette Law School,2.9,-0.2,9.1,Donald Trump,54.64,2024-09-02
+YouGov/Center for Working Class Politics,3,-1.1,9.7,Donald Trump,42.7,2024-09-28
+SurveyUSA,3,-0.9,6.9,Kamala Harris,54.8,2024-08-30
+SurveyUSA/High Point University,2.9,-1.4,6.6,Donald Trump,42.25,2024-08-27
+YouGov/Center for Working Class Politics,2.8,-0.7,9.5,Donald Trump,47.42,2024-07-14
+Echelon Insights,2.8,-1.3,6,Kamala Harris,58.63,2024-07-07
+Marist,2.9,-0.5,4.5,Donald Trump,53.11,2024-08-26
+Suffolk,3,-1.2,4.6,Kamala Harris,59.31,2024-09-15
+MassINC Polling Group,2.7,-1.4,5.8,Donald Trump,53.93,2024-09-08
+Emerson,2.9,-1.1,6.7,Donald Trump,56.75,2024-09-01
+Selzer,2.7,-0.1,9,Kamala Harris,39.39,2024-09-18
+SurveyUSA,2.9,-1.2,7.2,Kamala Harris,43.3,2024-07-12
+MassINC Polling Group,2.7,-0.1,7.9,Kamala Harris,50.02,2024-08-27
+The Washington Post,2.9,-1.5,4.9,Kamala Harris,38.78,2024-09-16
+Christopher Newport U.,2.7,-1.4,6.7,Donald Trump,47.3,2024-07-30
+Emerson,2.8,-0,6.3,Donald Trump,47.09,2024-09-03
+Beacon/Shaw,2.8,-1.3,9.6,Kamala Harris,53.14,2024-07-26
+CNN/SSRS,2.9,-1.2,9.6,Kamala Harris,48.75,2024-07-09
+Data Orbital,2.7,-0.6,6.4,Donald Trump,52.95,2024-07-23
+University of Massachusetts Lowell/YouGov,3,-0.1,9.7,Kamala Harris,48.04,2024-09-27
+Selzer,3,-0.3,10,Donald Trump,50.38,2024-08-01
+U. North Florida,3,-1.2,7.4,Kamala Harris,44.7,2024-09-06
+SurveyUSA,2.9,-1.5,7.2,Donald Trump,53.54,2024-07-05
+Siena/NYT,2.8,-0.7,9.9,Donald Trump,44.37,2024-07-08
+SurveyUSA,2.8,-0,5.6,Kamala Harris,54.02,2024-09-09
+McCourtney Institute/YouGov,2.7,-0.6,7.2,Kamala Harris,61.69,2024-08-05
+University of Massachusetts Lowell/YouGov,2.8,-1.2,6.9,Donald Trump,49.89,2024-07-16
+Selzer,2.7,-1.2,9,Donald Trump,53.78,2024-08-03
+Christopher Newport U.,3,-0.9,8.7,Kamala Harris,57.01,2024-08-21
+Suffolk,2.9,-1.1,9.6,Kamala Harris,53.35,2024-08-16
+McCourtney Institute/YouGov,2.9,-0.8,9.5,Donald Trump,55.92,2024-08-02
+CNN/SSRS,2.9,-0.9,4.7,Kamala Harris,46.53,2024-07-05
+Data Orbital,2.8,-1,9.1,Kamala Harris,41.19,2024-07-20
+YouGov,2.7,-0,5,Donald Trump,53.16,2024-09-29
+Siena,2.8,-1.1,5.5,Kamala Harris,50.63,2024-09-25
+Marist,3,-1.4,6.4,Kamala Harris,46.25,2024-09-18
+Marist,2.9,-0.7,4.6,Donald Trump,51.78,2024-07-08
+Muhlenberg,3,-0.5,5.8,Donald Trump,45.62,2024-09-10
+YouGov Blue,2.8,-0.1,8.4,Donald Trump,44.65,2024-07-14
+Beacon/Shaw,2.7,-0.2,8.2,Donald Trump,55.83,2024-08-13
+AtlasIntel,3,-0.1,7.5,Kamala Harris,55.86,2024-08-24
+YouGov,2.8,-0.8,9,Kamala Harris,48.28,2024-08-03
+SurveyUSA/High Point University,3,-1.4,9.8,Donald Trump,58.34,2024-09-23
+Selzer,2.7,-0.2,4.8,Kamala Harris,53.14,2024-08-17
+Echelon Insights,2.9,-1,8,Donald Trump,50.86,2024-08-14
+CNN/SSRS,3,-1.2,8.5,Kamala Harris,39.9,2024-07-24
+AtlasIntel,2.8,-0.1,9.6,Kamala Harris,55.32,2024-08-06
+Siena/NYT,2.9,-1.3,9.7,Donald Trump,58.51,2024-09-14
+Beacon/Shaw,3,-0.1,6.8,Kamala Harris,51.39,2024-07-16
+Siena/NYT,2.9,-1.1,9.8,Kamala Harris,50.71,2024-08-16
+Selzer,2.9,-1.3,7.2,Kamala Harris,52.02,2024-07-04
+The Washington Post,2.8,-1,8.7,Kamala Harris,48.87,2024-09-26
+YouGov Blue,2.7,-0,6.8,Donald Trump,43.02,2024-07-28
+Marquette Law School,2.8,-1.3,9.2,Donald Trump,45.03,2024-08-14
+Christopher Newport U.,2.8,-1.3,9.7,Donald Trump,56.16,2024-09-05
+Ipsos,2.7,-0.2,9.4,Kamala Harris,49.71,2024-07-06
+YouGov Blue,3,-1.1,8.7,Kamala Harris,47.39,2024-09-12
+University of Massachusetts Lowell/YouGov,2.7,-0,8.4,Kamala Harris,52.36,2024-09-06
+Beacon/Shaw,2.7,-0.6,5.9,Kamala Harris,57.9,2024-09-17
+AtlasIntel,2.9,-1,5.8,Donald Trump,47.1,2024-09-10
+SurveyUSA/High Point University,2.8,-0.9,7.5,Kamala Harris,49.68,2024-07-06
+SurveyUSA/High Point University,2.9,-0.2,6.2,Kamala Harris,45.19,2024-08-03
+Emerson,2.9,-1.5,5.6,Donald Trump,51.87,2024-07-10
+Quinnipiac,2.7,-1.4,7.6,Donald Trump,56.12,2024-09-05
+Suffolk,2.7,-1.3,4.5,Kamala Harris,57.7,2024-08-30
+Marquette Law School,2.9,-0.8,6.6,Kamala Harris,51.11,2024-09-13
+Quinnipiac,3,-0.3,5.8,Donald Trump,47.6,2024-07-10
+Marquette Law School,2.9,-0.7,6.8,Donald Trump,47.72,2024-08-24
+SurveyUSA,2.8,-1.5,6.3,Kamala Harris,41.82,2024-09-20
+Marist,3,-1.4,4.8,Donald Trump,44.26,2024-07-13
+YouGov Blue,2.8,-0.5,6.1,Donald Trump,51.82,2024-08-04
+YouGov,3,-1.4,6.5,Donald Trump,44.65,2024-09-10
+CNN/SSRS,2.7,-1.4,8.9,Donald Trump,51.88,2024-07-07
+Emerson,2.9,-0.3,8.3,Kamala Harris,52.29,2024-09-01
+Selzer,2.9,-0.8,4.8,Kamala Harris,47.01,2024-08-18
+MassINC Polling Group,2.7,-1.3,8.3,Kamala Harris,50.57,2024-09-03
+AtlasIntel,2.8,-0.8,6.6,Kamala Harris,52.21,2024-08-09
+AtlasIntel,2.8,-0.3,4.8,Donald Trump,45.86,2024-08-02
+SurveyUSA,2.8,-0.2,7.9,Donald Trump,40.28,2024-08-11
+YouGov Blue,2.8,-1.2,5.7,Donald Trump,54.01,2024-09-02
+Marquette Law School,2.8,-1,7.5,Kamala Harris,54.85,2024-09-24
+The Washington Post,2.9,-0.4,5.9,Kamala Harris,58.75,2024-09-23
+Siena,3,-1.1,6,Kamala Harris,53.01,2024-07-09
+Data Orbital,2.8,-1,6.4,Kamala Harris,40.59,2024-07-14
+YouGov/Center for Working Class Politics,2.8,-0.3,9.4,Kamala Harris,44.11,2024-08-14
+SurveyUSA/High Point University,2.8,-0.4,8.8,Donald Trump,45.81,2024-09-12
+YouGov Blue,2.8,-1,10,Kamala Harris,53.72,2024-07-21
+Emerson,2.8,-1,9.4,Donald Trump,52.61,2024-09-11
+Washington Post/George Mason University,2.9,-0.5,7.3,Kamala Harris,50.76,2024-07-26
+MassINC Polling Group,2.7,-1.4,4.8,Donald Trump,43.78,2024-07-18
+Muhlenberg,2.9,-0.2,7.6,Donald Trump,55.35,2024-07-02
+Echelon Insights,2.8,-1,7.1,Kamala Harris,53.93,2024-08-01
+Echelon Insights,2.7,-1.2,9.5,Donald Trump,53.86,2024-08-27
+Emerson,2.7,-0.6,5.7,Kamala Harris,42.43,2024-08-09
+YouGov Blue,2.7,-0.3,8.8,Kamala Harris,55.64,2024-07-09
+Suffolk,2.8,-0.1,9.7,Donald Trump,45.33,2024-09-11
+Echelon Insights,2.9,-1,8.4,Kamala Harris,52.86,2024-07-26
+Muhlenberg,3,-0.2,8.9,Donald Trump,55.79,2024-08-27
+Suffolk,2.9,-0.5,5.1,Kamala Harris,47.8,2024-09-03
+Siena/NYT,2.9,-0.5,4.7,Donald Trump,52.5,2024-07-03
+Muhlenberg,2.9,-1,6.4,Donald Trump,48.9,2024-07-08
+U. North Florida,2.8,-1.1,9.5,Donald Trump,52.81,2024-07-11
+Marquette Law School,2.8,-0.1,5,Kamala Harris,60.39,2024-08-08
+Ipsos,2.9,-1.1,8.5,Donald Trump,50.06,2024-08-08
+Suffolk,2.8,-0.2,5.4,Donald Trump,46.16,2024-08-22
+Siena,2.8,-0.4,4.8,Donald Trump,47.77,2024-09-15
+YouGov/Center for Working Class Politics,3,-0.9,5.3,Kamala Harris,46.99,2024-09-16
+McCourtney Institute/YouGov,2.9,-0.6,9.4,Kamala Harris,53.67,2024-08-24
+Muhlenberg,2.9,-1.5,9,Kamala Harris,43.57,2024-09-19
+MassINC Polling Group,2.8,-1.2,8.5,Donald Trump,47.99,2024-07-01
+Echelon Insights,2.7,-0.1,4.8,Donald Trump,53.28,2024-08-06
+Christopher Newport U.,2.9,-0.5,9.3,Donald Trump,51.46,2024-09-18
+CNN/SSRS,3,-0.9,7.8,Kamala Harris,62.13,2024-08-01
+The Washington Post,2.7,-0.7,5.2,Donald Trump,50.82,2024-09-10
+Muhlenberg,2.8,-1.4,6.4,Kamala Harris,47.76,2024-09-03
+Selzer,2.8,-0.1,7.6,Donald Trump,45.23,2024-07-16
+Siena/NYT,2.9,-0.7,7.8,Kamala Harris,54.78,2024-07-04
+Data Orbital,3,-1.1,7.8,Kamala Harris,45.74,2024-09-05
+Beacon/Shaw,2.8,-0.7,5.1,Donald Trump,51.43,2024-09-17
+YouGov Blue,2.9,-1.2,9.1,Kamala Harris,46.62,2024-08-11
+SurveyUSA/High Point University,2.8,-1,8.8,Kamala Harris,56.26,2024-08-19
+Siena/NYT,2.9,-1.2,9,Kamala Harris,54.25,2024-07-29
+MassINC Polling Group,2.9,-0.2,7.9,Kamala Harris,51.82,2024-07-12
+Quinnipiac,2.7,-0.5,8,Donald Trump,57.3,2024-07-26
+SurveyUSA/High Point University,3,-1.2,8.6,Donald Trump,40.45,2024-08-07
+Beacon/Shaw,2.9,-0.6,8,Kamala Harris,50.59,2024-08-15
+Beacon/Shaw,2.8,-0.6,5.7,Donald Trump,44.26,2024-07-01
+Siena,3,-1.1,6.6,Kamala Harris,52.84,2024-09-06
+Christopher Newport U.,2.8,-1.3,5.4,Donald Trump,54.89,2024-07-12
+Christopher Newport U.,2.8,-1.2,9.5,Donald Trump,52.44,2024-07-10
+MassINC Polling Group,3,-0.5,4.8,Kamala Harris,44.96,2024-08-01
+University of Massachusetts Lowell/YouGov,2.8,-1.3,8.3,Kamala Harris,48.11,2024-07-14
+CNN/SSRS,2.8,-0.6,6,Donald Trump,47.43,2024-09-29
+SurveyUSA/High Point University,3,-0.9,10,Kamala Harris,47.02,2024-07-23
+McCourtney Institute/YouGov,2.8,-1.4,5.6,Kamala Harris,48.38,2024-08-11
+YouGov Blue,2.8,-0.8,8.1,Kamala Harris,53.72,2024-09-04
+YouGov Blue,2.8,-1,7.5,Donald Trump,46.7,2024-09-21
+Suffolk,2.9,-0.2,7,Donald Trump,48.26,2024-09-17
+Muhlenberg,2.9,-0.4,6.8,Kamala Harris,57.58,2024-07-05
+Muhlenberg,2.8,-0.1,8.2,Donald Trump,54.14,2024-07-23
+Quinnipiac,2.7,-0.2,8.3,Kamala Harris,53.94,2024-09-18
+SurveyUSA,2.9,-0.9,4.7,Donald Trump,56.72,2024-08-17
+Suffolk,2.7,-0.4,8.5,Kamala Harris,51.29,2024-07-04
+Ipsos,2.9,-0.4,8.9,Kamala Harris,53.55,2024-07-10
+SurveyUSA,2.9,-1,7.3,Kamala Harris,46.41,2024-08-24
+YouGov/Center for Working Class Politics,3,-0.7,7.6,Kamala Harris,45.47,2024-09-27
+YouGov/Center for Working Class Politics,3,-0,8.7,Kamala Harris,45.67,2024-07-13
+Siena/NYT,3,-1.4,4.6,Donald Trump,46.96,2024-07-25
+Emerson,2.9,-1,9.5,Donald Trump,40.8,2024-08-07
+SurveyUSA,2.9,-0.6,6.4,Kamala Harris,56.12,2024-07-27
+SurveyUSA/High Point University,2.9,-1.3,8.5,Kamala Harris,46.86,2024-07-03
+Emerson,3,-0.9,8,Kamala Harris,39.27,2024-08-20
+YouGov/Center for Working Class Politics,2.7,-1.1,9.1,Kamala Harris,42.71,2024-07-05
+SurveyUSA/High Point University,2.9,-0.2,8.7,Donald Trump,44.65,2024-07-06
+Suffolk,2.9,-0.1,9.6,Kamala Harris,39.98,2024-09-05
+Marist,2.9,-0.7,8.8,Kamala Harris,50.99,2024-08-20
+McCourtney Institute/YouGov,2.8,-1,8,Donald Trump,52.62,2024-08-27
+Ipsos,2.9,-0.5,4.9,Kamala Harris,39.76,2024-07-18
+YouGov Blue,2.9,-0.4,7.2,Kamala Harris,57.41,2024-07-24
+The Washington Post,2.8,-0.2,6.6,Kamala Harris,47.91,2024-09-02
+Quinnipiac,3,-0.1,8.4,Donald Trump,48.51,2024-07-28
+The Washington Post,2.9,-0.1,9.3,Donald Trump,47.39,2024-08-18
+Beacon/Shaw,2.7,-0.9,8.2,Kamala Harris,39.05,2024-09-22
+Siena/NYT,2.9,-1.2,5.3,Donald Trump,52.38,2024-08-08
+YouGov Blue,2.9,-1.1,7.5,Kamala Harris,50.38,2024-08-23
+AtlasIntel,3,-0.6,8.6,Donald Trump,48.96,2024-09-07
+Suffolk,2.7,-1,6,Kamala Harris,54.47,2024-08-31
+Marquette Law School,2.8,-1.2,6.3,Donald Trump,50.14,2024-08-01
+Data Orbital,2.7,-0,8.5,Kamala Harris,47.9,2024-08-03
+CNN/SSRS,2.7,-1.5,6.5,Kamala Harris,49.57,2024-08-24
+MassINC Polling Group,2.9,-1.2,5.6,Donald Trump,40.37,2024-07-11
+Selzer,2.8,-1.4,8.6,Donald Trump,65.8,2024-09-09
+Data Orbital,3,-0.6,6,Donald Trump,43.41,2024-07-03
+Marquette Law School,2.8,-0.4,8.1,Donald Trump,47.22,2024-09-29
+Muhlenberg,2.8,-0.3,6.7,Kamala Harris,60.11,2024-08-16
+Beacon/Shaw,3,-0.1,6,Donald Trump,49.99,2024-09-23
+YouGov,2.8,-1.3,5.8,Donald Trump,42.54,2024-08-29
+SurveyUSA,2.8,-1.1,8.3,Donald Trump,52.46,2024-09-14
+Selzer,2.8,-0.5,6.7,Kamala Harris,48.31,2024-08-25
+Echelon Insights,2.9,-0.6,9.5,Kamala Harris,50.48,2024-07-25
+Washington Post/George Mason University,3,-0.3,10,Kamala Harris,55.28,2024-08-10
+Beacon/Shaw,3,-1,7.8,Donald Trump,43.03,2024-08-30
+Data Orbital,2.9,-0.8,9.1,Donald Trump,43.95,2024-07-04
+Data Orbital,3,-0.6,10,Donald Trump,50.05,2024-07-01
+CNN/SSRS,2.8,-1.2,5.7,Donald Trump,44.61,2024-09-26
+CNN/SSRS,2.7,-1,9.1,Kamala Harris,50.47,2024-08-09
+Beacon/Shaw,3,-0.9,10,Kamala Harris,41.42,2024-07-18
+Christopher Newport U.,2.8,-0.5,8,Kamala Harris,45.55,2024-09-17
+Data Orbital,2.9,-0.5,6,Kamala Harris,59.1,2024-07-07
+AtlasIntel,2.9,-0.4,4.8,Donald Trump,54.35,2024-07-25
+Christopher Newport U.,2.8,-1,7.7,Donald Trump,48.39,2024-09-21
+McCourtney Institute/YouGov,2.8,-0,5.9,Donald Trump,46.09,2024-08-08
+MassINC Polling Group,2.9,-0.4,9.4,Donald Trump,55.35,2024-08-28
+MassINC Polling Group,2.9,-0.2,8.5,Donald Trump,43.91,2024-07-31
+CNN/SSRS,3,-0.9,9.3,Kamala Harris,48.54,2024-08-03
+AtlasIntel,2.8,-1.3,6.9,Kamala Harris,44.04,2024-08-04
+SurveyUSA/High Point University,2.8,-1.1,9.2,Donald Trump,47.57,2024-09-12
+SurveyUSA,2.8,-1.3,7.7,Donald Trump,53.63,2024-09-12
+Quinnipiac,2.7,-0.1,5.6,Kamala Harris,47.89,2024-07-24
+Emerson,2.9,-1,6.8,Donald Trump,58.11,2024-07-30
+YouGov,2.8,-1.4,5,Donald Trump,49.29,2024-09-10
+YouGov Blue,2.9,-0.8,5.2,Donald Trump,48.03,2024-07-03
+The Washington Post,2.8,-0.6,9.6,Kamala Harris,43.36,2024-09-24
+Marist,2.9,-0.7,9.4,Donald Trump,50.41,2024-08-05
+Christopher Newport U.,2.9,-0.9,7.1,Kamala Harris,48.66,2024-08-24
+McCourtney Institute/YouGov,2.8,-1.2,8.2,Donald Trump,53.63,2024-08-01
+Washington Post/George Mason University,2.9,-0.8,7.8,Kamala Harris,44.04,2024-08-24
+YouGov/Center for Working Class Politics,2.8,-1.4,5.4,Kamala Harris,56.92,2024-09-25
+Christopher Newport U.,3,-0.8,8.2,Donald Trump,50.6,2024-08-07
+Quinnipiac,2.9,-0,7.5,Donald Trump,46.61,2024-07-11
+Suffolk,2.8,-1.2,4.7,Donald Trump,49.69,2024-09-29
+YouGov,2.7,-0.2,4.8,Kamala Harris,51.93,2024-09-29
+McCourtney Institute/YouGov,3,-1.1,7,Donald Trump,50.45,2024-09-16
+SurveyUSA,2.8,-1.4,7.6,Kamala Harris,43.18,2024-07-23
+SurveyUSA/High Point University,3,-1,9,Kamala Harris,52.84,2024-08-04
+Marist,2.9,-0.5,8.5,Kamala Harris,45.25,2024-08-04
+YouGov,2.9,-0.3,8.4,Donald Trump,45.67,2024-09-14
+AtlasIntel,3,-0.4,8.3,Donald Trump,52.25,2024-08-16
+McCourtney Institute/YouGov,2.9,-0.2,9.4,Kamala Harris,49.76,2024-07-19
+Selzer,3,-1.3,6,Kamala Harris,47.37,2024-07-16
+Ipsos,2.9,-0.3,6.3,Donald Trump,46.48,2024-09-27
+The Washington Post,3,-0.8,4.9,Kamala Harris,47.44,2024-07-03
+Emerson,2.7,-0.3,7.1,Kamala Harris,53.19,2024-09-03
+U. North Florida,2.7,-1,9.8,Kamala Harris,54.11,2024-09-06
+Ipsos,2.7,-0,7.3,Kamala Harris,45.89,2024-09-23
+The Washington Post,2.9,-0.7,6.2,Donald Trump,45.64,2024-07-17
+YouGov/Center for Working Class Politics,2.8,-0,6.7,Kamala Harris,45.36,2024-07-24
+U. North Florida,2.8,-0.4,9.5,Donald Trump,43.41,2024-08-22
+Data Orbital,2.9,-1,6.3,Kamala Harris,48.97,2024-09-02
+SurveyUSA/High Point University,3,-1.3,8.4,Kamala Harris,52.97,2024-08-27
+Beacon/Shaw,3,-1.4,5.4,Donald Trump,51.13,2024-08-04
+YouGov/Center for Working Class Politics,2.9,-0.7,9.5,Donald Trump,47.95,2024-07-08
+Marist,2.8,-0.4,6.7,Kamala Harris,52.52,2024-09-28
+MassINC Polling Group,2.8,-0.6,9.3,Donald Trump,65.34,2024-07-28
+Siena/NYT,2.9,-1.2,5,Donald Trump,36.78,2024-09-08
+YouGov Blue,2.9,-0.3,5.7,Kamala Harris,39.88,2024-08-10
+Washington Post/George Mason University,2.7,-0.5,4.9,Kamala Harris,50.45,2024-08-21
+Siena/NYT,2.8,-1.2,6.7,Donald Trump,55.92,2024-07-16
+Marquette Law School,3,-1.3,6.1,Kamala Harris,41.12,2024-08-23
+Echelon Insights,2.8,-1.4,5.4,Kamala Harris,50.8,2024-09-11
+SurveyUSA,2.8,-0.5,5,Kamala Harris,56.88,2024-07-24
+U. North Florida,2.8,-1.2,5.1,Kamala Harris,55.14,2024-08-22
+University of Massachusetts Lowell/YouGov,2.7,-1.3,9.9,Donald Trump,51.8,2024-08-03
+SurveyUSA,2.9,-0.2,6.2,Kamala Harris,48.26,2024-08-16
+McCourtney Institute/YouGov,3,-0,8,Donald Trump,53.1,2024-08-16
+MassINC Polling Group,2.9,-0.3,5.5,Kamala Harris,47.9,2024-09-12
+YouGov/Center for Working Class Politics,3,-1.2,9,Donald Trump,57.69,2024-07-26
+SurveyUSA,2.8,-0.8,9.1,Kamala Harris,46.46,2024-09-13
+Ipsos,2.9,-0.2,6.2,Kamala Harris,44.67,2024-09-03
+Selzer,3,-1,8.4,Kamala Harris,54.3,2024-07-30
+Marist,2.9,-1.2,4.9,Kamala Harris,51.67,2024-07-20
+The Washington Post,2.9,-0.6,9,Kamala Harris,57.56,2024-07-04
+University of Massachusetts Lowell/YouGov,2.8,-0.5,6.2,Kamala Harris,40.41,2024-09-07
+Marquette Law School,3,-1.5,8.8,Kamala Harris,49.21,2024-09-25
+YouGov Blue,3,-1,9.3,Kamala Harris,46.65,2024-07-04
+Data Orbital,2.9,-0.9,7.5,Donald Trump,49.19,2024-09-01
+Emerson,2.8,-0.4,9.2,Kamala Harris,55.56,2024-07-18
+Emerson,2.8,-0.6,6.1,Kamala Harris,42.03,2024-08-14
+Echelon Insights,2.7,-0.1,5.6,Donald Trump,50.99,2024-08-26
+Ipsos,2.8,-1.4,5.1,Kamala Harris,56.75,2024-09-29
+YouGov Blue,3,-0.1,4.6,Donald Trump,51.97,2024-09-17
+U. North Florida,2.8,-0.6,6,Donald Trump,40.11,2024-08-08
+CNN/SSRS,3,-0.6,6.5,Donald Trump,49.16,2024-08-10
+Muhlenberg,2.9,-0.3,7.8,Donald Trump,46.55,2024-08-07
+Siena,2.9,-1.3,6.6,Donald Trump,46.18,2024-07-16
+Ipsos,2.7,-0.5,5.7,Donald Trump,43.92,2024-08-08
+Ipsos,2.7,-1.2,8.9,Kamala Harris,54.77,2024-07-22
+Washington Post/George Mason University,3,-1.5,5.8,Donald Trump,43.93,2024-07-12
+Washington Post/George Mason University,2.9,-0,6,Kamala Harris,53.25,2024-08-28
+Ipsos,2.8,-0.8,5.6,Kamala Harris,50.07,2024-08-23
+Marquette Law School,2.8,-0.7,4.8,Donald Trump,45.74,2024-07-04
+Siena,2.8,-0.3,6.3,Kamala Harris,49.31,2024-07-27
+SurveyUSA/High Point University,3,-1,8.6,Kamala Harris,54.82,2024-08-30
+YouGov Blue,2.9,-0.5,8.8,Donald Trump,52.99,2024-07-21
+AtlasIntel,3,-0.5,5.7,Donald Trump,55.14,2024-08-30
+Data Orbital,2.9,-1,5.5,Kamala Harris,51.11,2024-09-03
+Siena,2.8,-1.4,7.9,Donald Trump,49.03,2024-09-14
+Beacon/Shaw,3,-0.3,5.5,Kamala Harris,38.86,2024-09-06
+Selzer,2.9,-1,6.8,Kamala Harris,53.9,2024-07-12
+SurveyUSA/High Point University,2.8,-0.2,7.3,Donald Trump,41.9,2024-07-18
+Siena/NYT,3,-1.2,6.3,Kamala Harris,42.92,2024-08-17
+Marquette Law School,2.8,-0.2,9,Donald Trump,51.35,2024-09-06
+Marist,3,-1.5,7.9,Donald Trump,53.17,2024-08-12
+Washington Post/George Mason University,2.7,-1.2,6.2,Kamala Harris,50.1,2024-08-23
+Emerson,2.9,-0.5,8.3,Kamala Harris,57.66,2024-09-23
+Data Orbital,2.7,-0.4,8.5,Donald Trump,52.98,2024-08-24
+McCourtney Institute/YouGov,2.8,-1.1,5.5,Donald Trump,46.05,2024-09-07
+Siena,2.9,-0.5,9.6,Donald Trump,44.52,2024-09-08
+Selzer,2.9,-0.6,6.6,Donald Trump,57.62,2024-08-02
+Siena/NYT,2.7,-0.6,5.7,Donald Trump,49.94,2024-08-16
+CNN/SSRS,2.9,-0.3,9.2,Kamala Harris,48.04,2024-08-28
+Marquette Law School,2.8,-0.5,7.7,Donald Trump,55.94,2024-09-29
+MassINC Polling Group,2.8,-0.8,6.7,Kamala Harris,46.59,2024-09-11
+Beacon/Shaw,2.7,-0.6,8.3,Donald Trump,48.73,2024-09-19
+Beacon/Shaw,2.7,-0.2,4.9,Donald Trump,44.39,2024-09-18
+MassINC Polling Group,2.9,-0,6.9,Kamala Harris,53.47,2024-08-16
+Echelon Insights,2.9,-1.2,5.2,Kamala Harris,47.2,2024-08-29
+MassINC Polling Group,3,-0.5,6,Kamala Harris,39.21,2024-08-26
+Selzer,2.8,-0.7,8.8,Donald Trump,44.45,2024-08-11
+U. North Florida,3,-1.1,5.5,Kamala Harris,50.01,2024-07-31
+AtlasIntel,2.8,-1.3,6.3,Donald Trump,45.37,2024-08-18
+Suffolk,2.9,-0.2,9.2,Donald Trump,52.05,2024-08-05
+McCourtney Institute/YouGov,2.9,-0.1,7.7,Kamala Harris,51.38,2024-07-12
+Emerson,2.8,-0.4,8.9,Donald Trump,42.41,2024-09-13
+The Washington Post,3,-0.3,9.6,Kamala Harris,47.04,2024-09-07
+YouGov Blue,2.8,-0.8,9.5,Kamala Harris,54.1,2024-08-02
+Muhlenberg,2.9,-1.3,9.3,Kamala Harris,50.8,2024-08-09
+McCourtney Institute/YouGov,2.7,-0.6,8.7,Donald Trump,52.43,2024-08-27
+Washington Post/George Mason University,2.8,-0.4,7.5,Donald Trump,42.13,2024-07-21
+Suffolk,2.7,-1.3,9.4,Kamala Harris,51.84,2024-08-17
+MassINC Polling Group,2.8,-0.5,6.6,Kamala Harris,57.23,2024-09-07
+Suffolk,2.9,-1.2,5.8,Donald Trump,56.6,2024-08-02
+AtlasIntel,2.9,-0.4,7.9,Kamala Harris,48.88,2024-09-26
+AtlasIntel,2.9,-0,9.5,Kamala Harris,56.24,2024-07-28
+YouGov,2.8,-0,6,Kamala Harris,54.94,2024-08-26
+University of Massachusetts Lowell/YouGov,3,-0.7,6.8,Kamala Harris,58.15,2024-08-30
+SurveyUSA,2.9,-1.2,7.6,Kamala Harris,53.92,2024-08-20
+U. North Florida,2.9,-0.5,6.9,Kamala Harris,41.8,2024-07-16
+SurveyUSA,2.9,-0.6,9.2,Donald Trump,53.1,2024-08-12
+YouGov Blue,2.8,-0.8,8.1,Donald Trump,38.08,2024-07-11
+Christopher Newport U.,3,-0.3,6,Donald Trump,57.48,2024-07-20
+Siena/NYT,2.7,-1.2,5,Kamala Harris,57.07,2024-08-08
+Washington Post/George Mason University,2.7,-0.8,9.1,Kamala Harris,50.73,2024-09-01
+YouGov,2.9,-1.4,5.8,Kamala Harris,41.14,2024-07-28
+YouGov Blue,2.9,-1,9,Kamala Harris,54.96,2024-08-01
+Washington Post/George Mason University,2.7,-1.1,9,Kamala Harris,54.57,2024-08-26
+University of Massachusetts Lowell/YouGov,2.8,-0.5,8.7,Donald Trump,57,2024-08-11
+MassINC Polling Group,2.9,-1,4.7,Kamala Harris,50.36,2024-08-29
+Washington Post/George Mason University,2.9,-0.3,8.6,Donald Trump,50.09,2024-09-18
+YouGov/Center for Working Class Politics,2.7,-0.6,6.3,Kamala Harris,58.52,2024-08-14
+SurveyUSA/High Point University,2.7,-1.3,6.3,Donald Trump,51.23,2024-07-26
+SurveyUSA,2.7,-0.2,8.3,Kamala Harris,42.69,2024-09-09
+Selzer,3,-0.8,9,Donald Trump,52.85,2024-09-10
+MassINC Polling Group,2.9,-0.9,5.1,Kamala Harris,51.02,2024-08-19
+Marquette Law School,2.8,-0.9,8.3,Kamala Harris,54.34,2024-07-02
+Beacon/Shaw,2.8,-0,6.5,Donald Trump,54.18,2024-08-27
+Quinnipiac,2.8,-0.7,4.5,Donald Trump,51.03,2024-07-23
+Emerson,2.9,-0.9,9.5,Donald Trump,53.7,2024-07-10
+Washington Post/George Mason University,2.9,-0.1,8,Kamala Harris,50.07,2024-07-16
+SurveyUSA/High Point University,2.9,-0.3,4.7,Donald Trump,58.88,2024-08-21
+Muhlenberg,2.8,-1.2,8.4,Donald Trump,44.09,2024-09-09
+SurveyUSA,2.7,-1.2,6.6,Kamala Harris,52.1,2024-08-06
+Christopher Newport U.,2.9,-0.8,7.9,Donald Trump,38.05,2024-09-29
+SurveyUSA,2.8,-1.1,7.8,Donald Trump,51.11,2024-09-12
+Quinnipiac,2.9,-1.4,7.1,Donald Trump,48.14,2024-09-18
+Ipsos,2.9,-1,9,Kamala Harris,45.92,2024-07-11
+U. North Florida,2.8,-1.1,8.5,Donald Trump,43.7,2024-07-19
+Washington Post/George Mason University,2.9,-0.7,8.8,Kamala Harris,40.9,2024-08-26
+Siena,2.9,-0.8,6.1,Kamala Harris,50.67,2024-08-18
+AtlasIntel,2.9,-1.4,7.5,Kamala Harris,41.81,2024-08-05
+SurveyUSA/High Point University,2.8,-1,9.5,Donald Trump,51.37,2024-09-19
+The Washington Post,2.8,-1.5,6.7,Kamala Harris,45.17,2024-09-23
+Christopher Newport U.,2.9,-1.1,8.2,Donald Trump,54.88,2024-08-25
+Marquette Law School,2.7,-0.1,9.2,Kamala Harris,54.01,2024-08-01
+Siena/NYT,2.8,-0.5,6.3,Donald Trump,46.49,2024-07-19
+SurveyUSA/High Point University,2.9,-0.1,6.9,Kamala Harris,56.04,2024-09-05
+Beacon/Shaw,2.7,-0.8,8.9,Kamala Harris,61.56,2024-09-26
+YouGov Blue,2.8,-0.3,9.6,Kamala Harris,54.96,2024-08-09
+YouGov,2.9,-1.1,9.5,Kamala Harris,53.63,2024-09-29
+SurveyUSA,2.8,-0.7,9.8,Donald Trump,45.02,2024-08-06
