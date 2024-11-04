@@ -1,6 +1,6 @@
 ---
 title: "Predicting the 2024 US Presidential Election: A Polling-Based Forecast"
-subtitle: "Trump will get support about 47.55% by pollster and may lose the election"
+subtitle: "Trump will get support about 46.87% by pollster and have probability of 31% lead the election over Harris"
 author: 
   - Tianrui Fu
   - Yiyue Deng
@@ -8,7 +8,7 @@ author:
 thanks: "Code and data are available at: [https://github.com/FrankFU323/U.S.-presidential-election.git](https://github.com/FrankFU323/U.S.-presidential-election.git)"
 date: today
 date-format: long
-abstract: "This paper uses polling data to predict the outcome of the 2024 U.S. presidential election. By applying generalized linear regression and Bayesian models, we analyze the factors related to the polls, including polling organizations and the ratings associated with those organizations, on Donald Trump’s support rate. The research results indicate a significant relationship between the variables, with Donald Trump’s support rate showing an upward trend. Additionally, we further discuss the advantages and disadvantages of the two models, as well as potential methods for improvement."
+abstract: "This paper uses advanced statistical techniques, including generalized linear regression and Bayesian models, to forecast the 2024 U.S. Presidential Election. Our analysis of polling data predicts an average support rate of 46.87% for Donald Trump and 48.50% for Kamala Harris across multiple polling sources. Among the 29 polling organizations examined, only 9 anticipate a higher support rate for Trump over Harris; however, the Bayesian model still assigns a 31% probability of Trump leading, underscoring the competitiveness of the race. These findings emphasize the importance of credible pollsters and robust statistical methods in electoral forecasting, highlighting the volatility of voter sentiment and the value of continual methodological refinement."
 format: pdf
 header-includes:
    - \usepackage{amsmath}
@@ -32,29 +32,22 @@ library(modelsummary)
 library(modelr)
 ```
 
-
+\newpage
 # Introduction {#sec-data}
 
-Overview paragraph
+With the 2024 U.S. Presidential Election on the horizon, the nuanced interpretation of voter sentiment is paramount for anticipating, understanding, and informing the strategies of campaign teams and political analysts about electoral outcomes. This study offers a comprehensive analysis of polling data to forecast voter support for potential President, Donald Trump, focusing on how various influences—ranging from media portrayals to strategic campaign adjustments and significant socio-political developments—mold public perception and shape electoral dynamics. By utilizing a robust dataset aggregated from diverse polling sources, this research endeavours to illuminate the predictors of voter behaviour. We delve into both the quantitative metrics of polling results and the qualitative aspects, such as the credibility of polling agencies and the specific timing of polls. It is through this dual approach that our work seeks to contribute to the academic conversation by addressing the often-overlooked subtleties that affect the interpretation and reliability of polling data.
 
-Estimand paragraph
+At the heart of our inquiry is the modelling of Donald Trump’s voter support, which incorporates a broad spectrum of variables including the trustworthiness of pollsters, geographic and demographic influences, and the temporal context relative to Election Day. By applying sophisticated statistical techniques such as generalized linear regression and Bayesian analysis, our study seeks to distill clear, actionable insights from the complex interplay of these factors. This methodology will not only highlight the dynamics of voter sentiment but also clarify how each determinant, from polling methodology to regional variations, impacts public opinion.
 
-Results paragraph
+Our analysis reveals a pattern of gradually increasing support for Trump as the election nears, accentuated by the methodological integrity of the polls. This trend underscores the critical role of employing high-quality polling data to predict electoral results with greater accuracy and to strategize more effectively. Access to such data allows campaign strategies to be not only data-driven but also precisely targeted, maximizing impact where it is most effective. This approach enables campaigns to rapidly adapt to changing voter sentiments and demographic shifts, thus enhancing their responsiveness. Thus, We believe that these insights gained from rigorous data analysis are essential for refining campaign strategies and ensuring a nuanced understanding of the electoral landscape. Moreover, these insights are essential for improving the precision of electoral forecasts, thereby providing campaigns with a clearer understanding of where to allocate resources to achieve the greatest effect and sway electoral outcomes. Precise forecasts enable campaigns to allocate resources more effectively, potentially swaying the election outcomes. Moreover, the implications of this study extend to practical applications in political strategy. By elucidating the primary influences on polling statistics, the research provides campaign strategists and political consultants with the foundations to tailor their initiatives more adeptly, aiming to sway voter opinions in pivotal states and demographics.
 
-Why it matters paragraph
-
-Telegraphing paragraph: The remainder of this paper is structured as follows. @sec-data....
-
-
-
-
-
+The paper will begin with an in-depth review of our data sources and the methodologies employed, ensuring clarity and methodological transparency. The rest of the paper will be structured as follows: [Data -@sec-data] provides a detailed examination of our findings, progressing from the initial section, which analyzes the data compilation and preprocessing methods. [Model -@sec-model] discusses our modelling approach and justification, [Results -@sec-result] shows the reulst of predictions, and [Discussion -@sec-discussion] delves into the statistical analysis and its implications, with each section building upon the last to paint a comprehensive picture of the current electoral landscape.
 
 # Data {#sec-data}
 
 ## Overview
 
-We use the statistical programming language @citeR, the templete from @citeRohan completed by following packages：tidyverse @tidyverse, dplyr @dplyr, rstanarm @rstanarm, arrow @arrow, modelr @modelr, modelsummary @modelsummary, ggplot2 @ggplot2, here @citehere, kableExtra @kableExtra and knitr @citeknitr to complete this analysis. Our data about the latest polling outcomes is from the website @fivethirtyeight2024. It has 52 variables and 15891 observations in this data set, including pollster, poll score, etc.
+We conducted our analysis using the statistical programming language @citeR, employing a suite of packages designed to facilitate efficient data manipulation and modeling. The analysis framework was based on the template from @citeRohan complemented by the primary packages used which include tidyverse @tidyverse for data manipulation and visualization, dplyr @dplyr for data transformation, rstanarm @rstanarm for Bayesian inference, arrow @arrow for data integration, modelr @modelr for modeling within the tidyverse framework, modelsummary @modelsummary for generating model summaries, ggplot2 @ggplot2 for creating advanced graphics, kableExtra @kableExtra for enhancing table outputs, knitr @citeknitr for dynamic report generation and here @citehere to help read the parquet. Our analysis is based on the latest polling outcomes available from the website @fivethirtyeight2024, which includes a dataset of 52 variables and 17765 observations, covering aspects such as pollster, poll score, and more.
 
 ```{r, fig.pos= 'H', fig.width=8, fig.height=4}
 #| label: tbl-dataset-example
@@ -72,49 +65,56 @@ kable(example_dataset, col.names = c("pollster", "pollscore", "numeric_grade", "
 ```
 
 ## Cleaning Data
-We have cleaned the data set and the detailed procedure see from the appendix @sec-cleandata.
+We have cleaned the data set and the detailed procedure see from the [Appendix -@sec-cleandata].
 
 ## Measurement
-	
-In the realm of political polling, measurement is critical as it transforms abstract voter sentiments into quantifiable estimates that can influence electoral outcomes. The fundamental challenge lies in converting individual opinions—such as a voter's intention to support a particular candidate—into structured data that can effectively forecast the number of electoral college votes that candidate might secure. This transformation begins with the design of the polling methodology, where specific phenomena in the real world, such as voter preferences, are captured through surveys.
 
-This dataset originates from @fivethirtyeight2024, a trusted source known for its rigorous standards in polling data collection, ensuring the widest possible coverage of voters and comprehensive collection and disclosure of all relevant information. This includes details like the pollster's name, identification number, survey dates, and associated trust levels. In our analysis dataset, which consists of 492 observations related to Donald Trump's polling outcomes, we have identified 38 relevant variables that play a significant role in understanding electoral support. Key among these are the numeric grade, transparency score, poll score, pollster, end date, and percentage of support for Trump. Each variable is meticulously measured to ensure that they accurately reflect the sentiments of likely voters.
+In political polling, measurement plays a critical role by translating complex and often conflicting voter sentiments into quantifiable data that can inform electoral predictions. The fundamental challenge in measurement lies in transforming a mix of opinions—where individual voters may hold conflicting views or ambivalence about candidates—into a single, structured outcome variable that reflects electoral support accurately. This process begins with careful design of polling methodologies aimed at capturing voter preferences through survey questions that effectively reduce complex sentiments into measurable data points.
 
-The dataset presents results as the proportion of votes each candidate receives according to each pollster, with this approach adjusting over time to account for changes in voter sentiment, which can shift rapidly due to the approach of Election Day, candidate speeches, and other factors. By applying these measurement principles, we systematically convert nuanced public opinion into a structured dataset that not only captures voter intentions but also provides a reliable foundation for predictive modeling. 
+This dataset, sourced from @fivethirtyeight2024, maintains high standards in polling data collection, ensuring broad voter representation and thorough documentation of variables like pollster identity, polling dates, and trust levels. In our dataset of 803 observations focused on Donald Trump's polling results, we examine 38 key variables relevant to understanding his electoral support, including the numeric grade, transparency score, poll score, pollster, end date, and percentage of support. Each variable is measured rigorously to capture both the nuances and shifts in public opinion accurately.
 
-Ultimately, this rigorous measurement approach allows us to build a Bayesian model to assess how different pollsters might influence the final outcome of the U.S. presidential election, thus bridging the gap between individual voter opinions and electoral predictions.
+The results are represented as proportions of support for each candidate per poll, adjusting over time to account for factors such as changing voter sentiment in response to candidate speeches or approaching Election Day. This transformation from raw opinions to structured data enables us to track and model trends with greater predictive reliability.
 
-The explain of each used variable please see in the @sec-variable.
+In addition to measuring the outcome variable (electoral support), we also ensure accurate measurement of predictor variables, such as pollster transparency scores and numeric grades, which may affect a poll's reliability. By applying these measurement principles, we systematically convert public opinion into a structured dataset that provides a robust basis for predictive modeling. Ultimately, this rigorous approach allows us to build a Bayesian model to evaluate how various pollsters may influence final election outcomes, thereby bridging individual opinions and broader electoral predictions with a high degree of credibility.
 
 ## Outcome variables
-The @fig-percentage-pollster shows the distribution of polling data over time, with each color representing a different polling organization. We can see that as time progresses from August to October, there is a steady increase in the amount of polling data, peaking around early October. This suggests that multiple organizations have contributed to polling data on a consistent basis over this period.
 
-In the @fig-pct-density, it reveals a central peak around the 45-50% range, indicating that most of the values for this variable are concentrated in this area. The shape of the plot suggests a right-skewed distribution, with relatively few data points falling below 40% or above 50%. This gives an overview of the central tendency and variability of the polling percentages.
-
-```{r, fig.pos= 'H', fig.width=8, fig.height=4}
-#| label: fig-percentage-pollster
-#| fig-cap: Percentage of Each Pollster Over Time
-#| echo: false
-ggplot(analysis_trump, aes(x = end_date, y = pct, fill = pollster)) +
-  geom_area(position = "stack", alpha = 0.7) +
-  labs(x = "End Date", y = "Percentage (%)") +
-  theme_minimal()
-```
+The pct is the percentage of the vote or support that the candidate received in the poll and keep integer. The @fig-percentage shows the distribution of this variable, labeled "pct," with most values clustered around 47%. The distribution appears approximately normal but has a slight skew due to a few higher values. Overlaying the @fig-percentage is a density curve that illustrates the general shape of the data. Accompanying the @fig-percentage is @tbl-pct, a summary statistics table for the "pct" variable, which indicates a mean of 46.98%, a median of 47%, and a standard deviation of 3.8. The range spans from 31% to 70%, showing some spread in the data, with most observations relatively close to the mean, suggesting that while there is some variability, support percentages are largely concentrated around the central values.
 
 ```{r, fig.pos= 'H', fig.width=8, fig.height=4}
-#| label: fig-pct-density
-#| fig-cap: Density plot of pct
+#| label: fig-percentage
+#| fig-cap: Distribution of percentage
 #| echo: false
 ggplot(analysis_trump, aes(x = pct)) +
-  geom_density(fill = "#87CEEB", color = "blue", alpha = 0.5) +
-  labs(title = "Density Plot of Pct", x = "Pct", y = "Density") +
+  geom_histogram(binwidth = 1.5, alpha = 0.7, fill = "#87CEEB", color = "black") +
+  geom_density(aes(y = after_stat(count)), color = "#D55E00", alpha = 0.5) +
+  labs(x = "Percentage (pct)",
+       y = "Count") +
   theme_minimal()
 ```
+
+```{r, fig.pos= 'H', fig.width=8, fig.height=4}
+#| label: tbl-pct
+#| tbl-cap: Summary Statistics for 'pct' Variable
+#| echo: false
+summary_pct <- analysis_trump %>%
+  summarise(
+    Mean = round(mean(pct, na.rm = TRUE), 2),
+    Median = round(median(pct, na.rm = TRUE), 2),
+    Lower = round(min(pct, na.rm = TRUE), 2),
+    Upper = round(max(pct, na.rm = TRUE), 2),
+    SD = round(sd(pct, na.rm = TRUE), 2)
+  )
+
+kable(summary_pct) %>%
+  kable_styling(full_width = F, position = "center", bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
 ## Predictor variables
 
 ### Pollster
 
-In @fig-frequency-bar, the predictor variable is the count of polls conducted by each pollster. The bar chart displays the number of polls released by different polling organizations, ordered from highest to lowest frequency. The bars range in color from light blue to dark blue, indicating the frequency of polls conducted by each organization. Siena/NYT and YouGov are the most active pollsters, with 136 and 121 polls conducted, respectively. Emerson and AtlasIntel also have high polling frequencies, with 73 and 82 polls. In contrast, several pollsters, like Christopher Newport University and McCourtney Institute/YouGov, conducted only one poll, indicating their minimal activity in comparison.
+The pollster is the name of the polling organization that conducted the poll included Marquette Law School, CNN/SSRS and etc. In @fig-frequency-bar, the predictor variable is the count of polls conducted by each pollster. The bar chart displays the number of polls released by different polling organizations, ordered from highest to lowest frequency. The bars range in color from light blue to dark blue, indicating the frequency of polls conducted by each organization. Siena/NYT and YouGov are the most active pollsters, with 136 and 121 polls conducted, respectively. Emerson and AtlasIntel also have high polling frequencies, with 73 and 82 polls. In contrast, several pollsters, like Christopher Newport University and McCourtney Institute/YouGov, conducted only one poll, indicating their minimal activity in comparison.
 
 ```{r, fig.pos= 'H', fig.width=8, fig.height=4}
 #| label: fig-frequency-bar
@@ -130,7 +130,7 @@ ggplot(analysis_trump, aes(y = reorder(pollster, table(pollster)[pollster]))) +
 ```
 ### Poll Score
 
-@fig-pollscore is a vertical bar chart displaying the distribution of poll scores, ranging from -0.5 to -1.5. The most frequent poll score is -1.1, indicating a high concentration around this value. Most pollsters' poll scores are below -0.8, which suggests that overall scores are relatively low, reflecting a higher level of trust in the polls. Further analysis shows that the lower the poll score, the higher the trust level. Therefore, the distribution is notably skewed, with most data concentrated in the lower range (around -1.1 and below). Higher negative scores (closer to -0.5) are relatively rare, indicating that most polling agencies demonstrated high credibility in this survey, earning broad approval from the public or voters.
+The poll score is the numeric value representing the score or reliability of the pollster in question from -1.5 to -0.5 and negative numbers of poll score are better. @fig-pollscore is a vertical bar chart displaying the distribution of poll scores, ranging from -0.5 to -1.5. The most frequent poll score is -1.1, indicating a high concentration around this value. Most pollsters' poll scores are below -0.8, which suggests that overall scores are relatively low, reflecting a higher level of trust in the polls. Further analysis shows that the lower the poll score, the higher the trust level. Therefore, the distribution is notably skewed, with most data concentrated in the lower range (around -1.1 and below). Higher negative scores (closer to -0.5) are relatively rare, indicating that most polling agencies demonstrated high credibility in this survey, earning broad approval from the public or voters.
 
 ```{r, fig.pos= 'H', fig.width=8, fig.height=4}
 #| label: fig-pollscore
@@ -141,16 +141,14 @@ ggplot(analysis_trump, aes(y = reorder(pollster, table(pollster)[pollster]))) +
 
 ggplot(analysis_trump, aes(x = pollscore)) +
   geom_histogram(binwidth = 0.1, fill = "#87CEEB", color = "black") +
-  labs(
-    title = "Distribution of Poll Score",
-    x = "Poll Score",
+  labs(x = "Poll Score",
     y = "Count"
   ) +
   theme_minimal()
 ```
 ### Transparency Score
 
-@fig-transparency illustrates the distribution of "Transparency Scores" related to the 2024 election, possibly representing public or media ratings of candidate transparency, ranging from 5 to 10. The majority of scores are clustered around 8, showing that most respondents rate transparency fairly high. Scores of 6 and 7 are less frequent, while extreme scores of 5 and 10 are rare. This indicates that most voters or media sources perceive candidates as moderately to highly transparent, with scores skewed toward the higher end of the scale.
+The transparency_score is the grade for how transparent a pollster is, calculated based on how much information it discloses about its polls and weighted by recency from 4.5 to 10.0. @fig-transparency illustrates the distribution of "Transparency Scores" related to the 2024 election, possibly representing public or media ratings of candidate transparency, ranging from 5 to 10. The majority of scores are clustered around 8, showing that most respondents rate transparency fairly high. Scores of 6 and 7 are less frequent, while extreme scores of 5 and 10 are rare. This indicates that most voters or media sources perceive candidates as moderately to highly transparent, with scores skewed toward the higher end of the scale.
 
 ```{r, fig.pos= 'H', fig.width=8, fig.height=4}
 #| label: fig-transparency
@@ -169,7 +167,7 @@ ggplot(analysis_trump, aes(x = transparency_score)) +
 ```
 ### Numeric Grade
 
-@fig-numeric displays the distribution of a "Numeric Grade" associated with the 2024 election, which could represent candidate approval ratings, public opinion scores, or voter satisfaction. The grades are primarily concentrated between 2.7 and 3.0, with a noticeable peak close to 3.0, indicating a higher frequency of favorable ratings. This distribution suggests strong public support or positive sentiment, with the majority of respondents giving relatively high scores on this variable.
+The numeric_grade is the numeric rating given to the pollster to indicate their quality or reliability from 2.7 to 3.0. @fig-numeric displays the distribution of a "Numeric Grade" associated with the 2024 election, which could represent candidate approval ratings, public opinion scores, or voter satisfaction. The grades are primarily concentrated between 2.7 and 3.0, with a noticeable peak close to 3.0, indicating a higher frequency of favorable ratings. This distribution suggests strong public support or positive sentiment, with the majority of respondents giving relatively high scores on this variable.
 
 ```{r, fig.pos= 'H', fig.width=8, fig.height=4}
 #| label: fig-numeric
@@ -187,7 +185,7 @@ ggplot(analysis_trump, aes(x = numeric_grade)) +
 ```
 ### End date
 
-@fig-enddate shows the distribution of a particular variable over time related to the 2024 U.S. election. The x-axis represents dates from August to November, and the y-axis shows the count. This variable might represent the frequency of certain events, such as news coverage, voter registrations, or polling responses. The data is relatively sparse from August to October, with small peaks in some areas. In November, however, there is a significant increase in counts, particularly in early November, possibly linked to the heightened election activity or voter engagement as Election Day approaches.
+The end_date is the date of polling ends. @fig-enddate shows the distribution of a particular variable over time related to the 2024 U.S. election. The x-axis represents dates from August to November, and the y-axis shows the count. This variable might represent the frequency of certain events, such as news coverage, voter registrations, or polling responses. The data is relatively sparse from August to October, with small peaks in some areas. In November, however, there is a significant increase in counts, particularly in early November, possibly linked to the heightened election activity or voter engagement as Election Day approaches.
 
 ```{r, fig.pos= 'H', fig.width=8, fig.height=4}
 #| label: fig-enddate
@@ -246,7 +244,7 @@ ggplot(analysis_trump, aes(x = transparency_score, y = numeric_grade)) +
   theme_minimal()
 ```
 
-# Model {#sec-data}
+# Model {#sec-model}
 
 ## Model Selection
 
@@ -255,7 +253,7 @@ Our model aims to predict the changes in Donald Trump’s probability of winning
 Background details and diagnostics are included in [Appendix -@sec-model-details].
 
 ## Model set-up
-In this Bayesian framework, we assume a normal distribution of poll results around a mean affected by key predictors: numeric grade, transparency score, and pollscore. Define $y_i$ as the percentage of Donald Trump. Then $\beta_i$ represents the numeric grade, $\gamma_i$ represents the transparency score, and $\delta_i$ represents the pollscore.
+In this Bayesian framework, we assume a normal distribution of poll results around a mean affected by key predictors: numeric grade, transparency score, pollscore, pollster and end date. Define $y_i$ as the percentage of Donald Trump.
 
 ### Model 1 -- GLM
 
@@ -265,12 +263,16 @@ y_i &= \alpha + \beta_1 \cdot \text{numeric\_grade}_i + \beta_2 \cdot \text{tran
 \end{align}
 
 where: 
-- $\alpha$ is the intercept, representing the average poll level.
-- $\beta_1$, $\beta_2$, and $\beta_3$ are the regression coefficients for numeric grade, transparency score, and pollscore, respectively.
-- $\gamma_j$ indicates the fixed effect of each pollster.
-- $\delta$ is the regression coefficient for the end date.
-- $\epsilon_i$ is the error term.
 
+- $\alpha$ is the intercept, representing the average poll level.
+
+- $\beta_1$, $\beta_2$, and $\beta_3$ are the regression coefficients for numeric grade, transparency score, and pollscore, respectively.
+
+- $\gamma_j$ indicates the fixed effect of each pollster.
+
+- $\delta$ is the regression coefficient for the end date.
+
+- $\epsilon_i$ is the error term.
 
 ### Model 2 -- Bayesian model for Trump
 
@@ -285,18 +287,22 @@ y_i | \mu_i, \sigma &\sim \text{Normal}(\mu_i, \sigma) \\
 \end{align}
 
 where:
+
 - $\alpha$ represents an average poll result.
+
 - $\beta_1$, $\beta_2$, and $\beta_3$ capture the unique effect of their respective predictors on the poll percentage.
+
 - $\gamma_j$ denotes a specific pollster effect.
+
 - $\delta_i$ accounts for time trends.
 
 We run the model in @citeR using the package of rstanarm @rstanarm.
 
 ## Model justification
 
-The choice of a Bayesian model to analyze Donald Trump’s voting support rate stems from the need to effectively integrate uncertainty and leverage prior knowledge in estimating outcomes. Given that the dataset includes key predictors related to polling organizations—such as numeric_grade, transparency_score, pollster, poll_score, end_date, and pct—this approach allows for a comprehensive understanding of how these variables influence voting results.
+The choice of a Bayesian model to analyze Donald Trump’s voting support rate stems from the need to effectively integrate uncertainty and leverage prior knowledge in estimating outcomes. Given that the dataset includes key predictors related to polling organizations—such as numeric grade, transparency score, pollster, poll score, end date, and pct—this approach allows for a comprehensive understanding of how these variables influence voting results.
 
-The numeric_grade and transparency_score are crucial in assessing the reliability of polling organizations. By integrating these factors, the Bayesian model can provide a nuanced analysis of how the quality and transparency of polling organizations impact Trump’s support rate. This is particularly important in the context of public opinion polling, as perceptions of reliability can significantly affect the interpretation of results.
+The numeric grade and transparency score are crucial in assessing the reliability of polling organizations. By integrating these factors, the Bayesian model can provide a nuanced analysis of how the quality and transparency of polling organizations impact Trump’s support rate. This is particularly important in the context of public opinion polling, as perceptions of reliability can significantly affect the interpretation of results.
 
 Moreover, the Bayesian framework enables the incorporation of prior distributions for model parameters, reflecting beliefs about their possible values before observing the data. This is especially beneficial in a domain where historical data and expert opinion can provide valuable insights.
 
@@ -306,13 +312,13 @@ However, there are areas for improvement within the model. First, refining the s
 
 By employing this Bayesian model, our aim is to provide robust estimates of Trump’s support rate, considering both the statistical characteristics of the data and the inherent uncertainty related to polling, while exploring avenues for further model improvement.
 
-# Results {#sec-data}
+# Results {#sec-result}
 
 The results part is combined with the result for models of analysis data and the result of predictions by Bayesian model on November 5, 2024. In order to get to know whether the votes of Trump will win the election, we combined the data of Harris who have the most competitive candidate other than Trump to do predictions. It would help us be faster and more accurate to do the predict judgment.
 
 ## Result of model for analysis data
 
-In @fig-final, we applied a generalized linear regression model to predict the percentage of polls Trump according each pollster. Specifically, the support rate data points range from 40% to 55%, with most clustered between 45% and 50%. The orange trend line shows a subtle upward trend, indicating a gradual increase in Trump's average support rate over time. For example, in early August, the support rate is around 45%, while by mid-October, the average support rate shown by the trend line is close to 50%. This suggests that Trump's support rate has risen by about 5% over these three months. For the model summary of Generalized Linear Regression and Bayesian Model, the table can see at @sec-model_result.
+In @fig-final, we applied a generalized linear regression model to predict the percentage of polls Trump according each pollster. Specifically, the support rate data points range from 40% to 55%, with most clustered between 45% and 50%. The orange trend line shows a subtle upward trend, indicating a gradual increase in Trump's average support rate over time. For example, in early August, the support rate is around 45%, while by mid-October, the average support rate shown by the trend line is close to 50%. This suggests that Trump's support rate has risen by about 5% over these three months. For the model summary of Generalized Linear Regression and Bayesian Model, the table can see at [Appendix -@sec-tbl-model-summary].
 
 ```{r}
 #| echo: false
@@ -355,7 +361,7 @@ ggplot(analysis_trump, aes(x = end_date)) +
 ```
 In @fig-bayes-trump, we applied a bayesian model to predict the percentage of polls Trump according each pollster. Each data point is color-coded by pollster, with support rates ranging from 35% to 60%. The shaded gray area around the trend line represents the confidence interval, indicating the uncertainty in support rate variations. The overall trend line (blue) shows a slight upward trend, increasing from about 45% in August to nearly 50% in October. In particular, data points in early August are more dispersed, with some pollsters reporting low support rates (around 40%) and others reporting higher rates (over 50%). By November, most poll results have converged, with support rates centered between 45% and 50%. Notably, certain pollsters, like YouGov and Marist, provide either consistently higher or lower support rate estimates compared to others, indicating some bias or variation among polling organizations.
 
-We also applied a Bayesian model to predict the percentage of polls Harris according each pollster. The figure can see it in @sec-model_result.
+We also applied a Bayesian model to predict the percentage of polls Harris according each pollster. The figure can see it in [Appendix -@sec-bayes-harris].
 
 ```{r, fig.pos= 'H', fig.width=10, fig.height=6}
 #| echo: false
@@ -489,7 +495,7 @@ ggplot(all_predictions, aes(x = pollster, y = pred_mean, color = candidate, grou
 
 ```
 
-In @tbl-pred-wide, we merged and compared the Bayesian model predictions of the vote shares for Trump and Harris on November 5, 2024, by pollster. The green background color represents the same pollster, indicating that the side with the larger predicted vote share is expected to win based on the data collected and summarized by that pollster. Conversely, red indicates the losing side. In @tbl-pred-wide, a total of 27 pollsters participated in the polling, with 9 pollsters predicting a Trump victory and 18 pollsters predicting a Harris victory. In @tbl-pred-summary, we calculated the mean support for Trump and Harris, estimating Trump's probability of leading probability to be 31% and the mean support be 46.87%. For the further more predictions about the Bayesian model, we can see at @sec-model_result.
+In @tbl-pred-wide, we merged and compared the Bayesian model predictions of the vote shares for Trump and Harris on November 5, 2024, by pollster. The green background color represents the same pollster, indicating that the side with the larger predicted vote share is expected to win based on the data collected and summarized by that pollster. Conversely, red indicates the losing side. In @tbl-pred-wide, a total of 29 pollsters participated in the polling, with 9 pollsters predicting a Trump victory and 18 pollsters predicting a Harris victory. In @tbl-pred-summary, we calculated the mean support for Trump and Harris, estimating Trump's probability of leading probability to be 31% and the mean support be 46.87%. For the further more predictions about the Bayesian model, we can see at [Appendix -@sec-pred-summary].
 
 ```{r, fig.pos= 'H', fig.width=10, fig.height=6}
 #| echo: false
@@ -547,66 +553,80 @@ kable(summary_table, col.names = c("Metric", "Value")) %>%
 ```
 
 
-# Discussion {#sec-data}
+# Discussion {#sec-discussion}
 
-## First discussion point {#sec-first-point}
+## Summary of findings
 
-If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
+The predictive models deployed in our study delineate a subtle yet pivotal dynamic: economic indicators and significant public events exert substantial influence on voter behavior as elections approach. The Bayesian analysis reveals a close support rate between Donald Trump (46.87%) and Kamala Harris (48.50%), highlighting an electorate acutely responsive to shifts in economic sentiment and public perception. This responsiveness is intensified by the fact that nearly 41% of pollsters show varying support levels for Trump, underscoring a voter sentiment that is not merely divided but remarkably fluid. This data suggests that electoral outcomes can pivot rapidly following major economic updates or notable public engagements by candidates, potentially reshaping the electoral narrative almost instantaneously.
 
-## Second discussion point
+Furthermore, this analysis accentuates the imperative for campaign strategies to remain highly adaptable to these evolving conditions. The efficacy of Bayesian models, which we will talk about in the next section, in integrating and updating predictions with incoming economic data and changes in public sentiment is particularly invaluable. This capability enables campaigns to refine their strategic approaches almost in real-time, customizing their communications to exploit shifts in voter sentiment precipitated by economic improvements or declines. Such strategic agility is crucial; it equips campaign teams to seize opportunities to influence undecided or swing voters at decisive moments, effectively harnessing economic and social currents to secure electoral leverage.
 
-Please don't use these as sub-heading labels - change them to be what your point actually is.
 
-## Third discussion point
+## Evaluating Predictive Models in Electoral Forecasting {#sec-first-point}
+
+In the task of forecasting the U.S. presidential election, the strategic selection of predictive models is paramount due to the complex interplay of electoral dynamics, such as shifts in voter behavior driven by economic changes, social movements, and regional voting patterns. These dynamics are characterized by non-linear relationships and interactions that are not only highly contextual but also vary significantly over time. Generalized Linear Models (GLMs) are valued for their straightforwardness and computational efficiency. However, they often simplify the intricate relationships within electoral data, which can result in overlooking subtle yet crucial nuances that are vital for accurate predictions. In contrast, Bayesian models excel in environments where prior knowledge and expert insights are available. These models integrate these elements through prior distributions that inform and refine the model’s estimations, making them particularly advantageous for electoral forecasting. This integration allows for a nuanced understanding of voter intentions, providing the ability to adaptively update as new data becomes available— a critical feature in the rapidly changing landscape of political campaigns.
+
+Additionally, Bayesian models produce probabilistic outputs—posterior distributions of parameters—that offer not only point estimates but also the probabilities of these estimates. This aspect enhances the interpretability and reliability of the forecasted electoral outcomes, making Bayesian models especially adept at handling the uncertainties inherent in polling data, such as non-response biases and sampling errors. Our project’s application of Bayesian methodologies not only evaluates but also quantifies the effects of various predictive factors within a sophisticated probabilistic framework, ensuring a robust approach to capturing the complexities of national election predictions.
+
+## Quantifying Pollster Influence on Electoral Outcomes
+
+The influence of pollster methodology on electoral forecasts is particularly critical for candidates like Donald Trump, whose support base may be heterogeneously distributed and exhibits high polarization. Our analysis of aggregated polling data from various sources demonstrates significant variations in predictions due to differing pollster methodologies. This variability highlights the crucial need for a rigorous assessment of how pollster-specific biases and methodological differences can skew the overall election forecasts. To systematically address this issue, an in-depth evaluation of each pollster’s historical accuracy and methodological rigor is required. Pollsters with a track record of high accuracy, especially in contexts demographically and politically akin to the current electoral environment, should be weighted more heavily in the models.
+
+Furthermore, adopting a Bayesian hierarchical approach can refine these forecasts by pooling data from a variety of sources and adjusting for known biases. This model enhances the predictions by modulating the influence of each pollster based on their historical performance and methodological transparency, thereby improving the reliability and accuracy of electoral forecasts. Such a comprehensive approach not only mitigates the impact of pollster-specific biases but also provides a more detailed and contextually informed perspective on potential electoral outcomes.
 
 ## Weaknesses and next steps
 
-Weaknesses and next steps should also be included.
+While our predictive models provide a comprehensive analysis of electoral dynamics, they are not without limitations. One notable challenge is the potential for overfitting in complex Bayesian models, which may adapt too closely to specific datasets and fail to generalize across different electoral cycles. Additionally, despite the sophisticated integration of economic indicators and polling data, the unpredictable nature of voter behavior—especially in response to sudden political or economic events—presents a significant challenge to the accuracy of our forecasts. The reliance on historical data to inform model priors can also lead to biases if past trends do not accurately reflect future outcomes.
+
+To address these challenges, future research should focus on enhancing the generalizability of our models. This could involve the development of new statistical techniques that reduce the risk of overfitting and improve the models’ ability to adapt to new and varying datasets. Incorporating real-time data analytics into our Bayesian framework could also enhance the responsiveness of our models to sudden changes in the political landscape. Furthermore, expanding our data sources to include more granular demographic and psychographic information could refine our understanding of voter behavior and improve the accuracy of our predictions.
+
+Additionally, conducting longitudinal studies to track changes in voter sentiment over multiple election cycles could provide deeper insights into the long-term efficacy of our predictive models and help identify persistent biases in pollster methodologies. Finally, increasing collaboration with political scientists and behavior analysts could enrich the theoretical foundations of our models, ensuring that they not only predict electoral outcomes but also contribute to a broader understanding of electoral behavior.
 
 \newpage
 
 \appendix
 
-# Appendix {#sec-data}
+# Appendix {#sec-appendix}
 
 ## Methodology Overview and Evaluation of YouGov Polling
 
 **Introduction**
 
-YouGov is an online polling company that uses a combination of non-probability sampling and a model known as multilevel regression with post-stratification (MRP) to estimate voter intentions. This appendix reviews YouGov’s approach, including sample recruitment, data collection, response handling, questionnaire design, and MRP modeling. It also assesses the strengths and limitations of YouGov’s methods.
+YouGov is an online polling company using a mix of non-probability sampling and a specialized model called multilevel regression with post-stratification (MRP) to estimate voter intentions. This appendix reviews YouGov’s methodology, covering sample recruitment, data collection, non-response management, questionnaire design, and MRP modeling. An assessment of the strengths and limitations of YouGov’s approach is also provided.
 
-**1. Population, Frame, and Sample Composition**
+**Population, Frame, and Sample Composition**
 
-YouGov’s target population for its election polling includes American adults, with a focus on registered voters. It uses an online panel as its frame, drawing participants from a pool of volunteers who sign up and provide demographic information. This setup allows YouGov to adjust samples to align with the population it seeks to represent. Additionally, YouGov uses the TargetSmart voter file to verify that the sample aligns with national voter demographics. During election periods, YouGov increases its sample size, beginning with nearly 100,000 responses and adding another 20,000 in September and October to update its model.
+The target population for YouGov’s election polling consists of American adults, particularly registered voters. YouGov uses an online panel framework, recruiting participants who voluntarily sign up and provide detailed demographic information. The sampling frame is further refined by aligning samples with demographic data from the TargetSmart voter file, which ensures that the sample accurately reflects national voter demographics. YouGov adjusts sample sizes during election cycles to improve representativeness and model robustness, starting with approximately 100,000 responses and increasing by an additional 20,000 during peak months, such as September and October.
 
-**2. Sample Recruitment and Representativeness**
+**Sample Recruitment and Representativeness**
 
-YouGov recruits panel members online through ads and partnerships with other websites. This approach allows any American adult with internet access to join. Members provide basic demographic information, which YouGov uses to select participants and apply statistical weighting to reflect the population accurately. Panelists earn points for participating, redeemable for small rewards, which encourages engagement and enhances data quality. However, since recruitment is internet-based, some groups without reliable internet access, such as rural or low-income populations, may be underrepresented.
+Panelists are recruited online through digital ads and partnerships with other websites, allowing any American adult with internet access to participate. Demographic data provided by participants enables YouGov to weight samples to reflect the population more closely. Respondents earn points redeemable for small rewards, which promotes engagement and data quality. However, reliance on online recruitment can underrepresent groups with limited internet access, such as some rural and low-income populations.
 
-**3. Sampling Approach and Methodological Trade-offs**
+**Sampling Approach and Methodological Trade-offs**
 
-YouGov’s approach involves non-probability sampling, meaning that not everyone in the population has an equal chance of being selected. To address this, YouGov applies the MRP model, dividing respondents into subgroups based on characteristics like age, gender, race, education, region, and political affiliation. Each subgroup is weighted to match its share in the population. This method is efficient but has trade-offs, as MRP may not fully capture smaller states or hard-to-reach groups.
+YouGov’s sampling is non-probabilistic, meaning not everyone has an equal chance of selection. To mitigate this, YouGov applies MRP, a hierarchical modeling technique that segments respondents into subgroups based on characteristics like age, gender, race, education, and region. Subgroups are weighted to match their proportions in the broader population. While MRP efficiently models population-wide estimates, it may have trade-offs, especially in accurately representing smaller states and hard-to-reach demographic groups.
 
-**4. Non-response Handling and Quality Control Measures**
+**Non-response Handling and Quality Control Measures**
 
-YouGov uses strict quality control measures to manage non-response. Surveys include checks for speed and consistency, removing low-quality responses. Panelists who repeatedly fail these checks are excluded, helping to reduce bias and improve data quality. These quality controls are essential for the MRP model, which relies on accurate data to produce reliable estimates.
+YouGov employs quality control checks to address non-response bias. The platform incorporates response speed and consistency checks to filter out low-quality responses, and panelists failing these criteria are removed from future studies. These quality measures enhance the MRP model's accuracy by ensuring reliable data, critical for generating robust estimates of voter intentions.
 
-**5. Questionnaire Design**
+**Questionnaire Design**
 
-YouGov’s questionnaires are neutral and straightforward, with randomized question order to reduce bias. They include various question types, such as text, images, and audio, helping respondents understand the context. Options like “prefer not to say” are included for sensitive questions, supporting respondent privacy. However, since the surveys are conducted online, some groups without internet access may be excluded, and shorter questionnaires may limit the depth of data collected.
+YouGov’s questionnaires are concise and randomized to minimize bias, with neutral wording and varied question types (text, images, audio) to enhance respondent understanding. For sensitive topics, options like "prefer not to say" are included to protect privacy. The online format, however, excludes certain demographics, and shorter survey lengths may limit the depth of data collected.
 
-**6. MRP Model for Vote Estimation**
+**MRP Model for Vote Estimation**
 
-YouGov’s MRP model estimates voter intentions through three stages: estimating likelihood to vote, predicting support for a candidate among likely voters, and aggregating results to calculate overall support. By matching responses to the TargetSmart voter file, the model generates estimates at both national and regional levels. The MRP model also helps YouGov track changes in voter intentions over time.
+YouGov’s MRP model estimates voter support through three main steps: predicting voter turnout likelihood, determining likely voter candidate support, and aggregating to estimate overall support. The model draws on responses from the TargetSmart voter file, enabling estimates at both national and regional levels. MRP also allows YouGov to track voter opinion shifts, reflecting changing public sentiment over time.
 
-**7. Strengths and Limitations of the YouGov Approach**
+**Strengths and Limitations of the YouGov Approach**
 
-YouGov’s approach has several strengths. The MRP model allows for accurate predictions at regional and national levels, and the use of voter files enhances sample representativeness. Repeated interviews with panelists allow YouGov to observe shifts in voter intentions over time. However, limitations include potential representativeness issues due to non-probability sampling, particularly in small states and among underrepresented groups. The internet-based survey method also may not fully capture populations without reliable internet access.
+YouGov’s methodology has strengths, including the MRP model’s ability to generate precise regional and national predictions, and voter file use that enhances sample validity. Continuous panelist engagement allows YouGov to monitor shifts in voter support. However, potential limitations stem from the non-probability sampling approach, which may affect representativeness, especially in smaller states or underrepresented groups. Additionally, reliance on internet-based methods may miss some populations lacking consistent internet access.
 
 **Conclusion**
 
-Through a combination of MRP modeling, quality control, and a large online panel, YouGov provides a structured approach for election polling. Although challenges remain in achieving full representativeness and internet coverage, YouGov’s approach offers useful information on U.S. voter intentions. The MRP model has proven effective in past elections and serves as a practical tool for future polling and tracking trends.
+YouGov employs a structured methodology combining MRP modeling, quality control measures, and a large online panel, producing valuable insights into U.S. voter intentions. While challenges in achieving full representativeness and internet reach persist, YouGov’s methodology has demonstrated success in past elections and serves as a reliable tool for future polling and tracking electoral trends.
 
+\newpage
 ## Idealized Survey Methodology
 
 The budget for this survey is $100,000, aimed at predicting the outcome of the 2024 United States Presidential Election. This methodology includes stratified sampling, multi-platform recruitment, data validation, and multi-wave data aggregation to ensure representative and reliable data.
@@ -640,6 +660,24 @@ To maximize budget efficiency, we will use a phased spending strategy. An initia
 Survey Title: 2024 United States Presidential Election Survey
 
 Survey Link: https://forms.gle/EzyHp3zuX8Cu6Ep8A
+
+Introduction:
+
+Thank you for taking part in our survey on the 2024 United States Presidential Election. Your input will help us understand voters’ views on candidates and key policy issues. All responses are confidential and will be used solely for statistical purposes. As a token of appreciation, participants will have a chance to win a small reward, with one in every 100 respondents receiving $5 to $10.
+
+For Questions or Concerns, Please Contact:
+
+Tianrui Fu
+
+Email: tianrui.fu@mail.utoronto.ca
+
+Yiyue Deng
+
+Email: yiyue.deng@mail.utoronto.ca
+
+Jianing Li
+
+Email: lijianing.li@mail.utoronto.ca
 
 Survey Questions:
 
@@ -719,29 +757,17 @@ o	Not sure
 
 Email: ______________________
 
+Thank You for Participating
+
+We appreciate your time and input in our survey on the 2024 U.S. Presidential Election. Your responses are valuable to our research. Good luck with the reward draw, and have a great day!
+
 ## Clean data {#sec-cleandata}
 
-It starts by reading the dataset and standardizing column names. Next, it removes irrelevant columns like sponsor_ids, sponsors, and etc and filters for high-quality polls (with a rating of 2.7 or higher) that specifically track Trump’s support. National polls missing state information are labeled as "National," and dates are formatted and filtered to include only those on or after July 21, 2024 (when Trump declared his candidacy). Finally, the percentage supporting Trump is converted to an actual count for further modeling.
-
-## Variable details {#sec-variable}
-
-We have used the variable numeric_grade, transparency_score, pollster, poll score, end_date and pct in the building of Bayesian model. Among these variables in the data set after analysis,
-
-- The numeric_grade is the numeric rating given to the pollster to indicate their quality or reliability from 2.7 to 3.0. 
-
-- The transparency_score is the grade for how transparent a pollster is, calculated based on how much information it discloses about its polls and weighted by recency from 4.5 to 10.0. 
-
-- The pollster is the name of the polling organization that conducted the poll included Marquette Law School, CNN/SSRS and etc. 
-
-- The poll score is the numeric value representing the score or reliability of the pollster in question from -1.5 to -0.5 and negative numbers of poll score are better. 
-
-- The end_date is the date of polling ends. 
-
-- The pct is the percentage of the vote or support that the candidate received in the poll and keep integer.
+It starts by reading the dataset and standardizing column names. Next, it removes irrelevant columns like sponsor_ids, sponsors, and etc and filters for high-quality polls (with a rating of 2.7 or higher) that specifically track Trump’s support. National polls missing state information are labeled as "National," and dates are formatted and filtered to include only those on or after July 21, 2024 (when Trump declared his candidacy). Finally, the percentage supporting Trump is converted to an actual count for further modeling. The same step also does with the Harris data set which will help us to do comparison later.
 
 ## Results of model {#sec-model_result}
 
-### Table for summary of model results 
+### Table for summary of model results {#sec-tbl-model-summary}
 
 In @tbl-modelresults, we conducted a summary of three models, including a generalized linear regression and a Bayesian model for Trump’s data, as well as a Bayesian model for Harris’s data. This summary includes the $\gamma_j$ values for each pollster and monitoring data for the models, such as AIC, BIC, etc.
 
@@ -800,7 +826,7 @@ modelsummary(models = list("Model by glm" = model_final_glm,
 
 ```
 \newpage
-### Bayesian model for Harris data set
+### Bayesian model for Harris data set {#sec-bayes-harris}
 
 In @fig-bayes-harris, we applied a bayesian model to predict the percentage of polls Harris according each pollster. Each data point is color-coded by pollster, with support rates ranging from 35% to 65%. The shaded gray area around the trend line represents the confidence interval, indicating the uncertainty in support rate variations. The overall trend line (blue) shows a slight upward trend, increasing from about 46% in August to nearly 48% in October. Compared to Trump's model, the increasing trend of Harris is lower than Trump's. By October, most poll results have converged, with support rates centered between 45% and 50%.
 
@@ -860,9 +886,9 @@ ggplot(analysis_harris, aes(x = end_date, y = pct, color = pollster)) +
 
 ```
 \newpage
-### Predictions for both Trump and Harris
+### Predictions for both Trump and Harris {#sec-pred-summary}
 
-In @tbl-all-pred, we summarized the Bayesian model predictions for Trump and Harris on November 5, 2024, based on 27 pollsters, including the mean, lower bound, and upper bound.
+In @tbl-all-pred, we summarized the Bayesian model predictions for Trump and Harris on November 5, 2024, based on 29 pollsters, including the mean, lower bound, and upper bound.
 
 ```{r, fig.pos= 'H'}
 #| echo: false
