@@ -114,7 +114,7 @@ ggplot(analysis_trump, aes(x = pct)) +
 
 ### Pollster
 
-In @fig-frequency-bar, the predictor variable is the count of polls conducted by each pollster. The bar chart displays the number of polls released by different polling organizations, ordered from highest to lowest frequency. The bars range in color from light blue to dark blue, indicating the frequency of polls conducted by each organization. Siena/NYT and YouGov are the most active pollsters, with 94 and 59 polls conducted, respectively. Emerson and Beacon/Shaw also have high polling frequencies, with 58 and 46 polls. In contrast, several pollsters, like Christopher Newport University and Data Orbital, conducted only one poll, indicating their minimal activity in comparison.
+In @fig-frequency-bar, the predictor variable is the count of polls conducted by each pollster. The bar chart displays the number of polls released by different polling organizations, ordered from highest to lowest frequency. The bars range in color from light blue to dark blue, indicating the frequency of polls conducted by each organization. Siena/NYT and YouGov are the most active pollsters, with 136 and 121 polls conducted, respectively. Emerson and AtlasIntel also have high polling frequencies, with 73 and 82 polls. In contrast, several pollsters, like Christopher Newport University and McCourtney Institute/YouGov, conducted only one poll, indicating their minimal activity in comparison.
 
 ```{r, fig.pos= 'H', fig.width=8, fig.height=4}
 #| label: fig-frequency-bar
@@ -130,6 +130,7 @@ ggplot(analysis_trump, aes(y = reorder(pollster, table(pollster)[pollster]))) +
 ```
 ### Poll Score
 
+@fig-pollscore is a vertical bar chart displaying the distribution of poll scores, ranging from -0.5 to -1.5. The most frequent poll score is -1.1, indicating a high concentration around this value. Most pollsters' poll scores are below -0.8, which suggests that overall scores are relatively low, reflecting a higher level of trust in the polls. Further analysis shows that the lower the poll score, the higher the trust level. Therefore, the distribution is notably skewed, with most data concentrated in the lower range (around -1.1 and below). Higher negative scores (closer to -0.5) are relatively rare, indicating that most polling agencies demonstrated high credibility in this survey, earning broad approval from the public or voters.
 
 ```{r, fig.pos= 'H', fig.width=8, fig.height=4}
 #| label: fig-pollscore
@@ -149,6 +150,8 @@ ggplot(analysis_trump, aes(x = pollscore)) +
 ```
 ### Transparency Score
 
+@fig-transparency illustrates the distribution of "Transparency Scores" related to the 2024 election, possibly representing public or media ratings of candidate transparency, ranging from 5 to 10. The majority of scores are clustered around 8, showing that most respondents rate transparency fairly high. Scores of 6 and 7 are less frequent, while extreme scores of 5 and 10 are rare. This indicates that most voters or media sources perceive candidates as moderately to highly transparent, with scores skewed toward the higher end of the scale.
+
 ```{r, fig.pos= 'H', fig.width=8, fig.height=4}
 #| label: fig-transparency
 #| fig-cap: Distribution of Transparency Score
@@ -166,7 +169,9 @@ ggplot(analysis_trump, aes(x = transparency_score)) +
 ```
 ### Numeric Grade
 
-```{r}
+@fig-numeric displays the distribution of a "Numeric Grade" associated with the 2024 election, which could represent candidate approval ratings, public opinion scores, or voter satisfaction. The grades are primarily concentrated between 2.7 and 3.0, with a noticeable peak close to 3.0, indicating a higher frequency of favorable ratings. This distribution suggests strong public support or positive sentiment, with the majority of respondents giving relatively high scores on this variable.
+
+```{r, fig.pos= 'H', fig.width=8, fig.height=4}
 #| label: fig-numeric
 #| fig-cap: Density Plot of Numeric Grade
 #| echo: false
@@ -181,6 +186,8 @@ ggplot(analysis_trump, aes(x = numeric_grade)) +
   theme_minimal()
 ```
 ### End date
+
+@fig-enddate shows the distribution of a particular variable over time related to the 2024 U.S. election. The x-axis represents dates from August to November, and the y-axis shows the count. This variable might represent the frequency of certain events, such as news coverage, voter registrations, or polling responses. The data is relatively sparse from August to October, with small peaks in some areas. In November, however, there is a significant increase in counts, particularly in early November, possibly linked to the heightened election activity or voter engagement as Election Day approaches.
 
 ```{r, fig.pos= 'H', fig.width=8, fig.height=4}
 #| label: fig-enddate
